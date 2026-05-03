@@ -1,0 +1,2026 @@
+==========
+Args:Namespace(dataset='regdb_rgb', batch_size=128, workers=8, height=288, width=144, num_instances=16, eps=0.6, eps_gap=0.02, k1=30, k2=6, arch='agw', features=0, dropout=0, momentum=0.1, memorybank='CMhcl', smooth=0, lr=0.00035, weight_decay=0.0005, epochs=50, iters=100, step_size=20, seed=1, print_freq=10, eval_step=1, trial=8, temp=0.05, data_dir='../RegDB/', logs_dir='logs/regdb_gamma_s2/8', pooling_type='gem', use_hard=False, no_cam=False)
+==========
+==> Load unlabeled dataset
+=> regdb_ir loaded 8
+Dataset statistics:
+  ----------------------------------------
+  subset   | # ids | # images | # cameras
+  ----------------------------------------
+  train    |   206 |     2060 |         1
+  query    |   206 |      824 |         1
+  gallery  |   206 |     2060 |         1
+  ----------------------------------------
+=> regdb_rgb loaded 8
+Dataset statistics:
+  ----------------------------------------
+  subset   | # ids | # images | # cameras
+  ----------------------------------------
+  train    |   206 |     2060 |         1
+  query    |   206 |      824 |         1
+  gallery  |   206 |     2060 |         1
+  ----------------------------------------
+=> Loaded checkpoint './logs/regdb_gamma_s1/8/model_best.pth.tar'
+IR Clustering criterion: eps: 0.300
+RGB Clustering criterion: eps: 0.300
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.530149221420288
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5022296905517578
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 0: 209 clusters
+==> Statistics for RGB epoch 0: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 209
+  M_vr shape: torch.Size([207, 209]), M_ar shape: torch.Size([207, 209])
+  M_var (fused) shape: torch.Size([207, 209])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [0][10/100]	Time 0.337 (0.814)	Data 0.000 (0.071)	Loss 5.036 (4.216)	Loss ir 1.669	Loss rgb 0.186	Loss RC 0.048	Loss hybrid 4.068	
+Epoch: [0][20/100]	Time 0.328 (0.573)	Data 0.000 (0.035)	Loss 4.993 (4.766)	Loss ir 0.958	Loss rgb 0.135	Loss RC 0.052	Loss hybrid 4.613	
+Epoch: [0][30/100]	Time 0.338 (0.526)	Data 0.000 (0.057)	Loss 5.246 (5.108)	Loss ir 1.029	Loss rgb 0.095	Loss RC 0.045	Loss hybrid 5.613	
+Epoch: [0][40/100]	Time 0.329 (0.478)	Data 0.000 (0.043)	Loss 5.180 (5.350)	Loss ir 1.593	Loss rgb 0.101	Loss RC 0.046	Loss hybrid 4.186	
+Epoch: [0][50/100]	Time 0.330 (0.448)	Data 0.000 (0.034)	Loss 6.164 (5.445)	Loss ir 1.930	Loss rgb 0.292	Loss RC 0.042	Loss hybrid 4.621	
+Epoch: [0][60/100]	Time 0.339 (0.459)	Data 0.000 (0.059)	Loss 4.741 (5.386)	Loss ir 1.685	Loss rgb 1.002	Loss RC 0.051	Loss hybrid 1.929	
+Epoch: [0][70/100]	Time 0.329 (0.440)	Data 0.000 (0.051)	Loss 5.666 (5.434)	Loss ir 1.553	Loss rgb 1.265	Loss RC 0.051	Loss hybrid 3.060	
+Epoch: [0][80/100]	Time 0.336 (0.438)	Data 0.000 (0.056)	Loss 3.599 (5.356)	Loss ir 0.804	Loss rgb 1.067	Loss RC 0.054	Loss hybrid 1.370	
+Epoch: [0][90/100]	Time 0.333 (0.427)	Data 0.000 (0.050)	Loss 4.616 (5.388)	Loss ir 0.742	Loss rgb 0.762	Loss RC 0.058	Loss hybrid 3.949	
+Epoch: [0][100/100]	Time 0.333 (0.417)	Data 0.000 (0.045)	Loss 5.533 (5.424)	Loss ir 1.133	Loss rgb 1.124	Loss RC 0.048	Loss hybrid 3.337	
+Extracting Query Feature...
+Extracting Time:	 3.828
+Extracting Gallery Feature...
+Extracting Time:	 3.263
+Test Trial: 8
+FC:   Rank-1: 50.19% | Rank-5: 62.04% | Rank-10: 69.13%| Rank-20: 76.60%| mAP: 46.89%| mINP: 33.79%
+
+ * Finished epoch   0   model R1: 50.2%  model mAP: 46.9%   best R1: 50.2%   best mAP: 46.9%(best_epoch:0)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5112578868865967
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4690420627593994
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 1: 211 clusters
+==> Statistics for RGB epoch 1: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 211
+  M_vr shape: torch.Size([208, 211]), M_ar shape: torch.Size([208, 211])
+  M_var (fused) shape: torch.Size([208, 211])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [1][10/100]	Time 0.313 (0.372)	Data 0.000 (0.051)	Loss 4.803 (4.010)	Loss ir 0.102	Loss rgb 1.390	Loss RC 0.037	Loss hybrid 4.908	
+Epoch: [1][20/100]	Time 0.329 (0.352)	Data 0.000 (0.026)	Loss 5.322 (4.977)	Loss ir 0.024	Loss rgb 1.296	Loss RC 0.044	Loss hybrid 5.117	
+Epoch: [1][30/100]	Time 0.312 (0.381)	Data 0.000 (0.056)	Loss 3.246 (5.112)	Loss ir 0.653	Loss rgb 1.341	Loss RC 0.040	Loss hybrid 0.491	
+Epoch: [1][40/100]	Time 0.309 (0.365)	Data 0.000 (0.042)	Loss 4.217 (4.806)	Loss ir 0.431	Loss rgb 1.894	Loss RC 0.055	Loss hybrid 0.395	
+Epoch: [1][50/100]	Time 0.329 (0.357)	Data 0.000 (0.034)	Loss 4.625 (4.660)	Loss ir 0.697	Loss rgb 2.279	Loss RC 0.050	Loss hybrid 0.695	
+Epoch: [1][60/100]	Time 0.313 (0.382)	Data 0.000 (0.059)	Loss 2.936 (4.445)	Loss ir 0.207	Loss rgb 1.752	Loss RC 0.054	Loss hybrid 0.207	
+Epoch: [1][70/100]	Time 0.325 (0.375)	Data 0.000 (0.050)	Loss 2.859 (4.342)	Loss ir 0.376	Loss rgb 1.100	Loss RC 0.047	Loss hybrid 0.305	
+Epoch: [1][80/100]	Time 0.336 (0.385)	Data 0.000 (0.060)	Loss 3.011 (4.298)	Loss ir 0.638	Loss rgb 1.349	Loss RC 0.041	Loss hybrid 0.638	
+Epoch: [1][90/100]	Time 0.334 (0.380)	Data 0.000 (0.053)	Loss 2.993 (4.217)	Loss ir 0.354	Loss rgb 1.186	Loss RC 0.051	Loss hybrid 0.353	
+Epoch: [1][100/100]	Time 0.329 (0.375)	Data 0.000 (0.048)	Loss 3.754 (4.151)	Loss ir 0.477	Loss rgb 2.154	Loss RC 0.047	Loss hybrid 0.471	
+Extracting Query Feature...
+Extracting Time:	 3.324
+Extracting Gallery Feature...
+Extracting Time:	 3.341
+Test Trial: 8
+FC:   Rank-1: 61.07% | Rank-5: 70.68% | Rank-10: 77.52%| Rank-20: 83.45%| mAP: 53.66%| mINP: 38.52%
+
+ * Finished epoch   1   model R1: 61.1%  model mAP: 53.7%   best R1: 61.1%   best mAP: 53.7%(best_epoch:1)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4947538375854492
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4538044929504395
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 2: 209 clusters
+==> Statistics for RGB epoch 2: 209 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 209
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 209
+  Augmented clusters: 209
+  IR clusters: 209
+  M_vr shape: torch.Size([209, 209]), M_ar shape: torch.Size([209, 209])
+  M_var (fused) shape: torch.Size([209, 209])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [2][10/100]	Time 0.310 (0.367)	Data 0.000 (0.053)	Loss 3.707 (3.663)	Loss ir 0.630	Loss rgb 0.070	Loss RC 0.035	Loss hybrid 4.303	
+Epoch: [2][20/100]	Time 0.308 (0.346)	Data 0.000 (0.027)	Loss 3.503 (3.914)	Loss ir 0.681	Loss rgb 0.041	Loss RC 0.041	Loss hybrid 3.887	
+Epoch: [2][30/100]	Time 0.334 (0.375)	Data 0.000 (0.056)	Loss 5.094 (4.150)	Loss ir 1.203	Loss rgb 0.076	Loss RC 0.040	Loss hybrid 5.281	
+Epoch: [2][40/100]	Time 0.329 (0.363)	Data 0.000 (0.042)	Loss 4.498 (4.224)	Loss ir 0.568	Loss rgb 0.129	Loss RC 0.039	Loss hybrid 4.668	
+Epoch: [2][50/100]	Time 0.329 (0.356)	Data 0.000 (0.034)	Loss 5.236 (4.389)	Loss ir 1.894	Loss rgb 0.163	Loss RC 0.039	Loss hybrid 4.468	
+Epoch: [2][60/100]	Time 0.323 (0.386)	Data 0.000 (0.063)	Loss 3.268 (4.271)	Loss ir 1.401	Loss rgb 0.699	Loss RC 0.051	Loss hybrid 0.502	
+Epoch: [2][70/100]	Time 0.329 (0.377)	Data 0.000 (0.054)	Loss 3.279 (4.195)	Loss ir 1.354	Loss rgb 0.564	Loss RC 0.056	Loss hybrid 0.902	
+Epoch: [2][80/100]	Time 0.336 (0.386)	Data 0.001 (0.062)	Loss 4.661 (4.118)	Loss ir 0.433	Loss rgb 0.806	Loss RC 0.042	Loss hybrid 4.183	
+Epoch: [2][90/100]	Time 0.332 (0.380)	Data 0.000 (0.055)	Loss 3.403 (4.078)	Loss ir 0.888	Loss rgb 0.545	Loss RC 0.052	Loss hybrid 1.908	
+Epoch: [2][100/100]	Time 0.330 (0.375)	Data 0.000 (0.050)	Loss 2.995 (4.102)	Loss ir 0.862	Loss rgb 0.564	Loss RC 0.060	Loss hybrid 1.085	
+Extracting Query Feature...
+Extracting Time:	 3.314
+Extracting Gallery Feature...
+Extracting Time:	 3.343
+Test Trial: 8
+FC:   Rank-1: 64.66% | Rank-5: 75.83% | Rank-10: 81.46%| Rank-20: 86.84%| mAP: 59.19%| mINP: 44.98%
+
+ * Finished epoch   2   model R1: 64.7%  model mAP: 59.2%   best R1: 64.7%   best mAP: 59.2%(best_epoch:2)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5135486125946045
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4635765552520752
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 3: 210 clusters
+==> Statistics for RGB epoch 3: 209 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 209
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 209
+  Augmented clusters: 209
+  IR clusters: 210
+  M_vr shape: torch.Size([209, 210]), M_ar shape: torch.Size([209, 210])
+  M_var (fused) shape: torch.Size([209, 210])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [3][10/100]	Time 0.338 (0.390)	Data 0.000 (0.052)	Loss 3.750 (3.705)	Loss ir 0.028	Loss rgb 0.547	Loss RC 0.042	Loss hybrid 4.701	
+Epoch: [3][20/100]	Time 0.330 (0.362)	Data 0.000 (0.026)	Loss 5.014 (4.210)	Loss ir 0.044	Loss rgb 1.994	Loss RC 0.038	Loss hybrid 3.887	
+Epoch: [3][30/100]	Time 0.340 (0.392)	Data 0.001 (0.056)	Loss 3.229 (4.303)	Loss ir 0.343	Loss rgb 2.053	Loss RC 0.036	Loss hybrid 0.299	
+Epoch: [3][40/100]	Time 0.329 (0.378)	Data 0.000 (0.042)	Loss 3.699 (4.063)	Loss ir 0.416	Loss rgb 1.852	Loss RC 0.041	Loss hybrid 0.888	
+Epoch: [3][50/100]	Time 0.329 (0.369)	Data 0.000 (0.034)	Loss 5.262 (3.975)	Loss ir 1.061	Loss rgb 2.659	Loss RC 0.039	Loss hybrid 0.668	
+Epoch: [3][60/100]	Time 0.334 (0.397)	Data 0.000 (0.061)	Loss 3.512 (3.840)	Loss ir 0.312	Loss rgb 2.247	Loss RC 0.049	Loss hybrid 0.303	
+Epoch: [3][70/100]	Time 0.329 (0.388)	Data 0.000 (0.052)	Loss 2.375 (3.725)	Loss ir 0.375	Loss rgb 1.262	Loss RC 0.047	Loss hybrid 0.339	
+Epoch: [3][80/100]	Time 0.341 (0.395)	Data 0.000 (0.059)	Loss 3.055 (3.678)	Loss ir 0.422	Loss rgb 1.697	Loss RC 0.039	Loss hybrid 0.441	
+Epoch: [3][90/100]	Time 0.331 (0.388)	Data 0.000 (0.053)	Loss 2.624 (3.597)	Loss ir 0.299	Loss rgb 1.238	Loss RC 0.048	Loss hybrid 0.300	
+Epoch: [3][100/100]	Time 0.328 (0.382)	Data 0.000 (0.048)	Loss 3.354 (3.572)	Loss ir 0.336	Loss rgb 1.726	Loss RC 0.043	Loss hybrid 0.329	
+Extracting Query Feature...
+Extracting Time:	 3.315
+Extracting Gallery Feature...
+Extracting Time:	 3.377
+Test Trial: 8
+FC:   Rank-1: 76.55% | Rank-5: 84.42% | Rank-10: 87.91%| Rank-20: 91.41%| mAP: 68.49%| mINP: 52.75%
+
+ * Finished epoch   3   model R1: 76.6%  model mAP: 68.5%   best R1: 76.6%   best mAP: 68.5%(best_epoch:3)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.495074987411499
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5127198696136475
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 4: 207 clusters
+==> Statistics for RGB epoch 4: 210 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 210
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 210
+  Augmented clusters: 210
+  IR clusters: 207
+  M_vr shape: torch.Size([210, 207]), M_ar shape: torch.Size([210, 207])
+  M_var (fused) shape: torch.Size([210, 207])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [4][10/100]	Time 0.334 (0.368)	Data 0.000 (0.041)	Loss 2.856 (2.931)	Loss ir 0.111	Loss rgb 0.040	Loss RC 0.042	Loss hybrid 4.344	
+Epoch: [4][20/100]	Time 0.327 (0.348)	Data 0.000 (0.021)	Loss 2.964 (3.355)	Loss ir 0.270	Loss rgb 0.057	Loss RC 0.037	Loss hybrid 3.993	
+Epoch: [4][30/100]	Time 0.323 (0.376)	Data 0.000 (0.049)	Loss 3.553 (3.577)	Loss ir 0.767	Loss rgb 0.039	Loss RC 0.040	Loss hybrid 3.827	
+Epoch: [4][40/100]	Time 0.308 (0.360)	Data 0.000 (0.037)	Loss 4.066 (3.739)	Loss ir 1.014	Loss rgb 0.017	Loss RC 0.043	Loss hybrid 4.275	
+Epoch: [4][50/100]	Time 0.329 (0.353)	Data 0.000 (0.030)	Loss 4.345 (3.855)	Loss ir 1.130	Loss rgb 0.023	Loss RC 0.044	Loss hybrid 4.439	
+Epoch: [4][60/100]	Time 0.330 (0.382)	Data 0.001 (0.056)	Loss 2.986 (3.714)	Loss ir 0.720	Loss rgb 0.711	Loss RC 0.039	Loss hybrid 1.347	
+Epoch: [4][70/100]	Time 0.330 (0.374)	Data 0.000 (0.048)	Loss 3.387 (3.669)	Loss ir 0.939	Loss rgb 1.147	Loss RC 0.048	Loss hybrid 0.724	
+Epoch: [4][80/100]	Time 0.334 (0.383)	Data 0.000 (0.056)	Loss 4.063 (3.638)	Loss ir 1.244	Loss rgb 0.688	Loss RC 0.044	Loss hybrid 2.029	
+Epoch: [4][90/100]	Time 0.329 (0.378)	Data 0.000 (0.050)	Loss 4.011 (3.612)	Loss ir 0.863	Loss rgb 0.531	Loss RC 0.047	Loss hybrid 3.117	
+Epoch: [4][100/100]	Time 0.329 (0.373)	Data 0.000 (0.045)	Loss 3.208 (3.598)	Loss ir 1.252	Loss rgb 0.716	Loss RC 0.040	Loss hybrid 1.137	
+Extracting Query Feature...
+Extracting Time:	 3.628
+Extracting Gallery Feature...
+Extracting Time:	 3.846
+Test Trial: 8
+FC:   Rank-1: 74.61% | Rank-5: 83.40% | Rank-10: 87.04%| Rank-20: 91.89%| mAP: 67.73%| mINP: 51.43%
+
+ * Finished epoch   4   model R1: 74.6%  model mAP: 67.7%   best R1: 76.6%   best mAP: 68.5%(best_epoch:3)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4859607219696045
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4538402557373047
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 5: 206 clusters
+==> Statistics for RGB epoch 5: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 206
+  M_vr shape: torch.Size([208, 206]), M_ar shape: torch.Size([208, 206])
+  M_var (fused) shape: torch.Size([208, 206])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [5][10/100]	Time 0.333 (0.389)	Data 0.000 (0.051)	Loss 3.326 (3.376)	Loss ir 0.005	Loss rgb 0.557	Loss RC 0.044	Loss hybrid 4.282	
+Epoch: [5][20/100]	Time 0.329 (0.360)	Data 0.000 (0.025)	Loss 3.930 (3.629)	Loss ir 0.013	Loss rgb 1.477	Loss RC 0.040	Loss hybrid 3.491	
+Epoch: [5][30/100]	Time 0.336 (0.391)	Data 0.000 (0.057)	Loss 2.774 (3.548)	Loss ir 0.532	Loss rgb 1.404	Loss RC 0.038	Loss hybrid 0.320	
+Epoch: [5][40/100]	Time 0.328 (0.377)	Data 0.000 (0.043)	Loss 2.226 (3.329)	Loss ir 0.603	Loss rgb 0.585	Loss RC 0.041	Loss hybrid 0.622	
+Epoch: [5][50/100]	Time 0.329 (0.367)	Data 0.000 (0.034)	Loss 3.285 (3.235)	Loss ir 0.392	Loss rgb 2.097	Loss RC 0.036	Loss hybrid 0.220	
+Epoch: [5][60/100]	Time 0.337 (0.398)	Data 0.000 (0.064)	Loss 2.307 (3.099)	Loss ir 0.358	Loss rgb 0.942	Loss RC 0.050	Loss hybrid 0.319	
+Epoch: [5][70/100]	Time 0.330 (0.388)	Data 0.000 (0.055)	Loss 2.573 (3.048)	Loss ir 0.407	Loss rgb 1.363	Loss RC 0.042	Loss hybrid 0.373	
+Epoch: [5][80/100]	Time 0.332 (0.394)	Data 0.000 (0.061)	Loss 2.616 (2.992)	Loss ir 0.363	Loss rgb 1.366	Loss RC 0.042	Loss hybrid 0.360	
+Epoch: [5][90/100]	Time 0.332 (0.388)	Data 0.000 (0.054)	Loss 2.762 (2.964)	Loss ir 0.405	Loss rgb 1.411	Loss RC 0.042	Loss hybrid 0.394	
+Epoch: [5][100/100]	Time 0.328 (0.382)	Data 0.000 (0.049)	Loss 2.653 (2.936)	Loss ir 0.295	Loss rgb 1.543	Loss RC 0.042	Loss hybrid 0.276	
+Extracting Query Feature...
+Extracting Time:	 3.315
+Extracting Gallery Feature...
+Extracting Time:	 3.382
+Test Trial: 8
+FC:   Rank-1: 80.53% | Rank-5: 87.28% | Rank-10: 90.05%| Rank-20: 93.20%| mAP: 73.50%| mINP: 59.19%
+
+ * Finished epoch   5   model R1: 80.5%  model mAP: 73.5%   best R1: 80.5%   best mAP: 73.5%(best_epoch:5)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4967024326324463
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.471421480178833
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 6: 205 clusters
+==> Statistics for RGB epoch 6: 209 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 209
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 209
+  Augmented clusters: 209
+  IR clusters: 205
+  M_vr shape: torch.Size([209, 205]), M_ar shape: torch.Size([209, 205])
+  M_var (fused) shape: torch.Size([209, 205])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [6][10/100]	Time 0.338 (0.373)	Data 0.000 (0.036)	Loss 3.051 (3.058)	Loss ir 0.224	Loss rgb 0.049	Loss RC 0.037	Loss hybrid 4.464	
+Epoch: [6][20/100]	Time 0.330 (0.352)	Data 0.000 (0.018)	Loss 3.480 (3.184)	Loss ir 0.579	Loss rgb 0.055	Loss RC 0.036	Loss hybrid 3.948	
+Epoch: [6][30/100]	Time 0.331 (0.384)	Data 0.000 (0.050)	Loss 3.877 (3.403)	Loss ir 0.474	Loss rgb 0.069	Loss RC 0.028	Loss hybrid 5.000	
+Epoch: [6][40/100]	Time 0.329 (0.371)	Data 0.000 (0.038)	Loss 3.638 (3.522)	Loss ir 0.648	Loss rgb 0.030	Loss RC 0.040	Loss hybrid 4.167	
+Epoch: [6][50/100]	Time 0.329 (0.363)	Data 0.000 (0.030)	Loss 4.085 (3.613)	Loss ir 1.095	Loss rgb 0.035	Loss RC 0.036	Loss hybrid 4.486	
+Epoch: [6][60/100]	Time 0.339 (0.390)	Data 0.000 (0.058)	Loss 3.151 (3.504)	Loss ir 1.390	Loss rgb 0.731	Loss RC 0.043	Loss hybrid 0.771	
+Epoch: [6][70/100]	Time 0.330 (0.382)	Data 0.000 (0.050)	Loss 4.136 (3.467)	Loss ir 1.023	Loss rgb 0.465	Loss RC 0.039	Loss hybrid 2.986	
+Epoch: [6][80/100]	Time 0.338 (0.391)	Data 0.000 (0.058)	Loss 2.614 (3.373)	Loss ir 0.430	Loss rgb 0.664	Loss RC 0.043	Loss hybrid 1.212	
+Epoch: [6][90/100]	Time 0.329 (0.384)	Data 0.000 (0.052)	Loss 2.490 (3.301)	Loss ir 0.951	Loss rgb 0.670	Loss RC 0.046	Loss hybrid 0.246	
+Epoch: [6][100/100]	Time 0.329 (0.379)	Data 0.000 (0.047)	Loss 2.180 (3.286)	Loss ir 0.712	Loss rgb 0.545	Loss RC 0.044	Loss hybrid 0.655	
+Extracting Query Feature...
+Extracting Time:	 3.314
+Extracting Gallery Feature...
+Extracting Time:	 3.387
+Test Trial: 8
+FC:   Rank-1: 80.05% | Rank-5: 87.09% | Rank-10: 90.05%| Rank-20: 92.82%| mAP: 73.99%| mINP: 58.59%
+
+ * Finished epoch   6   model R1: 80.0%  model mAP: 74.0%   best R1: 80.5%   best mAP: 73.5%(best_epoch:5)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4373400211334229
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4092357158660889
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 7: 207 clusters
+==> Statistics for RGB epoch 7: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 207
+  M_vr shape: torch.Size([208, 207]), M_ar shape: torch.Size([208, 207])
+  M_var (fused) shape: torch.Size([208, 207])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [7][10/100]	Time 0.333 (0.369)	Data 0.000 (0.030)	Loss 3.465 (3.240)	Loss ir 0.012	Loss rgb 0.357	Loss RC 0.041	Loss hybrid 4.530	
+Epoch: [7][20/100]	Time 0.334 (0.350)	Data 0.000 (0.015)	Loss 2.764 (3.479)	Loss ir 0.030	Loss rgb 0.245	Loss RC 0.033	Loss hybrid 3.458	
+Epoch: [7][30/100]	Time 0.338 (0.380)	Data 0.000 (0.045)	Loss 2.501 (3.435)	Loss ir 0.514	Loss rgb 1.175	Loss RC 0.033	Loss hybrid 0.333	
+Epoch: [7][40/100]	Time 0.329 (0.369)	Data 0.000 (0.034)	Loss 2.125 (3.190)	Loss ir 0.271	Loss rgb 0.992	Loss RC 0.039	Loss hybrid 0.254	
+Epoch: [7][50/100]	Time 0.330 (0.361)	Data 0.000 (0.027)	Loss 1.930 (3.095)	Loss ir 0.257	Loss rgb 0.818	Loss RC 0.044	Loss hybrid 0.149	
+Epoch: [7][60/100]	Time 0.336 (0.389)	Data 0.000 (0.055)	Loss 2.873 (2.956)	Loss ir 0.411	Loss rgb 1.425	Loss RC 0.040	Loss hybrid 0.360	
+Epoch: [7][70/100]	Time 0.333 (0.381)	Data 0.000 (0.047)	Loss 1.585 (2.849)	Loss ir 0.400	Loss rgb 0.390	Loss RC 0.041	Loss hybrid 0.410	
+Epoch: [7][80/100]	Time 0.334 (0.389)	Data 0.000 (0.055)	Loss 2.207 (2.806)	Loss ir 0.259	Loss rgb 1.213	Loss RC 0.043	Loss hybrid 0.256	
+Epoch: [7][90/100]	Time 0.329 (0.383)	Data 0.000 (0.049)	Loss 2.551 (2.748)	Loss ir 0.369	Loss rgb 1.295	Loss RC 0.040	Loss hybrid 0.361	
+Epoch: [7][100/100]	Time 0.310 (0.377)	Data 0.000 (0.044)	Loss 3.580 (2.736)	Loss ir 0.613	Loss rgb 1.818	Loss RC 0.035	Loss hybrid 0.610	
+Extracting Query Feature...
+Extracting Time:	 3.292
+Extracting Gallery Feature...
+Extracting Time:	 3.337
+Test Trial: 8
+FC:   Rank-1: 78.30% | Rank-5: 85.78% | Rank-10: 89.27%| Rank-20: 92.96%| mAP: 72.69%| mINP: 58.41%
+
+ * Finished epoch   7   model R1: 78.3%  model mAP: 72.7%   best R1: 80.5%   best mAP: 73.5%(best_epoch:5)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.508551836013794
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5397658348083496
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 8: 204 clusters
+==> Statistics for RGB epoch 8: 210 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 210
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 210
+  Augmented clusters: 210
+  IR clusters: 204
+  M_vr shape: torch.Size([210, 204]), M_ar shape: torch.Size([210, 204])
+  M_var (fused) shape: torch.Size([210, 204])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [8][10/100]	Time 0.338 (0.390)	Data 0.000 (0.054)	Loss 3.264 (2.899)	Loss ir 0.745	Loss rgb 0.028	Loss RC 0.040	Loss hybrid 4.078	
+Epoch: [8][20/100]	Time 0.329 (0.360)	Data 0.000 (0.027)	Loss 3.522 (3.012)	Loss ir 0.751	Loss rgb 0.047	Loss RC 0.033	Loss hybrid 3.967	
+Epoch: [8][30/100]	Time 0.337 (0.389)	Data 0.000 (0.055)	Loss 4.050 (3.260)	Loss ir 1.068	Loss rgb 0.105	Loss RC 0.028	Loss hybrid 4.000	
+Epoch: [8][40/100]	Time 0.327 (0.376)	Data 0.000 (0.041)	Loss 4.420 (3.361)	Loss ir 1.744	Loss rgb 0.032	Loss RC 0.033	Loss hybrid 4.057	
+Epoch: [8][50/100]	Time 0.329 (0.366)	Data 0.000 (0.033)	Loss 3.773 (3.441)	Loss ir 1.157	Loss rgb 0.045	Loss RC 0.034	Loss hybrid 3.598	
+Epoch: [8][60/100]	Time 0.340 (0.395)	Data 0.000 (0.060)	Loss 3.161 (3.327)	Loss ir 1.499	Loss rgb 0.843	Loss RC 0.034	Loss hybrid 0.510	
+Epoch: [8][70/100]	Time 0.327 (0.386)	Data 0.000 (0.052)	Loss 1.988 (3.232)	Loss ir 0.595	Loss rgb 0.456	Loss RC 0.045	Loss hybrid 0.397	
+Epoch: [8][80/100]	Time 0.337 (0.393)	Data 0.000 (0.059)	Loss 2.765 (3.158)	Loss ir 0.212	Loss rgb 0.847	Loss RC 0.043	Loss hybrid 1.620	
+Epoch: [8][90/100]	Time 0.330 (0.387)	Data 0.000 (0.053)	Loss 2.914 (3.105)	Loss ir 0.635	Loss rgb 0.457	Loss RC 0.041	Loss hybrid 2.043	
+Epoch: [8][100/100]	Time 0.332 (0.381)	Data 0.000 (0.047)	Loss 2.848 (3.062)	Loss ir 0.572	Loss rgb 0.766	Loss RC 0.042	Loss hybrid 1.323	
+Extracting Query Feature...
+Extracting Time:	 3.517
+Extracting Gallery Feature...
+Extracting Time:	 3.425
+Test Trial: 8
+FC:   Rank-1: 79.47% | Rank-5: 85.92% | Rank-10: 88.88%| Rank-20: 92.18%| mAP: 72.92%| mINP: 59.17%
+
+ * Finished epoch   8   model R1: 79.5%  model mAP: 72.9%   best R1: 80.5%   best mAP: 73.5%(best_epoch:5)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5109381675720215
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5019018650054932
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 9: 209 clusters
+==> Statistics for RGB epoch 9: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 209
+  M_vr shape: torch.Size([208, 209]), M_ar shape: torch.Size([208, 209])
+  M_var (fused) shape: torch.Size([208, 209])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [9][10/100]	Time 0.333 (0.389)	Data 0.000 (0.051)	Loss 3.135 (2.989)	Loss ir 0.008	Loss rgb 0.266	Loss RC 0.038	Loss hybrid 4.821	
+Epoch: [9][20/100]	Time 0.332 (0.360)	Data 0.000 (0.026)	Loss 2.641 (3.107)	Loss ir 0.024	Loss rgb 0.117	Loss RC 0.031	Loss hybrid 3.123	
+Epoch: [9][30/100]	Time 0.340 (0.383)	Data 0.000 (0.049)	Loss 3.597 (3.225)	Loss ir 0.431	Loss rgb 2.255	Loss RC 0.035	Loss hybrid 0.309	
+Epoch: [9][40/100]	Time 0.330 (0.371)	Data 0.000 (0.037)	Loss 3.096 (3.044)	Loss ir 0.382	Loss rgb 1.917	Loss RC 0.043	Loss hybrid 0.223	
+Epoch: [9][50/100]	Time 0.332 (0.363)	Data 0.000 (0.030)	Loss 3.141 (2.928)	Loss ir 0.319	Loss rgb 1.979	Loss RC 0.037	Loss hybrid 0.313	
+Epoch: [9][60/100]	Time 0.358 (0.392)	Data 0.000 (0.058)	Loss 1.998 (2.784)	Loss ir 0.141	Loss rgb 1.263	Loss RC 0.042	Loss hybrid 0.132	
+Epoch: [9][70/100]	Time 0.329 (0.383)	Data 0.000 (0.050)	Loss 2.496 (2.679)	Loss ir 0.593	Loss rgb 1.027	Loss RC 0.036	Loss hybrid 0.569	
+Epoch: [9][80/100]	Time 0.346 (0.393)	Data 0.000 (0.060)	Loss 1.454 (2.592)	Loss ir 0.099	Loss rgb 0.829	Loss RC 0.042	Loss hybrid 0.100	
+Epoch: [9][90/100]	Time 0.337 (0.387)	Data 0.000 (0.053)	Loss 2.408 (2.539)	Loss ir 0.242	Loss rgb 1.134	Loss RC 0.045	Loss hybrid 0.243	
+Epoch: [9][100/100]	Time 0.328 (0.381)	Data 0.000 (0.048)	Loss 1.539 (2.490)	Loss ir 0.126	Loss rgb 0.643	Loss RC 0.046	Loss hybrid 0.126	
+Extracting Query Feature...
+Extracting Time:	 3.303
+Extracting Gallery Feature...
+Extracting Time:	 3.369
+Test Trial: 8
+FC:   Rank-1: 85.34% | Rank-5: 90.83% | Rank-10: 93.06%| Rank-20: 95.83%| mAP: 77.88%| mINP: 62.77%
+
+ * Finished epoch   9   model R1: 85.3%  model mAP: 77.9%   best R1: 85.3%   best mAP: 77.9%(best_epoch:9)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4968466758728027
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4884474277496338
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 10: 207 clusters
+==> Statistics for RGB epoch 10: 210 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 210
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 210
+  Augmented clusters: 210
+  IR clusters: 207
+  M_vr shape: torch.Size([210, 207]), M_ar shape: torch.Size([210, 207])
+  M_var (fused) shape: torch.Size([210, 207])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [10][10/100]	Time 0.334 (0.383)	Data 0.000 (0.046)	Loss 2.619 (2.742)	Loss ir 0.025	Loss rgb 0.026	Loss RC 0.041	Loss hybrid 4.246	
+Epoch: [10][20/100]	Time 0.309 (0.351)	Data 0.000 (0.023)	Loss 3.227 (2.935)	Loss ir 0.597	Loss rgb 0.058	Loss RC 0.033	Loss hybrid 3.938	
+Epoch: [10][30/100]	Time 0.332 (0.375)	Data 0.000 (0.048)	Loss 3.017 (3.004)	Loss ir 0.638	Loss rgb 0.023	Loss RC 0.031	Loss hybrid 3.610	
+Epoch: [10][40/100]	Time 0.329 (0.364)	Data 0.000 (0.036)	Loss 3.307 (3.175)	Loss ir 0.825	Loss rgb 0.020	Loss RC 0.032	Loss hybrid 3.854	
+Epoch: [10][50/100]	Time 0.329 (0.357)	Data 0.000 (0.029)	Loss 3.744 (3.295)	Loss ir 1.192	Loss rgb 0.017	Loss RC 0.036	Loss hybrid 3.416	
+Epoch: [10][60/100]	Time 0.335 (0.389)	Data 0.000 (0.059)	Loss 2.255 (3.168)	Loss ir 0.521	Loss rgb 0.699	Loss RC 0.044	Loss hybrid 0.634	
+Epoch: [10][70/100]	Time 0.330 (0.381)	Data 0.000 (0.051)	Loss 2.226 (3.090)	Loss ir 0.666	Loss rgb 0.650	Loss RC 0.043	Loss hybrid 0.626	
+Epoch: [10][80/100]	Time 0.334 (0.389)	Data 0.000 (0.059)	Loss 2.257 (2.990)	Loss ir 0.339	Loss rgb 0.839	Loss RC 0.041	Loss hybrid 0.626	
+Epoch: [10][90/100]	Time 0.330 (0.383)	Data 0.000 (0.052)	Loss 2.758 (2.894)	Loss ir 1.010	Loss rgb 0.765	Loss RC 0.039	Loss hybrid 0.525	
+Epoch: [10][100/100]	Time 0.327 (0.377)	Data 0.000 (0.047)	Loss 2.620 (2.852)	Loss ir 0.973	Loss rgb 0.624	Loss RC 0.042	Loss hybrid 0.761	
+Extracting Query Feature...
+Extracting Time:	 3.421
+Extracting Gallery Feature...
+Extracting Time:	 3.510
+Test Trial: 8
+FC:   Rank-1: 83.69% | Rank-5: 87.96% | Rank-10: 90.00%| Rank-20: 93.35%| mAP: 77.29%| mINP: 63.89%
+
+ * Finished epoch  10   model R1: 83.7%  model mAP: 77.3%   best R1: 85.3%   best mAP: 77.9%(best_epoch:9)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.529874324798584
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4955782890319824
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 11: 210 clusters
+==> Statistics for RGB epoch 11: 209 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 209
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 209
+  Augmented clusters: 209
+  IR clusters: 210
+  M_vr shape: torch.Size([209, 210]), M_ar shape: torch.Size([209, 210])
+  M_var (fused) shape: torch.Size([209, 210])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [11][10/100]	Time 0.349 (0.390)	Data 0.000 (0.047)	Loss 2.900 (2.683)	Loss ir 0.007	Loss rgb 0.143	Loss RC 0.037	Loss hybrid 4.637	
+Epoch: [11][20/100]	Time 0.330 (0.360)	Data 0.000 (0.024)	Loss 3.285 (2.971)	Loss ir 0.038	Loss rgb 0.970	Loss RC 0.029	Loss hybrid 3.300	
+Epoch: [11][30/100]	Time 0.333 (0.392)	Data 0.000 (0.057)	Loss 1.848 (2.988)	Loss ir 0.273	Loss rgb 0.883	Loss RC 0.032	Loss hybrid 0.233	
+Epoch: [11][40/100]	Time 0.331 (0.379)	Data 0.000 (0.043)	Loss 2.025 (2.722)	Loss ir 0.382	Loss rgb 0.884	Loss RC 0.039	Loss hybrid 0.339	
+Epoch: [11][50/100]	Time 0.329 (0.369)	Data 0.000 (0.034)	Loss 3.934 (2.664)	Loss ir 0.236	Loss rgb 2.557	Loss RC 0.037	Loss hybrid 0.982	
+Epoch: [11][60/100]	Time 0.332 (0.398)	Data 0.001 (0.064)	Loss 1.408 (2.535)	Loss ir 0.263	Loss rgb 0.466	Loss RC 0.043	Loss hybrid 0.262	
+Epoch: [11][70/100]	Time 0.329 (0.389)	Data 0.000 (0.055)	Loss 1.584 (2.467)	Loss ir 0.373	Loss rgb 0.411	Loss RC 0.046	Loss hybrid 0.335	
+Epoch: [11][80/100]	Time 0.338 (0.398)	Data 0.000 (0.065)	Loss 1.695 (2.407)	Loss ir 0.317	Loss rgb 0.688	Loss RC 0.041	Loss hybrid 0.316	
+Epoch: [11][90/100]	Time 0.332 (0.392)	Data 0.000 (0.057)	Loss 2.376 (2.367)	Loss ir 0.259	Loss rgb 1.522	Loss RC 0.031	Loss hybrid 0.258	
+Epoch: [11][100/100]	Time 0.330 (0.386)	Data 0.000 (0.052)	Loss 1.859 (2.318)	Loss ir 0.257	Loss rgb 0.877	Loss RC 0.046	Loss hybrid 0.249	
+Extracting Query Feature...
+Extracting Time:	 3.217
+Extracting Gallery Feature...
+Extracting Time:	 3.241
+Test Trial: 8
+FC:   Rank-1: 85.78% | Rank-5: 90.83% | Rank-10: 93.11%| Rank-20: 95.83%| mAP: 78.75%| mINP: 63.78%
+
+ * Finished epoch  11   model R1: 85.8%  model mAP: 78.8%   best R1: 85.8%   best mAP: 78.8%(best_epoch:11)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4975330829620361
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4918267726898193
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 12: 206 clusters
+==> Statistics for RGB epoch 12: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 206
+  M_vr shape: torch.Size([208, 206]), M_ar shape: torch.Size([208, 206])
+  M_var (fused) shape: torch.Size([208, 206])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [12][10/100]	Time 0.337 (0.377)	Data 0.000 (0.048)	Loss 2.935 (2.578)	Loss ir 0.277	Loss rgb 0.034	Loss RC 0.040	Loss hybrid 4.138	
+Epoch: [12][20/100]	Time 0.329 (0.354)	Data 0.000 (0.024)	Loss 2.694 (2.704)	Loss ir 0.120	Loss rgb 0.030	Loss RC 0.032	Loss hybrid 3.863	
+Epoch: [12][30/100]	Time 0.311 (0.381)	Data 0.000 (0.053)	Loss 3.008 (2.872)	Loss ir 0.240	Loss rgb 0.028	Loss RC 0.037	Loss hybrid 4.151	
+Epoch: [12][40/100]	Time 0.309 (0.363)	Data 0.000 (0.040)	Loss 3.087 (2.983)	Loss ir 0.763	Loss rgb 0.015	Loss RC 0.041	Loss hybrid 3.382	
+Epoch: [12][50/100]	Time 0.309 (0.352)	Data 0.000 (0.032)	Loss 3.259 (3.084)	Loss ir 1.062	Loss rgb 0.031	Loss RC 0.030	Loss hybrid 2.987	
+Epoch: [12][60/100]	Time 0.312 (0.380)	Data 0.000 (0.060)	Loss 1.679 (2.973)	Loss ir 0.700	Loss rgb 0.296	Loss RC 0.039	Loss hybrid 0.269	
+Epoch: [12][70/100]	Time 0.330 (0.370)	Data 0.000 (0.052)	Loss 2.128 (2.863)	Loss ir 0.944	Loss rgb 0.485	Loss RC 0.044	Loss hybrid 0.237	
+Epoch: [12][80/100]	Time 0.312 (0.381)	Data 0.000 (0.062)	Loss 2.645 (2.800)	Loss ir 0.426	Loss rgb 1.115	Loss RC 0.039	Loss hybrid 0.901	
+Epoch: [12][90/100]	Time 0.329 (0.376)	Data 0.000 (0.055)	Loss 1.867 (2.752)	Loss ir 0.604	Loss rgb 0.520	Loss RC 0.041	Loss hybrid 0.219	
+Epoch: [12][100/100]	Time 0.328 (0.370)	Data 0.000 (0.049)	Loss 3.160 (2.734)	Loss ir 0.820	Loss rgb 0.846	Loss RC 0.038	Loss hybrid 1.426	
+Extracting Query Feature...
+Extracting Time:	 3.156
+Extracting Gallery Feature...
+Extracting Time:	 3.370
+Test Trial: 8
+FC:   Rank-1: 83.35% | Rank-5: 89.27% | Rank-10: 91.36%| Rank-20: 94.17%| mAP: 77.18%| mINP: 63.60%
+
+ * Finished epoch  12   model R1: 83.3%  model mAP: 77.2%   best R1: 85.8%   best mAP: 78.8%(best_epoch:11)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5439584255218506
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4850993156433105
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 13: 207 clusters
+==> Statistics for RGB epoch 13: 206 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 206
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 206
+  Augmented clusters: 206
+  IR clusters: 207
+  M_vr shape: torch.Size([206, 207]), M_ar shape: torch.Size([206, 207])
+  M_var (fused) shape: torch.Size([206, 207])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [13][10/100]	Time 0.340 (0.390)	Data 0.000 (0.050)	Loss 3.911 (2.825)	Loss ir 0.011	Loss rgb 0.767	Loss RC 0.038	Loss hybrid 5.040	
+Epoch: [13][20/100]	Time 0.327 (0.360)	Data 0.000 (0.025)	Loss 3.251 (3.008)	Loss ir 0.023	Loss rgb 0.864	Loss RC 0.028	Loss hybrid 3.385	
+Epoch: [13][30/100]	Time 0.340 (0.393)	Data 0.000 (0.058)	Loss 2.060 (2.886)	Loss ir 0.366	Loss rgb 1.067	Loss RC 0.033	Loss hybrid 0.293	
+Epoch: [13][40/100]	Time 0.330 (0.378)	Data 0.000 (0.043)	Loss 1.863 (2.695)	Loss ir 0.150	Loss rgb 0.996	Loss RC 0.037	Loss hybrid 0.174	
+Epoch: [13][50/100]	Time 0.332 (0.368)	Data 0.000 (0.035)	Loss 2.444 (2.551)	Loss ir 0.345	Loss rgb 1.430	Loss RC 0.038	Loss hybrid 0.220	
+Epoch: [13][60/100]	Time 0.335 (0.396)	Data 0.000 (0.061)	Loss 1.719 (2.428)	Loss ir 0.400	Loss rgb 0.503	Loss RC 0.044	Loss hybrid 0.405	
+Epoch: [13][70/100]	Time 0.330 (0.386)	Data 0.000 (0.052)	Loss 1.990 (2.336)	Loss ir 0.207	Loss rgb 1.084	Loss RC 0.036	Loss hybrid 0.213	
+Epoch: [13][80/100]	Time 0.331 (0.395)	Data 0.000 (0.061)	Loss 1.545 (2.268)	Loss ir 0.075	Loss rgb 0.891	Loss RC 0.044	Loss hybrid 0.074	
+Epoch: [13][90/100]	Time 0.330 (0.388)	Data 0.000 (0.055)	Loss 1.673 (2.206)	Loss ir 0.192	Loss rgb 0.822	Loss RC 0.039	Loss hybrid 0.191	
+Epoch: [13][100/100]	Time 0.329 (0.382)	Data 0.000 (0.049)	Loss 1.704 (2.166)	Loss ir 0.329	Loss rgb 0.608	Loss RC 0.039	Loss hybrid 0.329	
+Extracting Query Feature...
+Extracting Time:	 3.224
+Extracting Gallery Feature...
+Extracting Time:	 3.336
+Test Trial: 8
+FC:   Rank-1: 85.19% | Rank-5: 90.73% | Rank-10: 93.93%| Rank-20: 96.75%| mAP: 78.93%| mINP: 64.39%
+
+ * Finished epoch  13   model R1: 85.2%  model mAP: 78.9%   best R1: 85.8%   best mAP: 78.8%(best_epoch:11)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5022914409637451
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5277166366577148
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 14: 206 clusters
+==> Statistics for RGB epoch 14: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 206
+  M_vr shape: torch.Size([208, 206]), M_ar shape: torch.Size([208, 206])
+  M_var (fused) shape: torch.Size([208, 206])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [14][10/100]	Time 0.342 (0.392)	Data 0.000 (0.050)	Loss 2.578 (2.602)	Loss ir 0.039	Loss rgb 0.021	Loss RC 0.038	Loss hybrid 3.536	
+Epoch: [14][20/100]	Time 0.331 (0.361)	Data 0.000 (0.025)	Loss 3.526 (2.691)	Loss ir 0.674	Loss rgb 0.034	Loss RC 0.033	Loss hybrid 4.173	
+Epoch: [14][30/100]	Time 0.335 (0.391)	Data 0.000 (0.056)	Loss 3.250 (2.782)	Loss ir 0.732	Loss rgb 0.046	Loss RC 0.031	Loss hybrid 3.793	
+Epoch: [14][40/100]	Time 0.308 (0.371)	Data 0.000 (0.042)	Loss 3.849 (2.914)	Loss ir 1.584	Loss rgb 0.022	Loss RC 0.033	Loss hybrid 3.173	
+Epoch: [14][50/100]	Time 0.330 (0.362)	Data 0.000 (0.034)	Loss 3.352 (2.996)	Loss ir 0.988	Loss rgb 0.016	Loss RC 0.038	Loss hybrid 3.232	
+Epoch: [14][60/100]	Time 0.337 (0.387)	Data 0.001 (0.057)	Loss 1.877 (2.855)	Loss ir 0.590	Loss rgb 0.563	Loss RC 0.040	Loss hybrid 0.501	
+Epoch: [14][70/100]	Time 0.331 (0.379)	Data 0.000 (0.049)	Loss 2.563 (2.737)	Loss ir 0.890	Loss rgb 0.696	Loss RC 0.040	Loss hybrid 0.749	
+Epoch: [14][80/100]	Time 0.334 (0.390)	Data 0.000 (0.059)	Loss 1.991 (2.646)	Loss ir 0.745	Loss rgb 0.440	Loss RC 0.041	Loss hybrid 0.542	
+Epoch: [14][90/100]	Time 0.329 (0.383)	Data 0.000 (0.053)	Loss 2.163 (2.582)	Loss ir 0.618	Loss rgb 0.540	Loss RC 0.038	Loss hybrid 0.660	
+Epoch: [14][100/100]	Time 0.330 (0.378)	Data 0.000 (0.047)	Loss 2.503 (2.547)	Loss ir 0.583	Loss rgb 0.546	Loss RC 0.043	Loss hybrid 1.360	
+Extracting Query Feature...
+Extracting Time:	 3.420
+Extracting Gallery Feature...
+Extracting Time:	 3.417
+Test Trial: 8
+FC:   Rank-1: 85.19% | Rank-5: 89.22% | Rank-10: 91.50%| Rank-20: 94.81%| mAP: 78.51%| mINP: 64.86%
+
+ * Finished epoch  14   model R1: 85.2%  model mAP: 78.5%   best R1: 85.8%   best mAP: 78.8%(best_epoch:11)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5128774642944336
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5263454914093018
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 15: 207 clusters
+==> Statistics for RGB epoch 15: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 207
+  M_vr shape: torch.Size([208, 207]), M_ar shape: torch.Size([208, 207])
+  M_var (fused) shape: torch.Size([208, 207])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [15][10/100]	Time 0.310 (0.371)	Data 0.000 (0.057)	Loss 3.036 (2.692)	Loss ir 0.007	Loss rgb 0.225	Loss RC 0.044	Loss hybrid 4.607	
+Epoch: [15][20/100]	Time 0.325 (0.343)	Data 0.000 (0.028)	Loss 2.772 (2.785)	Loss ir 0.018	Loss rgb 0.780	Loss RC 0.034	Loss hybrid 2.824	
+Epoch: [15][30/100]	Time 0.335 (0.380)	Data 0.000 (0.060)	Loss 1.657 (2.719)	Loss ir 0.321	Loss rgb 0.779	Loss RC 0.032	Loss hybrid 0.204	
+Epoch: [15][40/100]	Time 0.330 (0.368)	Data 0.000 (0.045)	Loss 1.754 (2.521)	Loss ir 0.311	Loss rgb 0.672	Loss RC 0.037	Loss hybrid 0.318	
+Epoch: [15][50/100]	Time 0.331 (0.360)	Data 0.000 (0.036)	Loss 2.594 (2.411)	Loss ir 0.474	Loss rgb 1.270	Loss RC 0.034	Loss hybrid 0.257	
+Epoch: [15][60/100]	Time 0.337 (0.387)	Data 0.000 (0.061)	Loss 1.847 (2.271)	Loss ir 0.359	Loss rgb 0.781	Loss RC 0.040	Loss hybrid 0.367	
+Epoch: [15][70/100]	Time 0.329 (0.379)	Data 0.000 (0.052)	Loss 1.250 (2.201)	Loss ir 0.193	Loss rgb 0.505	Loss RC 0.037	Loss hybrid 0.187	
+Epoch: [15][80/100]	Time 0.337 (0.389)	Data 0.000 (0.061)	Loss 1.602 (2.128)	Loss ir 0.272	Loss rgb 0.735	Loss RC 0.039	Loss hybrid 0.272	
+Epoch: [15][90/100]	Time 0.327 (0.383)	Data 0.000 (0.054)	Loss 2.094 (2.061)	Loss ir 0.225	Loss rgb 1.237	Loss RC 0.036	Loss hybrid 0.231	
+Epoch: [15][100/100]	Time 0.329 (0.377)	Data 0.000 (0.049)	Loss 1.527 (2.014)	Loss ir 0.221	Loss rgb 0.600	Loss RC 0.042	Loss hybrid 0.225	
+Extracting Query Feature...
+Extracting Time:	 3.356
+Extracting Gallery Feature...
+Extracting Time:	 3.388
+Test Trial: 8
+FC:   Rank-1: 86.46% | Rank-5: 91.07% | Rank-10: 92.77%| Rank-20: 94.90%| mAP: 79.75%| mINP: 66.30%
+
+ * Finished epoch  15   model R1: 86.5%  model mAP: 79.8%   best R1: 86.5%   best mAP: 79.8%(best_epoch:15)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.478851556777954
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5268559455871582
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 16: 207 clusters
+==> Statistics for RGB epoch 16: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 207
+  M_vr shape: torch.Size([208, 207]), M_ar shape: torch.Size([208, 207])
+  M_var (fused) shape: torch.Size([208, 207])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [16][10/100]	Time 0.334 (0.389)	Data 0.000 (0.051)	Loss 2.512 (2.488)	Loss ir 0.002	Loss rgb 0.016	Loss RC 0.039	Loss hybrid 4.035	
+Epoch: [16][20/100]	Time 0.330 (0.360)	Data 0.000 (0.025)	Loss 2.801 (2.656)	Loss ir 0.234	Loss rgb 0.071	Loss RC 0.028	Loss hybrid 3.899	
+Epoch: [16][30/100]	Time 0.336 (0.388)	Data 0.000 (0.054)	Loss 2.814 (2.719)	Loss ir 0.488	Loss rgb 0.033	Loss RC 0.031	Loss hybrid 3.515	
+Epoch: [16][40/100]	Time 0.330 (0.375)	Data 0.000 (0.041)	Loss 3.040 (2.772)	Loss ir 0.540	Loss rgb 0.013	Loss RC 0.036	Loss hybrid 3.752	
+Epoch: [16][50/100]	Time 0.329 (0.366)	Data 0.000 (0.033)	Loss 3.158 (2.858)	Loss ir 1.159	Loss rgb 0.008	Loss RC 0.035	Loss hybrid 2.977	
+Epoch: [16][60/100]	Time 0.339 (0.396)	Data 0.000 (0.061)	Loss 1.784 (2.763)	Loss ir 0.437	Loss rgb 0.491	Loss RC 0.040	Loss hybrid 0.404	
+Epoch: [16][70/100]	Time 0.331 (0.387)	Data 0.000 (0.052)	Loss 1.924 (2.659)	Loss ir 0.782	Loss rgb 0.398	Loss RC 0.040	Loss hybrid 0.215	
+Epoch: [16][80/100]	Time 0.332 (0.396)	Data 0.000 (0.061)	Loss 1.461 (2.583)	Loss ir 0.430	Loss rgb 0.316	Loss RC 0.041	Loss hybrid 0.282	
+Epoch: [16][90/100]	Time 0.330 (0.389)	Data 0.000 (0.055)	Loss 2.728 (2.520)	Loss ir 0.435	Loss rgb 1.059	Loss RC 0.041	Loss hybrid 1.065	
+Epoch: [16][100/100]	Time 0.328 (0.383)	Data 0.000 (0.049)	Loss 1.770 (2.477)	Loss ir 0.487	Loss rgb 0.507	Loss RC 0.043	Loss hybrid 0.390	
+Extracting Query Feature...
+Extracting Time:	 3.303
+Extracting Gallery Feature...
+Extracting Time:	 3.402
+Test Trial: 8
+FC:   Rank-1: 86.21% | Rank-5: 90.92% | Rank-10: 93.59%| Rank-20: 95.15%| mAP: 80.36%| mINP: 67.75%
+
+ * Finished epoch  16   model R1: 86.2%  model mAP: 80.4%   best R1: 86.5%   best mAP: 79.8%(best_epoch:15)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.550567388534546
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5279872417449951
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 17: 209 clusters
+==> Statistics for RGB epoch 17: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 209
+  M_vr shape: torch.Size([208, 209]), M_ar shape: torch.Size([208, 209])
+  M_var (fused) shape: torch.Size([208, 209])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [17][10/100]	Time 0.337 (0.394)	Data 0.000 (0.045)	Loss 3.044 (2.560)	Loss ir 0.026	Loss rgb 0.203	Loss RC 0.039	Loss hybrid 4.475	
+Epoch: [17][20/100]	Time 0.330 (0.362)	Data 0.000 (0.023)	Loss 3.086 (2.801)	Loss ir 0.034	Loss rgb 0.740	Loss RC 0.027	Loss hybrid 3.430	
+Epoch: [17][30/100]	Time 0.337 (0.392)	Data 0.000 (0.054)	Loss 1.868 (2.809)	Loss ir 0.338	Loss rgb 0.891	Loss RC 0.039	Loss hybrid 0.224	
+Epoch: [17][40/100]	Time 0.350 (0.376)	Data 0.000 (0.041)	Loss 1.818 (2.580)	Loss ir 0.410	Loss rgb 0.459	Loss RC 0.038	Loss hybrid 0.320	
+Epoch: [17][50/100]	Time 0.329 (0.367)	Data 0.000 (0.033)	Loss 2.422 (2.464)	Loss ir 0.366	Loss rgb 1.083	Loss RC 0.033	Loss hybrid 0.236	
+Epoch: [17][60/100]	Time 0.334 (0.398)	Data 0.000 (0.063)	Loss 1.463 (2.373)	Loss ir 0.345	Loss rgb 0.339	Loss RC 0.041	Loss hybrid 0.350	
+Epoch: [17][70/100]	Time 0.329 (0.390)	Data 0.000 (0.054)	Loss 1.373 (2.288)	Loss ir 0.267	Loss rgb 0.539	Loss RC 0.039	Loss hybrid 0.241	
+Epoch: [17][80/100]	Time 0.338 (0.396)	Data 0.000 (0.061)	Loss 1.180 (2.230)	Loss ir 0.143	Loss rgb 0.431	Loss RC 0.044	Loss hybrid 0.143	
+Epoch: [17][90/100]	Time 0.331 (0.389)	Data 0.000 (0.054)	Loss 1.811 (2.183)	Loss ir 0.366	Loss rgb 0.719	Loss RC 0.041	Loss hybrid 0.369	
+Epoch: [17][100/100]	Time 0.329 (0.383)	Data 0.000 (0.049)	Loss 1.607 (2.118)	Loss ir 0.212	Loss rgb 0.660	Loss RC 0.040	Loss hybrid 0.211	
+Extracting Query Feature...
+Extracting Time:	 3.299
+Extracting Gallery Feature...
+Extracting Time:	 3.372
+Test Trial: 8
+FC:   Rank-1: 86.26% | Rank-5: 91.89% | Rank-10: 93.64%| Rank-20: 95.83%| mAP: 80.03%| mINP: 66.44%
+
+ * Finished epoch  17   model R1: 86.3%  model mAP: 80.0%   best R1: 86.5%   best mAP: 79.8%(best_epoch:15)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5711414813995361
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4916369915008545
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 18: 206 clusters
+==> Statistics for RGB epoch 18: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 206
+  M_vr shape: torch.Size([208, 206]), M_ar shape: torch.Size([208, 206])
+  M_var (fused) shape: torch.Size([208, 206])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [18][10/100]	Time 0.331 (0.379)	Data 0.000 (0.041)	Loss 2.413 (2.482)	Loss ir 0.004	Loss rgb 0.025	Loss RC 0.036	Loss hybrid 3.898	
+Epoch: [18][20/100]	Time 0.330 (0.355)	Data 0.000 (0.021)	Loss 2.509 (2.615)	Loss ir 0.241	Loss rgb 0.028	Loss RC 0.026	Loss hybrid 3.658	
+Epoch: [18][30/100]	Time 0.338 (0.383)	Data 0.000 (0.049)	Loss 3.010 (2.759)	Loss ir 0.940	Loss rgb 0.023	Loss RC 0.029	Loss hybrid 2.996	
+Epoch: [18][40/100]	Time 0.329 (0.370)	Data 0.000 (0.037)	Loss 3.050 (2.863)	Loss ir 0.827	Loss rgb 0.027	Loss RC 0.032	Loss hybrid 3.296	
+Epoch: [18][50/100]	Time 0.329 (0.362)	Data 0.000 (0.029)	Loss 3.853 (2.938)	Loss ir 1.777	Loss rgb 0.009	Loss RC 0.037	Loss hybrid 2.793	
+Epoch: [18][60/100]	Time 0.338 (0.388)	Data 0.000 (0.055)	Loss 1.808 (2.824)	Loss ir 0.476	Loss rgb 0.520	Loss RC 0.038	Loss hybrid 0.402	
+Epoch: [18][70/100]	Time 0.331 (0.380)	Data 0.000 (0.047)	Loss 2.775 (2.721)	Loss ir 0.933	Loss rgb 0.704	Loss RC 0.036	Loss hybrid 0.803	
+Epoch: [18][80/100]	Time 0.331 (0.387)	Data 0.000 (0.054)	Loss 1.570 (2.611)	Loss ir 0.444	Loss rgb 0.594	Loss RC 0.033	Loss hybrid 0.261	
+Epoch: [18][90/100]	Time 0.327 (0.381)	Data 0.000 (0.048)	Loss 2.694 (2.555)	Loss ir 0.727	Loss rgb 0.723	Loss RC 0.038	Loss hybrid 1.240	
+Epoch: [18][100/100]	Time 0.329 (0.376)	Data 0.000 (0.044)	Loss 1.908 (2.496)	Loss ir 0.619	Loss rgb 0.566	Loss RC 0.042	Loss hybrid 0.293	
+Extracting Query Feature...
+Extracting Time:	 3.504
+Extracting Gallery Feature...
+Extracting Time:	 3.455
+Test Trial: 8
+FC:   Rank-1: 85.10% | Rank-5: 90.39% | Rank-10: 92.38%| Rank-20: 95.34%| mAP: 79.44%| mINP: 66.45%
+
+ * Finished epoch  18   model R1: 85.1%  model mAP: 79.4%   best R1: 86.5%   best mAP: 79.8%(best_epoch:15)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5592319965362549
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5770459175109863
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 19: 208 clusters
+==> Statistics for RGB epoch 19: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 208
+  M_vr shape: torch.Size([208, 208]), M_ar shape: torch.Size([208, 208])
+  M_var (fused) shape: torch.Size([208, 208])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [19][10/100]	Time 0.337 (0.385)	Data 0.000 (0.043)	Loss 2.697 (2.509)	Loss ir 0.008	Loss rgb 0.034	Loss RC 0.033	Loss hybrid 4.503	
+Epoch: [19][20/100]	Time 0.329 (0.358)	Data 0.000 (0.022)	Loss 2.457 (2.578)	Loss ir 0.023	Loss rgb 0.310	Loss RC 0.025	Loss hybrid 3.101	
+Epoch: [19][30/100]	Time 0.333 (0.391)	Data 0.000 (0.056)	Loss 2.058 (2.597)	Loss ir 0.383	Loss rgb 0.984	Loss RC 0.035	Loss hybrid 0.328	
+Epoch: [19][40/100]	Time 0.328 (0.376)	Data 0.000 (0.042)	Loss 1.830 (2.359)	Loss ir 0.369	Loss rgb 0.789	Loss RC 0.032	Loss hybrid 0.287	
+Epoch: [19][50/100]	Time 0.329 (0.367)	Data 0.000 (0.034)	Loss 1.790 (2.282)	Loss ir 0.338	Loss rgb 0.509	Loss RC 0.043	Loss hybrid 0.404	
+Epoch: [19][60/100]	Time 0.338 (0.394)	Data 0.000 (0.060)	Loss 2.354 (2.210)	Loss ir 0.477	Loss rgb 1.050	Loss RC 0.037	Loss hybrid 0.475	
+Epoch: [19][70/100]	Time 0.330 (0.386)	Data 0.000 (0.052)	Loss 1.868 (2.154)	Loss ir 0.310	Loss rgb 0.768	Loss RC 0.036	Loss hybrid 0.275	
+Epoch: [19][80/100]	Time 0.336 (0.394)	Data 0.000 (0.061)	Loss 1.486 (2.094)	Loss ir 0.182	Loss rgb 0.710	Loss RC 0.039	Loss hybrid 0.181	
+Epoch: [19][90/100]	Time 0.332 (0.388)	Data 0.000 (0.054)	Loss 1.391 (2.034)	Loss ir 0.311	Loss rgb 0.335	Loss RC 0.043	Loss hybrid 0.310	
+Epoch: [19][100/100]	Time 0.329 (0.382)	Data 0.000 (0.049)	Loss 1.958 (1.983)	Loss ir 0.354	Loss rgb 0.778	Loss RC 0.044	Loss hybrid 0.355	
+Extracting Query Feature...
+Extracting Time:	 3.358
+Extracting Gallery Feature...
+Extracting Time:	 3.345
+Test Trial: 8
+FC:   Rank-1: 85.00% | Rank-5: 90.39% | Rank-10: 92.33%| Rank-20: 94.66%| mAP: 78.22%| mINP: 63.79%
+
+ * Finished epoch  19   model R1: 85.0%  model mAP: 78.2%   best R1: 86.5%   best mAP: 79.8%(best_epoch:15)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.55625581741333
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4919214248657227
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 20: 205 clusters
+==> Statistics for RGB epoch 20: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 205
+  M_vr shape: torch.Size([208, 205]), M_ar shape: torch.Size([208, 205])
+  M_var (fused) shape: torch.Size([208, 205])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [20][10/100]	Time 0.336 (0.394)	Data 0.000 (0.053)	Loss 2.652 (2.589)	Loss ir 0.050	Loss rgb 0.013	Loss RC 0.043	Loss hybrid 4.198	
+Epoch: [20][20/100]	Time 0.330 (0.362)	Data 0.000 (0.026)	Loss 3.098 (2.778)	Loss ir 0.231	Loss rgb 0.015	Loss RC 0.039	Loss hybrid 4.808	
+Epoch: [20][30/100]	Time 0.337 (0.395)	Data 0.000 (0.060)	Loss 2.980 (2.837)	Loss ir 0.278	Loss rgb 0.010	Loss RC 0.037	Loss hybrid 4.329	
+Epoch: [20][40/100]	Time 0.329 (0.380)	Data 0.000 (0.045)	Loss 2.706 (2.897)	Loss ir 0.615	Loss rgb 0.007	Loss RC 0.040	Loss hybrid 2.870	
+Epoch: [20][50/100]	Time 0.328 (0.370)	Data 0.000 (0.036)	Loss 3.556 (2.915)	Loss ir 0.861	Loss rgb 0.009	Loss RC 0.037	Loss hybrid 4.371	
+Epoch: [20][60/100]	Time 0.332 (0.397)	Data 0.000 (0.063)	Loss 1.871 (2.720)	Loss ir 0.398	Loss rgb 0.356	Loss RC 0.037	Loss hybrid 0.900	
+Epoch: [20][70/100]	Time 0.329 (0.387)	Data 0.000 (0.054)	Loss 2.251 (2.594)	Loss ir 1.056	Loss rgb 0.444	Loss RC 0.037	Loss hybrid 0.477	
+Epoch: [20][80/100]	Time 0.335 (0.396)	Data 0.000 (0.063)	Loss 1.725 (2.477)	Loss ir 0.267	Loss rgb 0.408	Loss RC 0.038	Loss hybrid 0.764	
+Epoch: [20][90/100]	Time 0.327 (0.389)	Data 0.000 (0.056)	Loss 1.861 (2.397)	Loss ir 0.592	Loss rgb 0.488	Loss RC 0.040	Loss hybrid 0.453	
+Epoch: [20][100/100]	Time 0.329 (0.383)	Data 0.000 (0.050)	Loss 1.823 (2.332)	Loss ir 0.553	Loss rgb 0.453	Loss RC 0.036	Loss hybrid 0.489	
+Extracting Query Feature...
+Extracting Time:	 3.370
+Extracting Gallery Feature...
+Extracting Time:	 3.370
+Test Trial: 8
+FC:   Rank-1: 86.36% | Rank-5: 91.02% | Rank-10: 93.30%| Rank-20: 95.44%| mAP: 79.71%| mINP: 65.94%
+
+ * Finished epoch  20   model R1: 86.4%  model mAP: 79.7%   best R1: 86.5%   best mAP: 79.8%(best_epoch:15)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5733015537261963
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5212221145629883
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 21: 206 clusters
+==> Statistics for RGB epoch 21: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 206
+  M_vr shape: torch.Size([208, 206]), M_ar shape: torch.Size([208, 206])
+  M_var (fused) shape: torch.Size([208, 206])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [21][10/100]	Time 0.336 (0.387)	Data 0.000 (0.045)	Loss 2.210 (2.148)	Loss ir 0.001	Loss rgb 0.015	Loss RC 0.040	Loss hybrid 3.539	
+Epoch: [21][20/100]	Time 0.330 (0.358)	Data 0.000 (0.023)	Loss 2.929 (2.490)	Loss ir 0.010	Loss rgb 0.388	Loss RC 0.038	Loss hybrid 4.198	
+Epoch: [21][30/100]	Time 0.333 (0.384)	Data 0.000 (0.049)	Loss 0.908 (2.281)	Loss ir 0.171	Loss rgb 0.198	Loss RC 0.042	Loss hybrid 0.130	
+Epoch: [21][40/100]	Time 0.329 (0.371)	Data 0.000 (0.037)	Loss 1.015 (2.001)	Loss ir 0.106	Loss rgb 0.328	Loss RC 0.033	Loss hybrid 0.116	
+Epoch: [21][50/100]	Time 0.329 (0.363)	Data 0.000 (0.029)	Loss 1.082 (1.845)	Loss ir 0.106	Loss rgb 0.429	Loss RC 0.037	Loss hybrid 0.085	
+Epoch: [21][60/100]	Time 0.334 (0.392)	Data 0.000 (0.057)	Loss 0.850 (1.700)	Loss ir 0.083	Loss rgb 0.251	Loss RC 0.039	Loss hybrid 0.094	
+Epoch: [21][70/100]	Time 0.329 (0.383)	Data 0.000 (0.049)	Loss 1.079 (1.625)	Loss ir 0.141	Loss rgb 0.325	Loss RC 0.040	Loss hybrid 0.137	
+Epoch: [21][80/100]	Time 0.337 (0.393)	Data 0.000 (0.059)	Loss 1.076 (1.560)	Loss ir 0.116	Loss rgb 0.439	Loss RC 0.037	Loss hybrid 0.117	
+Epoch: [21][90/100]	Time 0.329 (0.386)	Data 0.000 (0.052)	Loss 1.031 (1.527)	Loss ir 0.132	Loss rgb 0.274	Loss RC 0.040	Loss hybrid 0.132	
+Epoch: [21][100/100]	Time 0.327 (0.380)	Data 0.000 (0.047)	Loss 1.406 (1.490)	Loss ir 0.277	Loss rgb 0.536	Loss RC 0.034	Loss hybrid 0.276	
+Extracting Query Feature...
+Extracting Time:	 3.339
+Extracting Gallery Feature...
+Extracting Time:	 3.544
+Test Trial: 8
+FC:   Rank-1: 88.06% | Rank-5: 92.62% | Rank-10: 94.47%| Rank-20: 96.17%| mAP: 81.74%| mINP: 68.97%
+
+ * Finished epoch  21   model R1: 88.1%  model mAP: 81.7%   best R1: 88.1%   best mAP: 81.7%(best_epoch:21)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5978515148162842
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5465247631072998
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 22: 210 clusters
+==> Statistics for RGB epoch 22: 209 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 209
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 209
+  Augmented clusters: 209
+  IR clusters: 210
+  M_vr shape: torch.Size([209, 210]), M_ar shape: torch.Size([209, 210])
+  M_var (fused) shape: torch.Size([209, 210])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [22][10/100]	Time 0.336 (0.397)	Data 0.001 (0.057)	Loss 1.829 (1.646)	Loss ir 0.156	Loss rgb 0.006	Loss RC 0.039	Loss hybrid 2.493	
+Epoch: [22][20/100]	Time 0.328 (0.363)	Data 0.000 (0.029)	Loss 1.875 (1.846)	Loss ir 0.074	Loss rgb 0.020	Loss RC 0.039	Loss hybrid 2.559	
+Epoch: [22][30/100]	Time 0.341 (0.388)	Data 0.000 (0.054)	Loss 2.199 (1.980)	Loss ir 0.198	Loss rgb 0.019	Loss RC 0.034	Loss hybrid 2.978	
+Epoch: [22][40/100]	Time 0.329 (0.374)	Data 0.000 (0.041)	Loss 2.479 (2.042)	Loss ir 0.376	Loss rgb 0.007	Loss RC 0.040	Loss hybrid 3.181	
+Epoch: [22][50/100]	Time 0.329 (0.365)	Data 0.000 (0.033)	Loss 2.155 (2.078)	Loss ir 0.425	Loss rgb 0.011	Loss RC 0.036	Loss hybrid 2.561	
+Epoch: [22][60/100]	Time 0.337 (0.394)	Data 0.000 (0.061)	Loss 1.523 (2.006)	Loss ir 0.470	Loss rgb 0.281	Loss RC 0.040	Loss hybrid 0.491	
+Epoch: [22][70/100]	Time 0.328 (0.385)	Data 0.000 (0.052)	Loss 1.570 (1.912)	Loss ir 0.573	Loss rgb 0.264	Loss RC 0.039	Loss hybrid 0.584	
+Epoch: [22][80/100]	Time 0.312 (0.392)	Data 0.001 (0.060)	Loss 1.643 (1.864)	Loss ir 0.451	Loss rgb 0.549	Loss RC 0.032	Loss hybrid 0.288	
+Epoch: [22][90/100]	Time 0.340 (0.384)	Data 0.000 (0.053)	Loss 1.409 (1.818)	Loss ir 0.359	Loss rgb 0.359	Loss RC 0.039	Loss hybrid 0.438	
+Epoch: [22][100/100]	Time 0.330 (0.379)	Data 0.000 (0.048)	Loss 1.724 (1.806)	Loss ir 0.731	Loss rgb 0.333	Loss RC 0.035	Loss hybrid 0.360	
+Extracting Query Feature...
+Extracting Time:	 3.357
+Extracting Gallery Feature...
+Extracting Time:	 3.310
+Test Trial: 8
+FC:   Rank-1: 88.20% | Rank-5: 92.62% | Rank-10: 94.03%| Rank-20: 96.31%| mAP: 82.24%| mINP: 69.79%
+
+ * Finished epoch  22   model R1: 88.2%  model mAP: 82.2%   best R1: 88.2%   best mAP: 82.2%(best_epoch:22)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.589930772781372
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.526245355606079
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 23: 207 clusters
+==> Statistics for RGB epoch 23: 209 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 209
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 209
+  Augmented clusters: 209
+  IR clusters: 207
+  M_vr shape: torch.Size([209, 207]), M_ar shape: torch.Size([209, 207])
+  M_var (fused) shape: torch.Size([209, 207])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [23][10/100]	Time 0.335 (0.377)	Data 0.000 (0.043)	Loss 2.159 (1.810)	Loss ir 0.005	Loss rgb 0.101	Loss RC 0.036	Loss hybrid 3.156	
+Epoch: [23][20/100]	Time 0.329 (0.352)	Data 0.000 (0.022)	Loss 2.396 (2.081)	Loss ir 0.003	Loss rgb 0.169	Loss RC 0.038	Loss hybrid 3.614	
+Epoch: [23][30/100]	Time 0.329 (0.382)	Data 0.000 (0.052)	Loss 0.890 (1.986)	Loss ir 0.079	Loss rgb 0.301	Loss RC 0.039	Loss hybrid 0.119	
+Epoch: [23][40/100]	Time 0.329 (0.366)	Data 0.000 (0.039)	Loss 1.152 (1.753)	Loss ir 0.175	Loss rgb 0.311	Loss RC 0.034	Loss hybrid 0.492	
+Epoch: [23][50/100]	Time 0.329 (0.359)	Data 0.000 (0.031)	Loss 0.885 (1.617)	Loss ir 0.070	Loss rgb 0.217	Loss RC 0.039	Loss hybrid 0.076	
+Epoch: [23][60/100]	Time 0.333 (0.388)	Data 0.000 (0.058)	Loss 1.132 (1.523)	Loss ir 0.105	Loss rgb 0.472	Loss RC 0.036	Loss hybrid 0.111	
+Epoch: [23][70/100]	Time 0.330 (0.379)	Data 0.000 (0.050)	Loss 1.159 (1.475)	Loss ir 0.107	Loss rgb 0.475	Loss RC 0.034	Loss hybrid 0.107	
+Epoch: [23][80/100]	Time 0.334 (0.391)	Data 0.000 (0.061)	Loss 0.960 (1.432)	Loss ir 0.082	Loss rgb 0.409	Loss RC 0.037	Loss hybrid 0.082	
+Epoch: [23][90/100]	Time 0.333 (0.384)	Data 0.000 (0.054)	Loss 1.246 (1.392)	Loss ir 0.225	Loss rgb 0.426	Loss RC 0.032	Loss hybrid 0.225	
+Epoch: [23][100/100]	Time 0.329 (0.379)	Data 0.000 (0.049)	Loss 1.016 (1.367)	Loss ir 0.196	Loss rgb 0.169	Loss RC 0.040	Loss hybrid 0.193	
+Extracting Query Feature...
+Extracting Time:	 3.492
+Extracting Gallery Feature...
+Extracting Time:	 3.380
+Test Trial: 8
+FC:   Rank-1: 88.40% | Rank-5: 93.16% | Rank-10: 94.32%| Rank-20: 96.60%| mAP: 82.30%| mINP: 69.85%
+
+ * Finished epoch  23   model R1: 88.4%  model mAP: 82.3%   best R1: 88.4%   best mAP: 82.3%(best_epoch:23)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.513533353805542
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5202968120574951
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 24: 208 clusters
+==> Statistics for RGB epoch 24: 209 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 209
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 209
+  Augmented clusters: 209
+  IR clusters: 208
+  M_vr shape: torch.Size([209, 208]), M_ar shape: torch.Size([209, 208])
+  M_var (fused) shape: torch.Size([209, 208])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [24][10/100]	Time 0.332 (0.384)	Data 0.000 (0.049)	Loss 1.738 (1.479)	Loss ir 0.156	Loss rgb 0.005	Loss RC 0.037	Loss hybrid 2.220	
+Epoch: [24][20/100]	Time 0.327 (0.357)	Data 0.000 (0.024)	Loss 1.594 (1.638)	Loss ir 0.092	Loss rgb 0.007	Loss RC 0.039	Loss hybrid 2.065	
+Epoch: [24][30/100]	Time 0.337 (0.387)	Data 0.000 (0.054)	Loss 1.761 (1.695)	Loss ir 0.131	Loss rgb 0.006	Loss RC 0.037	Loss hybrid 2.390	
+Epoch: [24][40/100]	Time 0.329 (0.374)	Data 0.000 (0.040)	Loss 1.767 (1.765)	Loss ir 0.198	Loss rgb 0.005	Loss RC 0.038	Loss hybrid 2.250	
+Epoch: [24][50/100]	Time 0.330 (0.365)	Data 0.000 (0.032)	Loss 1.815 (1.802)	Loss ir 0.304	Loss rgb 0.007	Loss RC 0.036	Loss hybrid 2.174	
+Epoch: [24][60/100]	Time 0.351 (0.393)	Data 0.000 (0.059)	Loss 1.201 (1.735)	Loss ir 0.272	Loss rgb 0.321	Loss RC 0.036	Loss hybrid 0.183	
+Epoch: [24][70/100]	Time 0.327 (0.384)	Data 0.000 (0.050)	Loss 1.377 (1.695)	Loss ir 0.406	Loss rgb 0.230	Loss RC 0.036	Loss hybrid 0.522	
+Epoch: [24][80/100]	Time 0.333 (0.393)	Data 0.000 (0.060)	Loss 0.877 (1.668)	Loss ir 0.173	Loss rgb 0.160	Loss RC 0.036	Loss hybrid 0.205	
+Epoch: [24][90/100]	Time 0.333 (0.387)	Data 0.000 (0.053)	Loss 1.532 (1.631)	Loss ir 0.249	Loss rgb 0.528	Loss RC 0.035	Loss hybrid 0.507	
+Epoch: [24][100/100]	Time 0.326 (0.381)	Data 0.000 (0.048)	Loss 1.033 (1.608)	Loss ir 0.271	Loss rgb 0.169	Loss RC 0.040	Loss hybrid 0.183	
+Extracting Query Feature...
+Extracting Time:	 3.310
+Extracting Gallery Feature...
+Extracting Time:	 3.186
+Test Trial: 8
+FC:   Rank-1: 87.48% | Rank-5: 92.52% | Rank-10: 94.08%| Rank-20: 96.46%| mAP: 82.07%| mINP: 70.05%
+
+ * Finished epoch  24   model R1: 87.5%  model mAP: 82.1%   best R1: 88.4%   best mAP: 82.3%(best_epoch:23)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.562941551208496
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5155322551727295
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 25: 208 clusters
+==> Statistics for RGB epoch 25: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 208
+  M_vr shape: torch.Size([208, 208]), M_ar shape: torch.Size([208, 208])
+  M_var (fused) shape: torch.Size([208, 208])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [25][10/100]	Time 0.342 (0.387)	Data 0.000 (0.042)	Loss 2.084 (1.680)	Loss ir 0.002	Loss rgb 0.150	Loss RC 0.039	Loss hybrid 3.068	
+Epoch: [25][20/100]	Time 0.328 (0.359)	Data 0.000 (0.021)	Loss 2.449 (1.966)	Loss ir 0.001	Loss rgb 0.414	Loss RC 0.034	Loss hybrid 3.319	
+Epoch: [25][30/100]	Time 0.333 (0.392)	Data 0.000 (0.055)	Loss 0.839 (1.904)	Loss ir 0.086	Loss rgb 0.322	Loss RC 0.033	Loss hybrid 0.087	
+Epoch: [25][40/100]	Time 0.316 (0.378)	Data 0.000 (0.042)	Loss 0.899 (1.681)	Loss ir 0.120	Loss rgb 0.341	Loss RC 0.031	Loss hybrid 0.091	
+Epoch: [25][50/100]	Time 0.334 (0.368)	Data 0.000 (0.033)	Loss 0.754 (1.527)	Loss ir 0.065	Loss rgb 0.137	Loss RC 0.038	Loss hybrid 0.075	
+Epoch: [25][60/100]	Time 0.331 (0.397)	Data 0.000 (0.062)	Loss 1.213 (1.449)	Loss ir 0.121	Loss rgb 0.554	Loss RC 0.037	Loss hybrid 0.125	
+Epoch: [25][70/100]	Time 0.330 (0.388)	Data 0.000 (0.053)	Loss 1.056 (1.398)	Loss ir 0.094	Loss rgb 0.465	Loss RC 0.035	Loss hybrid 0.093	
+Epoch: [25][80/100]	Time 0.331 (0.398)	Data 0.001 (0.064)	Loss 0.983 (1.370)	Loss ir 0.123	Loss rgb 0.378	Loss RC 0.037	Loss hybrid 0.122	
+Epoch: [25][90/100]	Time 0.335 (0.391)	Data 0.000 (0.056)	Loss 0.948 (1.342)	Loss ir 0.082	Loss rgb 0.420	Loss RC 0.032	Loss hybrid 0.081	
+Epoch: [25][100/100]	Time 0.329 (0.385)	Data 0.000 (0.051)	Loss 0.945 (1.323)	Loss ir 0.123	Loss rgb 0.349	Loss RC 0.034	Loss hybrid 0.124	
+Extracting Query Feature...
+Extracting Time:	 3.439
+Extracting Gallery Feature...
+Extracting Time:	 3.402
+Test Trial: 8
+FC:   Rank-1: 89.08% | Rank-5: 93.35% | Rank-10: 94.61%| Rank-20: 96.84%| mAP: 82.89%| mINP: 70.29%
+
+ * Finished epoch  25   model R1: 89.1%  model mAP: 82.9%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.535013198852539
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5126123428344727
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 26: 209 clusters
+==> Statistics for RGB epoch 26: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 209
+  M_vr shape: torch.Size([208, 209]), M_ar shape: torch.Size([208, 209])
+  M_var (fused) shape: torch.Size([208, 209])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [26][10/100]	Time 0.334 (0.395)	Data 0.001 (0.054)	Loss 1.772 (1.549)	Loss ir 0.145	Loss rgb 0.009	Loss RC 0.036	Loss hybrid 2.418	
+Epoch: [26][20/100]	Time 0.330 (0.364)	Data 0.000 (0.027)	Loss 1.921 (1.657)	Loss ir 0.158	Loss rgb 0.014	Loss RC 0.033	Loss hybrid 2.550	
+Epoch: [26][30/100]	Time 0.317 (0.391)	Data 0.000 (0.057)	Loss 1.554 (1.680)	Loss ir 0.291	Loss rgb 0.005	Loss RC 0.034	Loss hybrid 1.566	
+Epoch: [26][40/100]	Time 0.332 (0.376)	Data 0.000 (0.043)	Loss 2.555 (1.791)	Loss ir 0.552	Loss rgb 0.003	Loss RC 0.038	Loss hybrid 2.967	
+Epoch: [26][50/100]	Time 0.327 (0.367)	Data 0.000 (0.034)	Loss 2.127 (1.838)	Loss ir 0.385	Loss rgb 0.005	Loss RC 0.036	Loss hybrid 2.549	
+Epoch: [26][60/100]	Time 0.326 (0.396)	Data 0.000 (0.063)	Loss 1.268 (1.793)	Loss ir 0.292	Loss rgb 0.253	Loss RC 0.031	Loss hybrid 0.412	
+Epoch: [26][70/100]	Time 0.330 (0.386)	Data 0.000 (0.054)	Loss 1.493 (1.728)	Loss ir 0.494	Loss rgb 0.281	Loss RC 0.039	Loss hybrid 0.369	
+Epoch: [26][80/100]	Time 0.332 (0.395)	Data 0.000 (0.064)	Loss 1.272 (1.699)	Loss ir 0.198	Loss rgb 0.325	Loss RC 0.037	Loss hybrid 0.490	
+Epoch: [26][90/100]	Time 0.333 (0.388)	Data 0.000 (0.057)	Loss 1.367 (1.663)	Loss ir 0.330	Loss rgb 0.385	Loss RC 0.038	Loss hybrid 0.397	
+Epoch: [26][100/100]	Time 0.329 (0.382)	Data 0.000 (0.051)	Loss 1.373 (1.645)	Loss ir 0.489	Loss rgb 0.235	Loss RC 0.037	Loss hybrid 0.389	
+Extracting Query Feature...
+Extracting Time:	 3.358
+Extracting Gallery Feature...
+Extracting Time:	 3.400
+Test Trial: 8
+FC:   Rank-1: 88.06% | Rank-5: 92.86% | Rank-10: 94.03%| Rank-20: 96.41%| mAP: 82.21%| mINP: 69.63%
+
+ * Finished epoch  26   model R1: 88.1%  model mAP: 82.2%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.577791452407837
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5185832977294922
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 27: 207 clusters
+==> Statistics for RGB epoch 27: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 207
+  M_vr shape: torch.Size([208, 207]), M_ar shape: torch.Size([208, 207])
+  M_var (fused) shape: torch.Size([208, 207])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [27][10/100]	Time 0.333 (0.383)	Data 0.000 (0.044)	Loss 1.655 (1.554)	Loss ir 0.003	Loss rgb 0.003	Loss RC 0.039	Loss hybrid 2.379	
+Epoch: [27][20/100]	Time 0.330 (0.357)	Data 0.000 (0.022)	Loss 1.698 (1.747)	Loss ir 0.003	Loss rgb 0.162	Loss RC 0.035	Loss hybrid 2.182	
+Epoch: [27][30/100]	Time 0.334 (0.385)	Data 0.000 (0.050)	Loss 1.068 (1.676)	Loss ir 0.218	Loss rgb 0.296	Loss RC 0.032	Loss hybrid 0.113	
+Epoch: [27][40/100]	Time 0.329 (0.372)	Data 0.000 (0.038)	Loss 1.183 (1.518)	Loss ir 0.165	Loss rgb 0.467	Loss RC 0.032	Loss hybrid 0.197	
+Epoch: [27][50/100]	Time 0.329 (0.363)	Data 0.000 (0.030)	Loss 1.353 (1.426)	Loss ir 0.082	Loss rgb 0.573	Loss RC 0.033	Loss hybrid 0.403	
+Epoch: [27][60/100]	Time 0.340 (0.395)	Data 0.000 (0.061)	Loss 0.972 (1.358)	Loss ir 0.097	Loss rgb 0.392	Loss RC 0.036	Loss hybrid 0.101	
+Epoch: [27][70/100]	Time 0.330 (0.386)	Data 0.000 (0.052)	Loss 1.258 (1.314)	Loss ir 0.175	Loss rgb 0.533	Loss RC 0.037	Loss hybrid 0.175	
+Epoch: [27][80/100]	Time 0.333 (0.393)	Data 0.000 (0.060)	Loss 0.850 (1.289)	Loss ir 0.137	Loss rgb 0.190	Loss RC 0.038	Loss hybrid 0.137	
+Epoch: [27][90/100]	Time 0.329 (0.387)	Data 0.000 (0.053)	Loss 1.235 (1.266)	Loss ir 0.144	Loss rgb 0.541	Loss RC 0.038	Loss hybrid 0.137	
+Epoch: [27][100/100]	Time 0.329 (0.381)	Data 0.000 (0.048)	Loss 1.069 (1.235)	Loss ir 0.079	Loss rgb 0.498	Loss RC 0.036	Loss hybrid 0.080	
+Extracting Query Feature...
+Extracting Time:	 3.338
+Extracting Gallery Feature...
+Extracting Time:	 3.401
+Test Trial: 8
+FC:   Rank-1: 87.72% | Rank-5: 92.57% | Rank-10: 94.27%| Rank-20: 96.41%| mAP: 82.02%| mINP: 69.34%
+
+ * Finished epoch  27   model R1: 87.7%  model mAP: 82.0%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5514039993286133
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5200366973876953
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 28: 208 clusters
+==> Statistics for RGB epoch 28: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 208
+  M_vr shape: torch.Size([208, 208]), M_ar shape: torch.Size([208, 208])
+  M_var (fused) shape: torch.Size([208, 208])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [28][10/100]	Time 0.334 (0.387)	Data 0.000 (0.047)	Loss 1.501 (1.429)	Loss ir 0.052	Loss rgb 0.008	Loss RC 0.031	Loss hybrid 2.169	
+Epoch: [28][20/100]	Time 0.327 (0.358)	Data 0.000 (0.024)	Loss 1.597 (1.557)	Loss ir 0.178	Loss rgb 0.006	Loss RC 0.036	Loss hybrid 1.909	
+Epoch: [28][30/100]	Time 0.336 (0.388)	Data 0.000 (0.055)	Loss 1.760 (1.620)	Loss ir 0.089	Loss rgb 0.005	Loss RC 0.035	Loss hybrid 2.466	
+Epoch: [28][40/100]	Time 0.330 (0.375)	Data 0.000 (0.041)	Loss 1.673 (1.667)	Loss ir 0.301	Loss rgb 0.003	Loss RC 0.035	Loss hybrid 1.828	
+Epoch: [28][50/100]	Time 0.326 (0.366)	Data 0.000 (0.033)	Loss 2.008 (1.697)	Loss ir 0.436	Loss rgb 0.008	Loss RC 0.034	Loss hybrid 2.160	
+Epoch: [28][60/100]	Time 0.335 (0.397)	Data 0.000 (0.063)	Loss 1.549 (1.646)	Loss ir 0.153	Loss rgb 0.387	Loss RC 0.031	Loss hybrid 0.797	
+Epoch: [28][70/100]	Time 0.328 (0.388)	Data 0.000 (0.054)	Loss 1.529 (1.621)	Loss ir 0.440	Loss rgb 0.322	Loss RC 0.030	Loss hybrid 0.617	
+Epoch: [28][80/100]	Time 0.336 (0.393)	Data 0.001 (0.060)	Loss 1.176 (1.588)	Loss ir 0.124	Loss rgb 0.320	Loss RC 0.039	Loss hybrid 0.464	
+Epoch: [28][90/100]	Time 0.335 (0.387)	Data 0.000 (0.054)	Loss 1.027 (1.565)	Loss ir 0.291	Loss rgb 0.210	Loss RC 0.033	Loss hybrid 0.278	
+Epoch: [28][100/100]	Time 0.329 (0.381)	Data 0.000 (0.048)	Loss 1.244 (1.536)	Loss ir 0.407	Loss rgb 0.167	Loss RC 0.037	Loss hybrid 0.432	
+Extracting Query Feature...
+Extracting Time:	 3.436
+Extracting Gallery Feature...
+Extracting Time:	 3.460
+Test Trial: 8
+FC:   Rank-1: 87.48% | Rank-5: 92.09% | Rank-10: 93.83%| Rank-20: 96.26%| mAP: 81.50%| mINP: 68.95%
+
+ * Finished epoch  28   model R1: 87.5%  model mAP: 81.5%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5789661407470703
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.510420322418213
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 29: 209 clusters
+==> Statistics for RGB epoch 29: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 209
+  M_vr shape: torch.Size([208, 209]), M_ar shape: torch.Size([208, 209])
+  M_var (fused) shape: torch.Size([208, 209])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [29][10/100]	Time 0.342 (0.394)	Data 0.000 (0.049)	Loss 1.618 (1.592)	Loss ir 0.003	Loss rgb 0.007	Loss RC 0.035	Loss hybrid 2.516	
+Epoch: [29][20/100]	Time 0.329 (0.364)	Data 0.000 (0.025)	Loss 1.923 (1.758)	Loss ir 0.002	Loss rgb 0.143	Loss RC 0.035	Loss hybrid 2.662	
+Epoch: [29][30/100]	Time 0.315 (0.391)	Data 0.001 (0.055)	Loss 0.927 (1.707)	Loss ir 0.176	Loss rgb 0.238	Loss RC 0.036	Loss hybrid 0.144	
+Epoch: [29][40/100]	Time 0.329 (0.378)	Data 0.000 (0.042)	Loss 1.354 (1.557)	Loss ir 0.148	Loss rgb 0.657	Loss RC 0.033	Loss hybrid 0.192	
+Epoch: [29][50/100]	Time 0.329 (0.368)	Data 0.000 (0.033)	Loss 0.946 (1.426)	Loss ir 0.200	Loss rgb 0.185	Loss RC 0.035	Loss hybrid 0.137	
+Epoch: [29][60/100]	Time 0.334 (0.396)	Data 0.000 (0.062)	Loss 1.142 (1.367)	Loss ir 0.066	Loss rgb 0.655	Loss RC 0.036	Loss hybrid 0.064	
+Epoch: [29][70/100]	Time 0.329 (0.387)	Data 0.000 (0.053)	Loss 0.813 (1.306)	Loss ir 0.120	Loss rgb 0.174	Loss RC 0.037	Loss hybrid 0.126	
+Epoch: [29][80/100]	Time 0.312 (0.396)	Data 0.000 (0.063)	Loss 1.037 (1.269)	Loss ir 0.151	Loss rgb 0.409	Loss RC 0.030	Loss hybrid 0.151	
+Epoch: [29][90/100]	Time 0.335 (0.387)	Data 0.000 (0.056)	Loss 1.126 (1.255)	Loss ir 0.134	Loss rgb 0.503	Loss RC 0.037	Loss hybrid 0.136	
+Epoch: [29][100/100]	Time 0.328 (0.382)	Data 0.000 (0.050)	Loss 1.065 (1.231)	Loss ir 0.073	Loss rgb 0.407	Loss RC 0.034	Loss hybrid 0.073	
+Extracting Query Feature...
+Extracting Time:	 3.356
+Extracting Gallery Feature...
+Extracting Time:	 3.411
+Test Trial: 8
+FC:   Rank-1: 88.20% | Rank-5: 92.91% | Rank-10: 94.32%| Rank-20: 96.26%| mAP: 82.34%| mINP: 70.20%
+
+ * Finished epoch  29   model R1: 88.2%  model mAP: 82.3%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5484552383422852
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5664644241333008
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 30: 208 clusters
+==> Statistics for RGB epoch 30: 208 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 208
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 208
+  Augmented clusters: 208
+  IR clusters: 208
+  M_vr shape: torch.Size([208, 208]), M_ar shape: torch.Size([208, 208])
+  M_var (fused) shape: torch.Size([208, 208])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [30][10/100]	Time 0.310 (0.364)	Data 0.000 (0.050)	Loss 1.524 (1.357)	Loss ir 0.244	Loss rgb 0.007	Loss RC 0.035	Loss hybrid 1.768	
+Epoch: [30][20/100]	Time 0.309 (0.337)	Data 0.000 (0.025)	Loss 1.916 (1.479)	Loss ir 0.357	Loss rgb 0.008	Loss RC 0.032	Loss hybrid 2.316	
+Epoch: [30][30/100]	Time 0.349 (0.367)	Data 0.000 (0.052)	Loss 1.855 (1.515)	Loss ir 0.326	Loss rgb 0.009	Loss RC 0.033	Loss hybrid 2.191	
+Epoch: [30][40/100]	Time 0.329 (0.359)	Data 0.000 (0.039)	Loss 1.678 (1.585)	Loss ir 0.315	Loss rgb 0.006	Loss RC 0.033	Loss hybrid 1.941	
+Epoch: [30][50/100]	Time 0.329 (0.353)	Data 0.000 (0.031)	Loss 2.064 (1.607)	Loss ir 0.608	Loss rgb 0.008	Loss RC 0.028	Loss hybrid 1.938	
+Epoch: [30][60/100]	Time 0.332 (0.385)	Data 0.000 (0.062)	Loss 1.124 (1.584)	Loss ir 0.160	Loss rgb 0.270	Loss RC 0.035	Loss hybrid 0.429	
+Epoch: [30][70/100]	Time 0.329 (0.377)	Data 0.000 (0.053)	Loss 1.463 (1.542)	Loss ir 0.513	Loss rgb 0.311	Loss RC 0.029	Loss hybrid 0.317	
+Epoch: [30][80/100]	Time 0.331 (0.386)	Data 0.000 (0.061)	Loss 1.753 (1.529)	Loss ir 0.121	Loss rgb 0.699	Loss RC 0.036	Loss hybrid 0.914	
+Epoch: [30][90/100]	Time 0.333 (0.381)	Data 0.000 (0.054)	Loss 1.143 (1.500)	Loss ir 0.224	Loss rgb 0.236	Loss RC 0.041	Loss hybrid 0.249	
+Epoch: [30][100/100]	Time 0.329 (0.376)	Data 0.000 (0.049)	Loss 1.108 (1.487)	Loss ir 0.340	Loss rgb 0.214	Loss RC 0.037	Loss hybrid 0.207	
+Extracting Query Feature...
+Extracting Time:	 3.378
+Extracting Gallery Feature...
+Extracting Time:	 3.377
+Test Trial: 8
+FC:   Rank-1: 87.72% | Rank-5: 92.43% | Rank-10: 93.74%| Rank-20: 95.44%| mAP: 82.21%| mINP: 70.45%
+
+ * Finished epoch  30   model R1: 87.7%  model mAP: 82.2%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5848803520202637
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5639467239379883
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 31: 208 clusters
+==> Statistics for RGB epoch 31: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 208
+  M_vr shape: torch.Size([207, 208]), M_ar shape: torch.Size([207, 208])
+  M_var (fused) shape: torch.Size([207, 208])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [31][10/100]	Time 0.313 (0.392)	Data 0.000 (0.051)	Loss 1.523 (1.491)	Loss ir 0.003	Loss rgb 0.147	Loss RC 0.032	Loss hybrid 2.032	
+Epoch: [31][20/100]	Time 0.311 (0.358)	Data 0.000 (0.026)	Loss 1.881 (1.674)	Loss ir 0.001	Loss rgb 0.137	Loss RC 0.034	Loss hybrid 2.788	
+Epoch: [31][30/100]	Time 0.334 (0.388)	Data 0.000 (0.057)	Loss 0.818 (1.639)	Loss ir 0.132	Loss rgb 0.177	Loss RC 0.037	Loss hybrid 0.098	
+Epoch: [31][40/100]	Time 0.332 (0.374)	Data 0.000 (0.043)	Loss 0.888 (1.466)	Loss ir 0.066	Loss rgb 0.300	Loss RC 0.040	Loss hybrid 0.085	
+Epoch: [31][50/100]	Time 0.332 (0.366)	Data 0.000 (0.034)	Loss 1.106 (1.375)	Loss ir 0.207	Loss rgb 0.424	Loss RC 0.030	Loss hybrid 0.190	
+Epoch: [31][60/100]	Time 0.334 (0.399)	Data 0.001 (0.066)	Loss 0.979 (1.318)	Loss ir 0.104	Loss rgb 0.434	Loss RC 0.036	Loss hybrid 0.100	
+Epoch: [31][70/100]	Time 0.329 (0.389)	Data 0.000 (0.056)	Loss 1.127 (1.273)	Loss ir 0.194	Loss rgb 0.403	Loss RC 0.031	Loss hybrid 0.194	
+Epoch: [31][80/100]	Time 0.336 (0.399)	Data 0.001 (0.066)	Loss 1.033 (1.238)	Loss ir 0.089	Loss rgb 0.453	Loss RC 0.036	Loss hybrid 0.088	
+Epoch: [31][90/100]	Time 0.342 (0.392)	Data 0.000 (0.058)	Loss 0.892 (1.215)	Loss ir 0.138	Loss rgb 0.247	Loss RC 0.037	Loss hybrid 0.137	
+Epoch: [31][100/100]	Time 0.329 (0.386)	Data 0.000 (0.053)	Loss 1.187 (1.196)	Loss ir 0.158	Loss rgb 0.482	Loss RC 0.035	Loss hybrid 0.158	
+Extracting Query Feature...
+Extracting Time:	 3.389
+Extracting Gallery Feature...
+Extracting Time:	 3.450
+Test Trial: 8
+FC:   Rank-1: 87.91% | Rank-5: 92.82% | Rank-10: 94.37%| Rank-20: 96.02%| mAP: 82.58%| mINP: 70.28%
+
+ * Finished epoch  31   model R1: 87.9%  model mAP: 82.6%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5904443264007568
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5297927856445312
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 32: 209 clusters
+==> Statistics for RGB epoch 32: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 209
+  M_vr shape: torch.Size([207, 209]), M_ar shape: torch.Size([207, 209])
+  M_var (fused) shape: torch.Size([207, 209])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [32][10/100]	Time 0.342 (0.369)	Data 0.001 (0.038)	Loss 1.397 (1.333)	Loss ir 0.059	Loss rgb 0.009	Loss RC 0.035	Loss hybrid 1.886	
+Epoch: [32][20/100]	Time 0.329 (0.350)	Data 0.000 (0.019)	Loss 1.752 (1.422)	Loss ir 0.355	Loss rgb 0.012	Loss RC 0.035	Loss hybrid 1.899	
+Epoch: [32][30/100]	Time 0.334 (0.385)	Data 0.000 (0.054)	Loss 1.941 (1.510)	Loss ir 0.238	Loss rgb 0.005	Loss RC 0.032	Loss hybrid 2.239	
+Epoch: [32][40/100]	Time 0.329 (0.372)	Data 0.000 (0.041)	Loss 1.700 (1.543)	Loss ir 0.340	Loss rgb 0.007	Loss RC 0.034	Loss hybrid 1.889	
+Epoch: [32][50/100]	Time 0.330 (0.363)	Data 0.000 (0.033)	Loss 1.604 (1.563)	Loss ir 0.570	Loss rgb 0.006	Loss RC 0.033	Loss hybrid 1.111	
+Epoch: [32][60/100]	Time 0.312 (0.387)	Data 0.000 (0.056)	Loss 1.140 (1.529)	Loss ir 0.205	Loss rgb 0.365	Loss RC 0.036	Loss hybrid 0.214	
+Epoch: [32][70/100]	Time 0.331 (0.378)	Data 0.000 (0.048)	Loss 1.341 (1.527)	Loss ir 0.284	Loss rgb 0.355	Loss RC 0.036	Loss hybrid 0.533	
+Epoch: [32][80/100]	Time 0.333 (0.385)	Data 0.001 (0.055)	Loss 1.213 (1.494)	Loss ir 0.135	Loss rgb 0.330	Loss RC 0.033	Loss hybrid 0.563	
+Epoch: [32][90/100]	Time 0.335 (0.379)	Data 0.000 (0.049)	Loss 1.207 (1.462)	Loss ir 0.287	Loss rgb 0.327	Loss RC 0.035	Loss hybrid 0.240	
+Epoch: [32][100/100]	Time 0.329 (0.374)	Data 0.000 (0.044)	Loss 1.531 (1.442)	Loss ir 0.556	Loss rgb 0.297	Loss RC 0.035	Loss hybrid 0.411	
+Extracting Query Feature...
+Extracting Time:	 3.274
+Extracting Gallery Feature...
+Extracting Time:	 3.322
+Test Trial: 8
+FC:   Rank-1: 88.11% | Rank-5: 92.52% | Rank-10: 93.98%| Rank-20: 95.92%| mAP: 82.72%| mINP: 70.58%
+
+ * Finished epoch  32   model R1: 88.1%  model mAP: 82.7%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5559968948364258
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5187287330627441
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 33: 207 clusters
+==> Statistics for RGB epoch 33: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 207
+  M_vr shape: torch.Size([207, 207]), M_ar shape: torch.Size([207, 207])
+  M_var (fused) shape: torch.Size([207, 207])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [33][10/100]	Time 0.336 (0.386)	Data 0.000 (0.049)	Loss 1.571 (1.272)	Loss ir 0.001	Loss rgb 0.091	Loss RC 0.037	Loss hybrid 2.205	
+Epoch: [33][20/100]	Time 0.330 (0.358)	Data 0.000 (0.025)	Loss 1.670 (1.508)	Loss ir 0.004	Loss rgb 0.125	Loss RC 0.037	Loss hybrid 2.245	
+Epoch: [33][30/100]	Time 0.336 (0.385)	Data 0.000 (0.052)	Loss 0.669 (1.442)	Loss ir 0.083	Loss rgb 0.148	Loss RC 0.035	Loss hybrid 0.071	
+Epoch: [33][40/100]	Time 0.328 (0.372)	Data 0.000 (0.039)	Loss 0.839 (1.327)	Loss ir 0.089	Loss rgb 0.247	Loss RC 0.037	Loss hybrid 0.074	
+Epoch: [33][50/100]	Time 0.328 (0.364)	Data 0.000 (0.031)	Loss 0.949 (1.243)	Loss ir 0.071	Loss rgb 0.322	Loss RC 0.035	Loss hybrid 0.182	
+Epoch: [33][60/100]	Time 0.334 (0.396)	Data 0.000 (0.061)	Loss 1.060 (1.186)	Loss ir 0.080	Loss rgb 0.561	Loss RC 0.034	Loss hybrid 0.081	
+Epoch: [33][70/100]	Time 0.329 (0.386)	Data 0.000 (0.053)	Loss 0.923 (1.158)	Loss ir 0.058	Loss rgb 0.416	Loss RC 0.033	Loss hybrid 0.060	
+Epoch: [33][80/100]	Time 0.337 (0.392)	Data 0.000 (0.058)	Loss 1.311 (1.140)	Loss ir 0.209	Loss rgb 0.637	Loss RC 0.029	Loss hybrid 0.209	
+Epoch: [33][90/100]	Time 0.326 (0.386)	Data 0.000 (0.052)	Loss 0.803 (1.118)	Loss ir 0.070	Loss rgb 0.251	Loss RC 0.033	Loss hybrid 0.076	
+Epoch: [33][100/100]	Time 0.328 (0.380)	Data 0.000 (0.047)	Loss 1.254 (1.112)	Loss ir 0.134	Loss rgb 0.554	Loss RC 0.038	Loss hybrid 0.133	
+Extracting Query Feature...
+Extracting Time:	 3.316
+Extracting Gallery Feature...
+Extracting Time:	 3.370
+Test Trial: 8
+FC:   Rank-1: 88.54% | Rank-5: 92.86% | Rank-10: 94.42%| Rank-20: 96.12%| mAP: 83.14%| mINP: 71.23%
+
+ * Finished epoch  33   model R1: 88.5%  model mAP: 83.1%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5685982704162598
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5279600620269775
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 34: 208 clusters
+==> Statistics for RGB epoch 34: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 208
+  M_vr shape: torch.Size([207, 208]), M_ar shape: torch.Size([207, 208])
+  M_var (fused) shape: torch.Size([207, 208])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [34][10/100]	Time 0.342 (0.385)	Data 0.000 (0.045)	Loss 1.468 (1.315)	Loss ir 0.040	Loss rgb 0.013	Loss RC 0.033	Loss hybrid 2.007	
+Epoch: [34][20/100]	Time 0.329 (0.355)	Data 0.000 (0.023)	Loss 1.476 (1.433)	Loss ir 0.042	Loss rgb 0.007	Loss RC 0.036	Loss hybrid 1.926	
+Epoch: [34][30/100]	Time 0.332 (0.387)	Data 0.000 (0.055)	Loss 1.575 (1.509)	Loss ir 0.089	Loss rgb 0.009	Loss RC 0.033	Loss hybrid 2.196	
+Epoch: [34][40/100]	Time 0.329 (0.374)	Data 0.000 (0.042)	Loss 1.397 (1.560)	Loss ir 0.223	Loss rgb 0.004	Loss RC 0.032	Loss hybrid 1.530	
+Epoch: [34][50/100]	Time 0.326 (0.365)	Data 0.000 (0.033)	Loss 2.242 (1.596)	Loss ir 0.902	Loss rgb 0.003	Loss RC 0.032	Loss hybrid 1.830	
+Epoch: [34][60/100]	Time 0.358 (0.392)	Data 0.000 (0.059)	Loss 1.280 (1.562)	Loss ir 0.379	Loss rgb 0.224	Loss RC 0.034	Loss hybrid 0.344	
+Epoch: [34][70/100]	Time 0.325 (0.383)	Data 0.000 (0.050)	Loss 1.626 (1.527)	Loss ir 0.280	Loss rgb 0.619	Loss RC 0.034	Loss hybrid 0.548	
+Epoch: [34][80/100]	Time 0.356 (0.390)	Data 0.000 (0.057)	Loss 1.202 (1.505)	Loss ir 0.129	Loss rgb 0.282	Loss RC 0.035	Loss hybrid 0.583	
+Epoch: [34][90/100]	Time 0.330 (0.384)	Data 0.000 (0.050)	Loss 0.921 (1.471)	Loss ir 0.177	Loss rgb 0.173	Loss RC 0.034	Loss hybrid 0.276	
+Epoch: [34][100/100]	Time 0.327 (0.378)	Data 0.000 (0.045)	Loss 1.603 (1.455)	Loss ir 0.250	Loss rgb 0.324	Loss RC 0.034	Loss hybrid 0.895	
+Extracting Query Feature...
+Extracting Time:	 3.490
+Extracting Gallery Feature...
+Extracting Time:	 3.431
+Test Trial: 8
+FC:   Rank-1: 88.25% | Rank-5: 92.18% | Rank-10: 93.69%| Rank-20: 95.68%| mAP: 82.27%| mINP: 70.17%
+
+ * Finished epoch  34   model R1: 88.3%  model mAP: 82.3%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5841705799102783
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5303528308868408
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 35: 207 clusters
+==> Statistics for RGB epoch 35: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 207
+  M_vr shape: torch.Size([207, 207]), M_ar shape: torch.Size([207, 207])
+  M_var (fused) shape: torch.Size([207, 207])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [35][10/100]	Time 0.336 (0.396)	Data 0.000 (0.055)	Loss 1.581 (1.392)	Loss ir 0.002	Loss rgb 0.018	Loss RC 0.035	Loss hybrid 2.394	
+Epoch: [35][20/100]	Time 0.331 (0.363)	Data 0.000 (0.027)	Loss 1.956 (1.606)	Loss ir 0.001	Loss rgb 0.202	Loss RC 0.032	Loss hybrid 2.781	
+Epoch: [35][30/100]	Time 0.338 (0.392)	Data 0.000 (0.056)	Loss 0.809 (1.516)	Loss ir 0.091	Loss rgb 0.156	Loss RC 0.036	Loss hybrid 0.259	
+Epoch: [35][40/100]	Time 0.329 (0.378)	Data 0.000 (0.042)	Loss 0.729 (1.376)	Loss ir 0.053	Loss rgb 0.199	Loss RC 0.034	Loss hybrid 0.067	
+Epoch: [35][50/100]	Time 0.329 (0.368)	Data 0.000 (0.034)	Loss 0.822 (1.301)	Loss ir 0.088	Loss rgb 0.275	Loss RC 0.033	Loss hybrid 0.070	
+Epoch: [35][60/100]	Time 0.332 (0.395)	Data 0.000 (0.061)	Loss 0.963 (1.239)	Loss ir 0.091	Loss rgb 0.441	Loss RC 0.030	Loss hybrid 0.095	
+Epoch: [35][70/100]	Time 0.330 (0.385)	Data 0.000 (0.052)	Loss 0.747 (1.199)	Loss ir 0.125	Loss rgb 0.193	Loss RC 0.034	Loss hybrid 0.102	
+Epoch: [35][80/100]	Time 0.335 (0.393)	Data 0.000 (0.060)	Loss 1.049 (1.177)	Loss ir 0.141	Loss rgb 0.459	Loss RC 0.032	Loss hybrid 0.129	
+Epoch: [35][90/100]	Time 0.330 (0.386)	Data 0.000 (0.053)	Loss 0.885 (1.145)	Loss ir 0.084	Loss rgb 0.269	Loss RC 0.035	Loss hybrid 0.083	
+Epoch: [35][100/100]	Time 0.329 (0.380)	Data 0.000 (0.048)	Loss 1.039 (1.133)	Loss ir 0.064	Loss rgb 0.481	Loss RC 0.036	Loss hybrid 0.064	
+Extracting Query Feature...
+Extracting Time:	 3.327
+Extracting Gallery Feature...
+Extracting Time:	 3.447
+Test Trial: 8
+FC:   Rank-1: 87.91% | Rank-5: 92.86% | Rank-10: 94.37%| Rank-20: 96.60%| mAP: 82.70%| mINP: 70.58%
+
+ * Finished epoch  35   model R1: 87.9%  model mAP: 82.7%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5637047290802002
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5364863872528076
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 36: 208 clusters
+==> Statistics for RGB epoch 36: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 208
+  M_vr shape: torch.Size([207, 208]), M_ar shape: torch.Size([207, 208])
+  M_var (fused) shape: torch.Size([207, 208])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [36][10/100]	Time 0.336 (0.393)	Data 0.000 (0.053)	Loss 1.298 (1.231)	Loss ir 0.002	Loss rgb 0.018	Loss RC 0.033	Loss hybrid 1.735	
+Epoch: [36][20/100]	Time 0.330 (0.361)	Data 0.000 (0.027)	Loss 1.254 (1.310)	Loss ir 0.054	Loss rgb 0.007	Loss RC 0.034	Loss hybrid 1.613	
+Epoch: [36][30/100]	Time 0.341 (0.390)	Data 0.000 (0.056)	Loss 1.539 (1.339)	Loss ir 0.157	Loss rgb 0.005	Loss RC 0.034	Loss hybrid 1.835	
+Epoch: [36][40/100]	Time 0.330 (0.377)	Data 0.000 (0.042)	Loss 1.489 (1.364)	Loss ir 0.330	Loss rgb 0.008	Loss RC 0.029	Loss hybrid 1.488	
+Epoch: [36][50/100]	Time 0.330 (0.367)	Data 0.000 (0.034)	Loss 1.777 (1.398)	Loss ir 0.636	Loss rgb 0.009	Loss RC 0.033	Loss hybrid 1.459	
+Epoch: [36][60/100]	Time 0.335 (0.394)	Data 0.000 (0.060)	Loss 1.001 (1.375)	Loss ir 0.124	Loss rgb 0.279	Loss RC 0.032	Loss hybrid 0.408	
+Epoch: [36][70/100]	Time 0.332 (0.385)	Data 0.000 (0.052)	Loss 1.404 (1.373)	Loss ir 0.624	Loss rgb 0.268	Loss RC 0.036	Loss hybrid 0.253	
+Epoch: [36][80/100]	Time 0.344 (0.391)	Data 0.001 (0.057)	Loss 1.200 (1.363)	Loss ir 0.165	Loss rgb 0.277	Loss RC 0.037	Loss hybrid 0.504	
+Epoch: [36][90/100]	Time 0.333 (0.385)	Data 0.000 (0.051)	Loss 0.986 (1.343)	Loss ir 0.159	Loss rgb 0.327	Loss RC 0.036	Loss hybrid 0.103	
+Epoch: [36][100/100]	Time 0.329 (0.379)	Data 0.000 (0.046)	Loss 1.733 (1.328)	Loss ir 0.334	Loss rgb 0.458	Loss RC 0.033	Loss hybrid 0.981	
+Extracting Query Feature...
+Extracting Time:	 3.405
+Extracting Gallery Feature...
+Extracting Time:	 3.354
+Test Trial: 8
+FC:   Rank-1: 88.35% | Rank-5: 91.99% | Rank-10: 93.69%| Rank-20: 96.41%| mAP: 82.58%| mINP: 70.45%
+
+ * Finished epoch  36   model R1: 88.3%  model mAP: 82.6%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5538311004638672
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5247924327850342
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 37: 208 clusters
+==> Statistics for RGB epoch 37: 206 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 206
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 206
+  Augmented clusters: 206
+  IR clusters: 208
+  M_vr shape: torch.Size([206, 208]), M_ar shape: torch.Size([206, 208])
+  M_var (fused) shape: torch.Size([206, 208])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [37][10/100]	Time 0.341 (0.382)	Data 0.001 (0.038)	Loss 1.874 (1.585)	Loss ir 0.002	Loss rgb 0.208	Loss RC 0.037	Loss hybrid 2.530	
+Epoch: [37][20/100]	Time 0.329 (0.357)	Data 0.000 (0.019)	Loss 1.691 (1.706)	Loss ir 0.001	Loss rgb 0.081	Loss RC 0.034	Loss hybrid 2.471	
+Epoch: [37][30/100]	Time 0.313 (0.387)	Data 0.000 (0.053)	Loss 0.703 (1.645)	Loss ir 0.109	Loss rgb 0.156	Loss RC 0.031	Loss hybrid 0.124	
+Epoch: [37][40/100]	Time 0.329 (0.370)	Data 0.000 (0.040)	Loss 0.903 (1.446)	Loss ir 0.127	Loss rgb 0.298	Loss RC 0.036	Loss hybrid 0.115	
+Epoch: [37][50/100]	Time 0.329 (0.362)	Data 0.000 (0.032)	Loss 0.965 (1.350)	Loss ir 0.135	Loss rgb 0.371	Loss RC 0.031	Loss hybrid 0.107	
+Epoch: [37][60/100]	Time 0.340 (0.390)	Data 0.001 (0.058)	Loss 1.012 (1.279)	Loss ir 0.119	Loss rgb 0.441	Loss RC 0.030	Loss hybrid 0.119	
+Epoch: [37][70/100]	Time 0.329 (0.382)	Data 0.000 (0.050)	Loss 0.996 (1.228)	Loss ir 0.097	Loss rgb 0.469	Loss RC 0.032	Loss hybrid 0.091	
+Epoch: [37][80/100]	Time 0.334 (0.390)	Data 0.000 (0.058)	Loss 0.987 (1.195)	Loss ir 0.090	Loss rgb 0.348	Loss RC 0.036	Loss hybrid 0.090	
+Epoch: [37][90/100]	Time 0.338 (0.384)	Data 0.000 (0.052)	Loss 0.981 (1.172)	Loss ir 0.098	Loss rgb 0.383	Loss RC 0.034	Loss hybrid 0.098	
+Epoch: [37][100/100]	Time 0.330 (0.378)	Data 0.000 (0.047)	Loss 0.809 (1.139)	Loss ir 0.124	Loss rgb 0.203	Loss RC 0.032	Loss hybrid 0.130	
+Extracting Query Feature...
+Extracting Time:	 3.356
+Extracting Gallery Feature...
+Extracting Time:	 3.373
+Test Trial: 8
+FC:   Rank-1: 89.03% | Rank-5: 92.91% | Rank-10: 94.32%| Rank-20: 95.97%| mAP: 83.09%| mINP: 70.87%
+
+ * Finished epoch  37   model R1: 89.0%  model mAP: 83.1%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5878958702087402
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.533515214920044
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 38: 208 clusters
+==> Statistics for RGB epoch 38: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 208
+  M_vr shape: torch.Size([207, 208]), M_ar shape: torch.Size([207, 208])
+  M_var (fused) shape: torch.Size([207, 208])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [38][10/100]	Time 0.340 (0.379)	Data 0.000 (0.050)	Loss 1.995 (1.549)	Loss ir 0.554	Loss rgb 0.007	Loss RC 0.037	Loss hybrid 2.087	
+Epoch: [38][20/100]	Time 0.330 (0.355)	Data 0.000 (0.025)	Loss 1.519 (1.603)	Loss ir 0.116	Loss rgb 0.011	Loss RC 0.035	Loss hybrid 1.971	
+Epoch: [38][30/100]	Time 0.319 (0.382)	Data 0.000 (0.052)	Loss 1.915 (1.624)	Loss ir 0.312	Loss rgb 0.006	Loss RC 0.033	Loss hybrid 2.373	
+Epoch: [38][40/100]	Time 0.329 (0.368)	Data 0.000 (0.039)	Loss 1.497 (1.639)	Loss ir 0.248	Loss rgb 0.006	Loss RC 0.031	Loss hybrid 1.699	
+Epoch: [38][50/100]	Time 0.329 (0.361)	Data 0.000 (0.031)	Loss 1.789 (1.646)	Loss ir 0.530	Loss rgb 0.006	Loss RC 0.034	Loss hybrid 1.590	
+Epoch: [38][60/100]	Time 0.334 (0.388)	Data 0.000 (0.057)	Loss 1.406 (1.595)	Loss ir 0.437	Loss rgb 0.300	Loss RC 0.032	Loss hybrid 0.459	
+Epoch: [38][70/100]	Time 0.331 (0.380)	Data 0.000 (0.049)	Loss 1.042 (1.544)	Loss ir 0.293	Loss rgb 0.164	Loss RC 0.035	Loss hybrid 0.170	
+Epoch: [38][80/100]	Time 0.335 (0.387)	Data 0.000 (0.056)	Loss 1.624 (1.525)	Loss ir 0.261	Loss rgb 0.583	Loss RC 0.036	Loss hybrid 0.696	
+Epoch: [38][90/100]	Time 0.333 (0.382)	Data 0.000 (0.050)	Loss 1.444 (1.489)	Loss ir 0.305	Loss rgb 0.193	Loss RC 0.035	Loss hybrid 1.089	
+Epoch: [38][100/100]	Time 0.327 (0.377)	Data 0.000 (0.045)	Loss 1.588 (1.489)	Loss ir 0.294	Loss rgb 0.307	Loss RC 0.035	Loss hybrid 1.081	
+Extracting Query Feature...
+Extracting Time:	 3.396
+Extracting Gallery Feature...
+Extracting Time:	 3.426
+Test Trial: 8
+FC:   Rank-1: 88.06% | Rank-5: 92.67% | Rank-10: 93.83%| Rank-20: 95.87%| mAP: 82.70%| mINP: 70.83%
+
+ * Finished epoch  38   model R1: 88.1%  model mAP: 82.7%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.567807674407959
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5455214977264404
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 39: 207 clusters
+==> Statistics for RGB epoch 39: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 207
+  M_vr shape: torch.Size([207, 207]), M_ar shape: torch.Size([207, 207])
+  M_var (fused) shape: torch.Size([207, 207])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [39][10/100]	Time 0.334 (0.381)	Data 0.000 (0.042)	Loss 1.615 (1.391)	Loss ir 0.003	Loss rgb 0.220	Loss RC 0.037	Loss hybrid 1.928	
+Epoch: [39][20/100]	Time 0.330 (0.356)	Data 0.000 (0.021)	Loss 2.024 (1.575)	Loss ir 0.003	Loss rgb 0.331	Loss RC 0.035	Loss hybrid 2.515	
+Epoch: [39][30/100]	Time 0.342 (0.390)	Data 0.000 (0.056)	Loss 0.691 (1.474)	Loss ir 0.056	Loss rgb 0.163	Loss RC 0.035	Loss hybrid 0.054	
+Epoch: [39][40/100]	Time 0.328 (0.376)	Data 0.000 (0.042)	Loss 0.911 (1.325)	Loss ir 0.095	Loss rgb 0.242	Loss RC 0.033	Loss hybrid 0.316	
+Epoch: [39][50/100]	Time 0.329 (0.367)	Data 0.000 (0.033)	Loss 0.989 (1.241)	Loss ir 0.087	Loss rgb 0.286	Loss RC 0.037	Loss hybrid 0.074	
+Epoch: [39][60/100]	Time 0.332 (0.393)	Data 0.000 (0.060)	Loss 0.867 (1.185)	Loss ir 0.178	Loss rgb 0.193	Loss RC 0.033	Loss hybrid 0.162	
+Epoch: [39][70/100]	Time 0.330 (0.385)	Data 0.000 (0.051)	Loss 0.926 (1.146)	Loss ir 0.095	Loss rgb 0.308	Loss RC 0.032	Loss hybrid 0.097	
+Epoch: [39][80/100]	Time 0.333 (0.392)	Data 0.000 (0.058)	Loss 0.703 (1.104)	Loss ir 0.097	Loss rgb 0.142	Loss RC 0.035	Loss hybrid 0.099	
+Epoch: [39][90/100]	Time 0.330 (0.385)	Data 0.000 (0.052)	Loss 0.914 (1.086)	Loss ir 0.101	Loss rgb 0.288	Loss RC 0.036	Loss hybrid 0.102	
+Epoch: [39][100/100]	Time 0.329 (0.380)	Data 0.000 (0.047)	Loss 1.165 (1.063)	Loss ir 0.125	Loss rgb 0.489	Loss RC 0.031	Loss hybrid 0.126	
+Extracting Query Feature...
+Extracting Time:	 3.312
+Extracting Gallery Feature...
+Extracting Time:	 3.405
+Test Trial: 8
+FC:   Rank-1: 88.20% | Rank-5: 92.52% | Rank-10: 94.27%| Rank-20: 95.83%| mAP: 82.89%| mINP: 70.79%
+
+ * Finished epoch  39   model R1: 88.2%  model mAP: 82.9%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.573218822479248
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.524371862411499
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 40: 208 clusters
+==> Statistics for RGB epoch 40: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 208
+  M_vr shape: torch.Size([207, 208]), M_ar shape: torch.Size([207, 208])
+  M_var (fused) shape: torch.Size([207, 208])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [40][10/100]	Time 0.334 (0.393)	Data 0.000 (0.057)	Loss 1.375 (1.347)	Loss ir 0.070	Loss rgb 0.008	Loss RC 0.037	Loss hybrid 1.834	
+Epoch: [40][20/100]	Time 0.329 (0.362)	Data 0.000 (0.028)	Loss 1.388 (1.415)	Loss ir 0.029	Loss rgb 0.005	Loss RC 0.033	Loss hybrid 1.899	
+Epoch: [40][30/100]	Time 0.331 (0.390)	Data 0.000 (0.058)	Loss 1.785 (1.494)	Loss ir 0.227	Loss rgb 0.012	Loss RC 0.033	Loss hybrid 2.183	
+Epoch: [40][40/100]	Time 0.329 (0.377)	Data 0.000 (0.043)	Loss 1.825 (1.560)	Loss ir 0.305	Loss rgb 0.005	Loss RC 0.032	Loss hybrid 2.036	
+Epoch: [40][50/100]	Time 0.326 (0.367)	Data 0.000 (0.035)	Loss 2.037 (1.625)	Loss ir 0.480	Loss rgb 0.005	Loss RC 0.032	Loss hybrid 2.231	
+Epoch: [40][60/100]	Time 0.356 (0.395)	Data 0.000 (0.062)	Loss 1.216 (1.560)	Loss ir 0.274	Loss rgb 0.315	Loss RC 0.034	Loss hybrid 0.360	
+Epoch: [40][70/100]	Time 0.327 (0.386)	Data 0.000 (0.053)	Loss 0.956 (1.501)	Loss ir 0.257	Loss rgb 0.148	Loss RC 0.038	Loss hybrid 0.245	
+Epoch: [40][80/100]	Time 0.336 (0.394)	Data 0.000 (0.061)	Loss 1.804 (1.470)	Loss ir 0.360	Loss rgb 0.707	Loss RC 0.029	Loss hybrid 0.778	
+Epoch: [40][90/100]	Time 0.328 (0.387)	Data 0.000 (0.054)	Loss 1.653 (1.453)	Loss ir 0.510	Loss rgb 0.125	Loss RC 0.035	Loss hybrid 1.176	
+Epoch: [40][100/100]	Time 0.330 (0.381)	Data 0.000 (0.049)	Loss 0.961 (1.413)	Loss ir 0.139	Loss rgb 0.261	Loss RC 0.033	Loss hybrid 0.336	
+Extracting Query Feature...
+Extracting Time:	 3.302
+Extracting Gallery Feature...
+Extracting Time:	 3.550
+Test Trial: 8
+FC:   Rank-1: 88.11% | Rank-5: 92.23% | Rank-10: 94.08%| Rank-20: 95.73%| mAP: 82.90%| mINP: 70.80%
+
+ * Finished epoch  40   model R1: 88.1%  model mAP: 82.9%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5901954174041748
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5368916988372803
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 41: 207 clusters
+==> Statistics for RGB epoch 41: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 207
+  M_vr shape: torch.Size([207, 207]), M_ar shape: torch.Size([207, 207])
+  M_var (fused) shape: torch.Size([207, 207])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [41][10/100]	Time 0.336 (0.386)	Data 0.000 (0.048)	Loss 1.519 (1.404)	Loss ir 0.002	Loss rgb 0.057	Loss RC 0.036	Loss hybrid 2.058	
+Epoch: [41][20/100]	Time 0.330 (0.359)	Data 0.000 (0.024)	Loss 2.005 (1.560)	Loss ir 0.004	Loss rgb 0.231	Loss RC 0.035	Loss hybrid 2.772	
+Epoch: [41][30/100]	Time 0.340 (0.391)	Data 0.000 (0.056)	Loss 0.842 (1.524)	Loss ir 0.075	Loss rgb 0.312	Loss RC 0.035	Loss hybrid 0.068	
+Epoch: [41][40/100]	Time 0.329 (0.376)	Data 0.000 (0.042)	Loss 0.904 (1.352)	Loss ir 0.079	Loss rgb 0.342	Loss RC 0.033	Loss hybrid 0.081	
+Epoch: [41][50/100]	Time 0.329 (0.367)	Data 0.000 (0.033)	Loss 0.737 (1.248)	Loss ir 0.112	Loss rgb 0.163	Loss RC 0.031	Loss hybrid 0.126	
+Epoch: [41][60/100]	Time 0.338 (0.394)	Data 0.000 (0.060)	Loss 0.896 (1.185)	Loss ir 0.069	Loss rgb 0.356	Loss RC 0.034	Loss hybrid 0.056	
+Epoch: [41][70/100]	Time 0.329 (0.385)	Data 0.000 (0.051)	Loss 0.819 (1.142)	Loss ir 0.085	Loss rgb 0.251	Loss RC 0.033	Loss hybrid 0.085	
+Epoch: [41][80/100]	Time 0.311 (0.392)	Data 0.000 (0.059)	Loss 0.738 (1.104)	Loss ir 0.074	Loss rgb 0.208	Loss RC 0.037	Loss hybrid 0.075	
+Epoch: [41][90/100]	Time 0.310 (0.384)	Data 0.000 (0.052)	Loss 0.901 (1.078)	Loss ir 0.095	Loss rgb 0.302	Loss RC 0.037	Loss hybrid 0.094	
+Epoch: [41][100/100]	Time 0.324 (0.378)	Data 0.000 (0.047)	Loss 0.864 (1.068)	Loss ir 0.081	Loss rgb 0.282	Loss RC 0.033	Loss hybrid 0.077	
+Extracting Query Feature...
+Extracting Time:	 3.351
+Extracting Gallery Feature...
+Extracting Time:	 3.361
+Test Trial: 8
+FC:   Rank-1: 88.64% | Rank-5: 92.57% | Rank-10: 94.13%| Rank-20: 95.92%| mAP: 83.16%| mINP: 71.14%
+
+ * Finished epoch  41   model R1: 88.6%  model mAP: 83.2%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5677745342254639
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5476877689361572
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 42: 210 clusters
+==> Statistics for RGB epoch 42: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 210
+  M_vr shape: torch.Size([207, 210]), M_ar shape: torch.Size([207, 210])
+  M_var (fused) shape: torch.Size([207, 210])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [42][10/100]	Time 0.335 (0.392)	Data 0.001 (0.054)	Loss 1.251 (1.117)	Loss ir 0.010	Loss rgb 0.008	Loss RC 0.034	Loss hybrid 1.712	
+Epoch: [42][20/100]	Time 0.329 (0.362)	Data 0.000 (0.027)	Loss 1.544 (1.226)	Loss ir 0.327	Loss rgb 0.004	Loss RC 0.033	Loss hybrid 1.661	
+Epoch: [42][30/100]	Time 0.334 (0.393)	Data 0.000 (0.058)	Loss 1.621 (1.292)	Loss ir 0.141	Loss rgb 0.011	Loss RC 0.030	Loss hybrid 2.203	
+Epoch: [42][40/100]	Time 0.329 (0.378)	Data 0.000 (0.044)	Loss 1.712 (1.347)	Loss ir 0.392	Loss rgb 0.009	Loss RC 0.035	Loss hybrid 1.714	
+Epoch: [42][50/100]	Time 0.327 (0.368)	Data 0.000 (0.035)	Loss 1.557 (1.391)	Loss ir 0.385	Loss rgb 0.004	Loss RC 0.031	Loss hybrid 1.591	
+Epoch: [42][60/100]	Time 0.335 (0.395)	Data 0.000 (0.063)	Loss 0.890 (1.347)	Loss ir 0.098	Loss rgb 0.271	Loss RC 0.033	Loss hybrid 0.275	
+Epoch: [42][70/100]	Time 0.308 (0.384)	Data 0.000 (0.054)	Loss 1.119 (1.322)	Loss ir 0.312	Loss rgb 0.249	Loss RC 0.037	Loss hybrid 0.259	
+Epoch: [42][80/100]	Time 0.317 (0.387)	Data 0.001 (0.059)	Loss 1.079 (1.300)	Loss ir 0.319	Loss rgb 0.183	Loss RC 0.034	Loss hybrid 0.249	
+Epoch: [42][90/100]	Time 0.336 (0.381)	Data 0.000 (0.052)	Loss 1.271 (1.282)	Loss ir 0.443	Loss rgb 0.239	Loss RC 0.030	Loss hybrid 0.337	
+Epoch: [42][100/100]	Time 0.334 (0.376)	Data 0.000 (0.047)	Loss 1.044 (1.275)	Loss ir 0.311	Loss rgb 0.202	Loss RC 0.036	Loss hybrid 0.118	
+Extracting Query Feature...
+Extracting Time:	 3.410
+Extracting Gallery Feature...
+Extracting Time:	 3.696
+Test Trial: 8
+FC:   Rank-1: 87.96% | Rank-5: 92.57% | Rank-10: 94.17%| Rank-20: 95.83%| mAP: 82.86%| mINP: 70.87%
+
+ * Finished epoch  42   model R1: 88.0%  model mAP: 82.9%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5776588916778564
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5491211414337158
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 43: 209 clusters
+==> Statistics for RGB epoch 43: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 209
+  M_vr shape: torch.Size([207, 209]), M_ar shape: torch.Size([207, 209])
+  M_var (fused) shape: torch.Size([207, 209])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [43][10/100]	Time 0.342 (0.385)	Data 0.001 (0.045)	Loss 1.353 (1.032)	Loss ir 0.002	Loss rgb 0.106	Loss RC 0.035	Loss hybrid 1.718	
+Epoch: [43][20/100]	Time 0.332 (0.357)	Data 0.000 (0.022)	Loss 1.439 (1.147)	Loss ir 0.004	Loss rgb 0.211	Loss RC 0.031	Loss hybrid 1.744	
+Epoch: [43][30/100]	Time 0.333 (0.388)	Data 0.000 (0.053)	Loss 0.885 (1.166)	Loss ir 0.133	Loss rgb 0.313	Loss RC 0.033	Loss hybrid 0.072	
+Epoch: [43][40/100]	Time 0.329 (0.374)	Data 0.000 (0.040)	Loss 0.791 (1.070)	Loss ir 0.088	Loss rgb 0.262	Loss RC 0.035	Loss hybrid 0.087	
+Epoch: [43][50/100]	Time 0.331 (0.366)	Data 0.000 (0.032)	Loss 0.753 (1.024)	Loss ir 0.057	Loss rgb 0.229	Loss RC 0.032	Loss hybrid 0.055	
+Epoch: [43][60/100]	Time 0.334 (0.392)	Data 0.000 (0.056)	Loss 0.894 (1.000)	Loss ir 0.042	Loss rgb 0.372	Loss RC 0.036	Loss hybrid 0.042	
+Epoch: [43][70/100]	Time 0.329 (0.383)	Data 0.000 (0.048)	Loss 0.909 (0.982)	Loss ir 0.080	Loss rgb 0.363	Loss RC 0.035	Loss hybrid 0.077	
+Epoch: [43][80/100]	Time 0.335 (0.391)	Data 0.000 (0.056)	Loss 0.902 (0.975)	Loss ir 0.090	Loss rgb 0.367	Loss RC 0.033	Loss hybrid 0.090	
+Epoch: [43][90/100]	Time 0.337 (0.385)	Data 0.000 (0.050)	Loss 0.768 (0.970)	Loss ir 0.087	Loss rgb 0.182	Loss RC 0.032	Loss hybrid 0.087	
+Epoch: [43][100/100]	Time 0.329 (0.379)	Data 0.000 (0.045)	Loss 0.929 (0.965)	Loss ir 0.163	Loss rgb 0.225	Loss RC 0.033	Loss hybrid 0.163	
+Extracting Query Feature...
+Extracting Time:	 3.340
+Extracting Gallery Feature...
+Extracting Time:	 3.432
+Test Trial: 8
+FC:   Rank-1: 88.64% | Rank-5: 92.72% | Rank-10: 94.22%| Rank-20: 95.87%| mAP: 83.04%| mINP: 70.77%
+
+ * Finished epoch  43   model R1: 88.6%  model mAP: 83.0%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5512521266937256
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5331001281738281
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 44: 208 clusters
+==> Statistics for RGB epoch 44: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 208
+  M_vr shape: torch.Size([207, 208]), M_ar shape: torch.Size([207, 208])
+  M_var (fused) shape: torch.Size([207, 208])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [44][10/100]	Time 0.338 (0.382)	Data 0.000 (0.044)	Loss 1.323 (1.120)	Loss ir 0.002	Loss rgb 0.009	Loss RC 0.035	Loss hybrid 1.734	
+Epoch: [44][20/100]	Time 0.330 (0.356)	Data 0.000 (0.022)	Loss 1.276 (1.243)	Loss ir 0.136	Loss rgb 0.011	Loss RC 0.031	Loss hybrid 1.467	
+Epoch: [44][30/100]	Time 0.335 (0.387)	Data 0.000 (0.053)	Loss 1.502 (1.312)	Loss ir 0.106	Loss rgb 0.008	Loss RC 0.032	Loss hybrid 1.988	
+Epoch: [44][40/100]	Time 0.329 (0.374)	Data 0.000 (0.040)	Loss 1.755 (1.358)	Loss ir 0.397	Loss rgb 0.004	Loss RC 0.031	Loss hybrid 1.849	
+Epoch: [44][50/100]	Time 0.329 (0.365)	Data 0.000 (0.032)	Loss 1.779 (1.410)	Loss ir 0.319	Loss rgb 0.009	Loss RC 0.030	Loss hybrid 2.145	
+Epoch: [44][60/100]	Time 0.339 (0.396)	Data 0.000 (0.062)	Loss 1.098 (1.367)	Loss ir 0.197	Loss rgb 0.233	Loss RC 0.036	Loss hybrid 0.381	
+Epoch: [44][70/100]	Time 0.327 (0.387)	Data 0.000 (0.053)	Loss 1.200 (1.331)	Loss ir 0.181	Loss rgb 0.334	Loss RC 0.032	Loss hybrid 0.494	
+Epoch: [44][80/100]	Time 0.333 (0.394)	Data 0.001 (0.061)	Loss 1.100 (1.306)	Loss ir 0.311	Loss rgb 0.234	Loss RC 0.034	Loss hybrid 0.233	
+Epoch: [44][90/100]	Time 0.333 (0.387)	Data 0.000 (0.054)	Loss 1.219 (1.284)	Loss ir 0.351	Loss rgb 0.161	Loss RC 0.036	Loss hybrid 0.500	
+Epoch: [44][100/100]	Time 0.329 (0.382)	Data 0.000 (0.049)	Loss 0.843 (1.282)	Loss ir 0.210	Loss rgb 0.144	Loss RC 0.035	Loss hybrid 0.150	
+Extracting Query Feature...
+Extracting Time:	 3.379
+Extracting Gallery Feature...
+Extracting Time:	 3.412
+Test Trial: 8
+FC:   Rank-1: 88.11% | Rank-5: 92.72% | Rank-10: 94.08%| Rank-20: 95.63%| mAP: 82.70%| mINP: 70.33%
+
+ * Finished epoch  44   model R1: 88.1%  model mAP: 82.7%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.587608814239502
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5400700569152832
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 45: 209 clusters
+==> Statistics for RGB epoch 45: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 209
+  M_vr shape: torch.Size([207, 209]), M_ar shape: torch.Size([207, 209])
+  M_var (fused) shape: torch.Size([207, 209])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [45][10/100]	Time 0.335 (0.391)	Data 0.001 (0.046)	Loss 1.459 (1.183)	Loss ir 0.002	Loss rgb 0.191	Loss RC 0.035	Loss hybrid 1.731	
+Epoch: [45][20/100]	Time 0.331 (0.361)	Data 0.000 (0.023)	Loss 1.623 (1.349)	Loss ir 0.002	Loss rgb 0.178	Loss RC 0.032	Loss hybrid 2.173	
+Epoch: [45][30/100]	Time 0.337 (0.391)	Data 0.000 (0.055)	Loss 0.589 (1.345)	Loss ir 0.058	Loss rgb 0.148	Loss RC 0.034	Loss hybrid 0.032	
+Epoch: [45][40/100]	Time 0.331 (0.378)	Data 0.000 (0.041)	Loss 0.820 (1.198)	Loss ir 0.096	Loss rgb 0.279	Loss RC 0.032	Loss hybrid 0.077	
+Epoch: [45][50/100]	Time 0.328 (0.368)	Data 0.000 (0.033)	Loss 0.830 (1.127)	Loss ir 0.099	Loss rgb 0.265	Loss RC 0.033	Loss hybrid 0.093	
+Epoch: [45][60/100]	Time 0.334 (0.398)	Data 0.000 (0.062)	Loss 0.954 (1.081)	Loss ir 0.080	Loss rgb 0.440	Loss RC 0.032	Loss hybrid 0.070	
+Epoch: [45][70/100]	Time 0.330 (0.389)	Data 0.000 (0.053)	Loss 0.744 (1.046)	Loss ir 0.114	Loss rgb 0.175	Loss RC 0.035	Loss hybrid 0.107	
+Epoch: [45][80/100]	Time 0.335 (0.397)	Data 0.001 (0.062)	Loss 0.827 (1.038)	Loss ir 0.064	Loss rgb 0.334	Loss RC 0.036	Loss hybrid 0.064	
+Epoch: [45][90/100]	Time 0.332 (0.390)	Data 0.000 (0.055)	Loss 1.087 (1.026)	Loss ir 0.223	Loss rgb 0.312	Loss RC 0.031	Loss hybrid 0.222	
+Epoch: [45][100/100]	Time 0.329 (0.384)	Data 0.000 (0.050)	Loss 0.705 (1.014)	Loss ir 0.077	Loss rgb 0.181	Loss RC 0.035	Loss hybrid 0.076	
+Extracting Query Feature...
+Extracting Time:	 3.367
+Extracting Gallery Feature...
+Extracting Time:	 3.392
+Test Trial: 8
+FC:   Rank-1: 88.79% | Rank-5: 92.72% | Rank-10: 94.17%| Rank-20: 96.07%| mAP: 83.09%| mINP: 70.80%
+
+ * Finished epoch  45   model R1: 88.8%  model mAP: 83.1%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5986831188201904
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5629487037658691
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 46: 209 clusters
+==> Statistics for RGB epoch 46: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 209
+  M_vr shape: torch.Size([207, 209]), M_ar shape: torch.Size([207, 209])
+  M_var (fused) shape: torch.Size([207, 209])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [46][10/100]	Time 0.340 (0.391)	Data 0.000 (0.049)	Loss 1.031 (1.009)	Loss ir 0.070	Loss rgb 0.006	Loss RC 0.037	Loss hybrid 1.163	
+Epoch: [46][20/100]	Time 0.332 (0.361)	Data 0.000 (0.025)	Loss 1.158 (1.075)	Loss ir 0.080	Loss rgb 0.006	Loss RC 0.034	Loss hybrid 1.319	
+Epoch: [46][30/100]	Time 0.336 (0.388)	Data 0.000 (0.054)	Loss 1.361 (1.189)	Loss ir 0.239	Loss rgb 0.014	Loss RC 0.033	Loss hybrid 1.363	
+Epoch: [46][40/100]	Time 0.330 (0.374)	Data 0.000 (0.040)	Loss 1.329 (1.243)	Loss ir 0.206	Loss rgb 0.004	Loss RC 0.036	Loss hybrid 1.452	
+Epoch: [46][50/100]	Time 0.329 (0.365)	Data 0.000 (0.032)	Loss 1.608 (1.287)	Loss ir 0.277	Loss rgb 0.008	Loss RC 0.032	Loss hybrid 1.804	
+Epoch: [46][60/100]	Time 0.328 (0.390)	Data 0.000 (0.057)	Loss 0.976 (1.250)	Loss ir 0.137	Loss rgb 0.298	Loss RC 0.033	Loss hybrid 0.335	
+Epoch: [46][70/100]	Time 0.311 (0.380)	Data 0.000 (0.049)	Loss 1.094 (1.223)	Loss ir 0.164	Loss rgb 0.411	Loss RC 0.032	Loss hybrid 0.233	
+Epoch: [46][80/100]	Time 0.333 (0.388)	Data 0.000 (0.057)	Loss 1.210 (1.205)	Loss ir 0.176	Loss rgb 0.263	Loss RC 0.032	Loss hybrid 0.602	
+Epoch: [46][90/100]	Time 0.333 (0.381)	Data 0.000 (0.051)	Loss 1.245 (1.197)	Loss ir 0.202	Loss rgb 0.374	Loss RC 0.034	Loss hybrid 0.465	
+Epoch: [46][100/100]	Time 0.308 (0.376)	Data 0.000 (0.046)	Loss 1.424 (1.207)	Loss ir 0.192	Loss rgb 0.150	Loss RC 0.035	Loss hybrid 1.277	
+Extracting Query Feature...
+Extracting Time:	 3.367
+Extracting Gallery Feature...
+Extracting Time:	 3.381
+Test Trial: 8
+FC:   Rank-1: 87.96% | Rank-5: 92.62% | Rank-10: 94.03%| Rank-20: 95.83%| mAP: 82.79%| mINP: 70.53%
+
+ * Finished epoch  46   model R1: 88.0%  model mAP: 82.8%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.6040010452270508
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.569918155670166
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 47: 209 clusters
+==> Statistics for RGB epoch 47: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 209
+  M_vr shape: torch.Size([207, 209]), M_ar shape: torch.Size([207, 209])
+  M_var (fused) shape: torch.Size([207, 209])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [47][10/100]	Time 0.337 (0.398)	Data 0.000 (0.056)	Loss 1.494 (1.011)	Loss ir 0.001	Loss rgb 0.487	Loss RC 0.033	Loss hybrid 1.322	
+Epoch: [47][20/100]	Time 0.329 (0.364)	Data 0.000 (0.028)	Loss 1.519 (1.214)	Loss ir 0.002	Loss rgb 0.209	Loss RC 0.032	Loss hybrid 1.890	
+Epoch: [47][30/100]	Time 0.334 (0.391)	Data 0.000 (0.056)	Loss 0.680 (1.235)	Loss ir 0.042	Loss rgb 0.201	Loss RC 0.039	Loss hybrid 0.044	
+Epoch: [47][40/100]	Time 0.328 (0.376)	Data 0.000 (0.042)	Loss 0.657 (1.140)	Loss ir 0.068	Loss rgb 0.157	Loss RC 0.034	Loss hybrid 0.050	
+Epoch: [47][50/100]	Time 0.329 (0.367)	Data 0.000 (0.034)	Loss 0.868 (1.083)	Loss ir 0.085	Loss rgb 0.318	Loss RC 0.036	Loss hybrid 0.066	
+Epoch: [47][60/100]	Time 0.341 (0.394)	Data 0.000 (0.060)	Loss 0.737 (1.051)	Loss ir 0.114	Loss rgb 0.206	Loss RC 0.033	Loss hybrid 0.111	
+Epoch: [47][70/100]	Time 0.329 (0.385)	Data 0.000 (0.051)	Loss 0.991 (1.024)	Loss ir 0.148	Loss rgb 0.315	Loss RC 0.033	Loss hybrid 0.150	
+Epoch: [47][80/100]	Time 0.334 (0.393)	Data 0.000 (0.059)	Loss 0.879 (1.000)	Loss ir 0.151	Loss rgb 0.295	Loss RC 0.032	Loss hybrid 0.151	
+Epoch: [47][90/100]	Time 0.335 (0.386)	Data 0.000 (0.053)	Loss 0.878 (0.991)	Loss ir 0.071	Loss rgb 0.311	Loss RC 0.035	Loss hybrid 0.071	
+Epoch: [47][100/100]	Time 0.329 (0.381)	Data 0.000 (0.047)	Loss 1.005 (0.977)	Loss ir 0.123	Loss rgb 0.402	Loss RC 0.033	Loss hybrid 0.124	
+Extracting Query Feature...
+Extracting Time:	 3.295
+Extracting Gallery Feature...
+Extracting Time:	 3.317
+Test Trial: 8
+FC:   Rank-1: 88.30% | Rank-5: 92.62% | Rank-10: 94.03%| Rank-20: 95.87%| mAP: 82.89%| mINP: 70.55%
+
+ * Finished epoch  47   model R1: 88.3%  model mAP: 82.9%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5964889526367188
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5554804801940918
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 48: 210 clusters
+==> Statistics for RGB epoch 48: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 210
+  M_vr shape: torch.Size([207, 210]), M_ar shape: torch.Size([207, 210])
+  M_var (fused) shape: torch.Size([207, 210])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [48][10/100]	Time 0.331 (0.378)	Data 0.000 (0.042)	Loss 1.123 (0.994)	Loss ir 0.160	Loss rgb 0.010	Loss RC 0.034	Loss hybrid 1.204	
+Epoch: [48][20/100]	Time 0.330 (0.354)	Data 0.000 (0.021)	Loss 1.127 (1.049)	Loss ir 0.170	Loss rgb 0.010	Loss RC 0.035	Loss hybrid 1.138	
+Epoch: [48][30/100]	Time 0.338 (0.384)	Data 0.000 (0.052)	Loss 1.286 (1.120)	Loss ir 0.266	Loss rgb 0.003	Loss RC 0.037	Loss hybrid 1.174	
+Epoch: [48][40/100]	Time 0.309 (0.368)	Data 0.000 (0.039)	Loss 1.653 (1.177)	Loss ir 0.448	Loss rgb 0.007	Loss RC 0.032	Loss hybrid 1.677	
+Epoch: [48][50/100]	Time 0.335 (0.357)	Data 0.000 (0.031)	Loss 1.670 (1.211)	Loss ir 0.355	Loss rgb 0.004	Loss RC 0.032	Loss hybrid 1.592	
+Epoch: [48][60/100]	Time 0.335 (0.384)	Data 0.000 (0.057)	Loss 1.245 (1.201)	Loss ir 0.168	Loss rgb 0.399	Loss RC 0.031	Loss hybrid 0.486	
+Epoch: [48][70/100]	Time 0.327 (0.377)	Data 0.000 (0.049)	Loss 1.118 (1.190)	Loss ir 0.287	Loss rgb 0.289	Loss RC 0.034	Loss hybrid 0.272	
+Epoch: [48][80/100]	Time 0.332 (0.384)	Data 0.001 (0.056)	Loss 1.070 (1.188)	Loss ir 0.148	Loss rgb 0.211	Loss RC 0.032	Loss hybrid 0.520	
+Epoch: [48][90/100]	Time 0.331 (0.379)	Data 0.000 (0.050)	Loss 1.130 (1.172)	Loss ir 0.123	Loss rgb 0.397	Loss RC 0.032	Loss hybrid 0.377	
+Epoch: [48][100/100]	Time 0.327 (0.374)	Data 0.000 (0.045)	Loss 1.200 (1.170)	Loss ir 0.314	Loss rgb 0.224	Loss RC 0.034	Loss hybrid 0.483	
+Extracting Query Feature...
+Extracting Time:	 3.336
+Extracting Gallery Feature...
+Extracting Time:	 3.425
+Test Trial: 8
+FC:   Rank-1: 87.86% | Rank-5: 92.38% | Rank-10: 94.32%| Rank-20: 95.73%| mAP: 82.56%| mINP: 70.12%
+
+ * Finished epoch  48   model R1: 87.9%  model mAP: 82.6%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5664656162261963
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5390548706054688
+Correcting label
+Correcting label finished
+==> Statistics for IR epoch 49: 209 clusters
+==> Statistics for RGB epoch 49: 207 clusters
+Augmented Matching: Extracting augmented features...
+Augmented clusters: 207
+Augmented Matching: Fusing Visible and Augmented similarities...
+Augmented Matching:
+  Visible clusters: 207
+  Augmented clusters: 207
+  IR clusters: 209
+  M_vr shape: torch.Size([207, 209]), M_ar shape: torch.Size([207, 209])
+  M_var (fused) shape: torch.Size([207, 209])
+  gamma_v=2.0, gamma_a=1.0
+Augmented Matching Done
+Epoch: [49][10/100]	Time 0.337 (0.400)	Data 0.000 (0.057)	Loss 1.210 (1.095)	Loss ir 0.002	Loss rgb 0.007	Loss RC 0.035	Loss hybrid 1.683	
+Epoch: [49][20/100]	Time 0.330 (0.365)	Data 0.000 (0.029)	Loss 1.616 (1.286)	Loss ir 0.001	Loss rgb 0.231	Loss RC 0.034	Loss hybrid 1.942	
+Epoch: [49][30/100]	Time 0.334 (0.388)	Data 0.000 (0.053)	Loss 0.703 (1.263)	Loss ir 0.085	Loss rgb 0.214	Loss RC 0.032	Loss hybrid 0.081	
+Epoch: [49][40/100]	Time 0.329 (0.375)	Data 0.000 (0.040)	Loss 0.809 (1.146)	Loss ir 0.059	Loss rgb 0.291	Loss RC 0.038	Loss hybrid 0.060	
+Epoch: [49][50/100]	Time 0.328 (0.366)	Data 0.000 (0.032)	Loss 0.676 (1.068)	Loss ir 0.063	Loss rgb 0.174	Loss RC 0.032	Loss hybrid 0.090	
+Epoch: [49][60/100]	Time 0.334 (0.392)	Data 0.000 (0.058)	Loss 1.310 (1.034)	Loss ir 0.066	Loss rgb 0.813	Loss RC 0.032	Loss hybrid 0.072	
+Epoch: [49][70/100]	Time 0.330 (0.384)	Data 0.000 (0.049)	Loss 0.651 (1.006)	Loss ir 0.061	Loss rgb 0.175	Loss RC 0.035	Loss hybrid 0.056	
+Epoch: [49][80/100]	Time 0.335 (0.391)	Data 0.001 (0.057)	Loss 0.828 (0.998)	Loss ir 0.140	Loss rgb 0.244	Loss RC 0.032	Loss hybrid 0.139	
+Epoch: [49][90/100]	Time 0.334 (0.385)	Data 0.000 (0.051)	Loss 0.853 (0.979)	Loss ir 0.171	Loss rgb 0.208	Loss RC 0.034	Loss hybrid 0.171	
+Epoch: [49][100/100]	Time 0.329 (0.379)	Data 0.000 (0.046)	Loss 0.936 (0.970)	Loss ir 0.096	Loss rgb 0.366	Loss RC 0.036	Loss hybrid 0.096	
+Extracting Query Feature...
+Extracting Time:	 3.370
+Extracting Gallery Feature...
+Extracting Time:	 3.358
+Test Trial: 8
+FC:   Rank-1: 88.30% | Rank-5: 92.52% | Rank-10: 94.03%| Rank-20: 95.92%| mAP: 82.84%| mINP: 70.39%
+
+ * Finished epoch  49   model R1: 88.3%  model mAP: 82.8%   best R1: 89.1%   best mAP: 82.9%(best_epoch:25)
+
+Total running time:  0:55:34.671540
