@@ -1,0 +1,20 @@
+==> Test with the best model:
+=> Loaded checkpoint '/root/work/PGM-new-1/logs/regdb_s2/4/train_model_best.pth.tar'
+visible to thermal
+Extracting Query Feature...
+Extracting Time:	 3.963
+Extracting Gallery Feature...
+Extracting Time:	 3.646
+Test Trial: 4
+FC:   Rank-1: 84.56% | Rank-5: 90.34% | Rank-10: 92.72%| Rank-20: 95.15%| mAP: 78.29%| mINP: 64.84%
+thermal to visible
+Extracting Gallery Feature...
+Extracting Time:	 3.639
+Extracting Query Feature...
+Extracting Time:	 3.790
+Test Trial: 4
+FC:   Rank-1: 83.35% | Rank-5: 91.07% | Rank-10: 93.59%| Rank-20: 95.68%| mAP: 77.26%| mINP: 62.09%
+==> Visible to Thermal, All Average:
+FC:     Rank-1: 84.56% | Rank-5: 90.34% | Rank-10: 92.72%| Rank-20: 95.15%| mAP: 78.29%| mINP: 64.84%
+==> Thermal to Visible, All Average:
+FC:     Rank-1: 83.35% | Rank-5: 91.07% | Rank-10: 93.59%| Rank-20: 95.68%| mAP: 77.26%| mINP: 62.09%

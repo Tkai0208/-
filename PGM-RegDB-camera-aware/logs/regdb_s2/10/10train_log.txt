@@ -1,0 +1,1301 @@
+==========
+Args:Namespace(dataset='regdb_rgb', batch_size=128, workers=8, height=288, width=144, num_instances=16, eps=0.3, eps_gap=0.02, k1=30, k2=6, arch='agw', features=0, dropout=0, momentum=0.1, memorybank='CMhybrid', smooth=0, lr=0.00035, weight_decay=0.0005, epochs=50, iters=100, step_size=20, seed=1, print_freq=10, eval_step=1, trial=10, temp=0.05, data_dir='/root/work/RegDB/', logs_dir='logs/regdb_s2/10', pooling_type='gem', use_hard=False, no_cam=False)
+==========
+==> Load unlabeled dataset
+=> regdb_ir loaded 10
+Dataset statistics:
+  ----------------------------------------
+  subset   | # ids | # images | # cameras
+  ----------------------------------------
+  train    |   206 |     2060 |         1
+  query    |   206 |      824 |         1
+  gallery  |   206 |     2060 |         1
+  ----------------------------------------
+=> regdb_rgb loaded 10
+Dataset statistics:
+  ----------------------------------------
+  subset   | # ids | # images | # cameras
+  ----------------------------------------
+  train    |   206 |     2060 |         1
+  query    |   206 |      824 |         1
+  gallery  |   206 |     2060 |         1
+  ----------------------------------------
+=> Loaded checkpoint './logs/regdb_s1/10/train_model_best.pth.tar'
+IR Clustering criterion: eps: 0.300
+RGB Clustering criterion: eps: 0.300
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5902645587921143
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5179450511932373
+==> Statistics for IR epoch 0: 210 clusters
+==> Statistics for RGB epoch 0: 208 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 2, total ir feat num= 208
+hungarian matched pseudo label number=  208
+Epoch: [0][10/100]	Time 0.331 (0.791)	Data 0.000 (0.049)	Loss 2.147 (1.031)	Loss ir 1.196	Loss rgb 0.059	Loss cross 3.565	
+Epoch: [0][20/100]	Time 0.321 (0.555)	Data 0.000 (0.024)	Loss 2.801 (1.614)	Loss ir 1.944	Loss rgb 0.039	Loss cross 3.273	
+Epoch: [0][30/100]	Time 0.319 (0.500)	Data 0.000 (0.038)	Loss 1.463 (1.774)	Loss ir 0.304	Loss rgb 0.095	Loss cross 4.254	
+Epoch: [0][40/100]	Time 0.320 (0.455)	Data 0.000 (0.028)	Loss 2.384 (2.105)	Loss ir 1.220	Loss rgb 0.103	Loss cross 4.245	
+Epoch: [0][50/100]	Time 0.320 (0.428)	Data 0.000 (0.023)	Loss 4.333 (2.400)	Loss ir 3.454	Loss rgb 0.138	Loss cross 2.966	
+Epoch: [0][60/100]	Time 0.318 (0.439)	Data 0.000 (0.048)	Loss 3.604 (2.587)	Loss ir 2.615	Loss rgb 0.712	Loss cross 1.106	
+Epoch: [0][70/100]	Time 0.328 (0.422)	Data 0.000 (0.041)	Loss 4.090 (2.711)	Loss ir 2.051	Loss rgb 0.713	Loss cross 5.304	
+Epoch: [0][80/100]	Time 0.329 (0.421)	Data 0.000 (0.046)	Loss 1.868 (2.766)	Loss ir 0.583	Loss rgb 0.703	Loss cross 2.324	
+Epoch: [0][90/100]	Time 0.320 (0.410)	Data 0.000 (0.041)	Loss 3.296 (2.755)	Loss ir 1.791	Loss rgb 0.724	Loss cross 3.124	
+Epoch: [0][100/100]	Time 0.318 (0.401)	Data 0.000 (0.037)	Loss 3.021 (2.821)	Loss ir 1.674	Loss rgb 0.480	Loss cross 3.471	
+Extracting Query Feature...
+Extracting Time:	 3.946
+Extracting Gallery Feature...
+Extracting Time:	 3.614
+Test Trial: 10
+FC:   Rank-1: 61.70% | Rank-5: 71.99% | Rank-10: 77.77%| Rank-20: 85.29%| mAP: 55.54%| mINP: 42.40%
+
+ * Finished epoch   0   model R1: 61.7%  model mAP: 55.5%   best R1: 61.7%   best mAP: 55.5%(best_epoch:0)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4958882331848145
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5190575122833252
+==> Statistics for IR epoch 1: 210 clusters
+==> Statistics for RGB epoch 1: 208 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 2, total ir feat num= 208
+hungarian matched pseudo label number=  208
+Epoch: [1][10/100]	Time 0.321 (0.375)	Data 0.001 (0.045)	Loss 0.660 (0.901)	Loss ir 0.012	Loss rgb 0.026	Loss cross 2.491	
+Epoch: [1][20/100]	Time 0.320 (0.348)	Data 0.000 (0.023)	Loss 2.229 (1.271)	Loss ir 0.025	Loss rgb 1.897	Loss cross 1.229	
+Epoch: [1][30/100]	Time 0.321 (0.364)	Data 0.000 (0.040)	Loss 3.471 (1.776)	Loss ir 0.333	Loss rgb 2.955	Loss cross 0.735	
+Epoch: [1][40/100]	Time 0.321 (0.353)	Data 0.000 (0.030)	Loss 2.484 (2.074)	Loss ir 0.431	Loss rgb 1.701	Loss cross 1.407	
+Epoch: [1][50/100]	Time 0.324 (0.347)	Data 0.000 (0.024)	Loss 3.310 (2.315)	Loss ir 0.354	Loss rgb 2.628	Loss cross 1.311	
+Epoch: [1][60/100]	Time 0.321 (0.371)	Data 0.000 (0.048)	Loss 1.796 (2.501)	Loss ir 0.555	Loss rgb 0.697	Loss cross 2.179	
+Epoch: [1][70/100]	Time 0.323 (0.364)	Data 0.000 (0.041)	Loss 3.222 (2.595)	Loss ir 0.949	Loss rgb 1.623	Loss cross 2.599	
+Epoch: [1][80/100]	Time 0.328 (0.370)	Data 0.000 (0.047)	Loss 2.996 (2.651)	Loss ir 0.378	Loss rgb 2.498	Loss cross 0.482	
+Epoch: [1][90/100]	Time 0.323 (0.365)	Data 0.000 (0.042)	Loss 2.830 (2.700)	Loss ir 0.384	Loss rgb 2.052	Loss cross 1.578	
+Epoch: [1][100/100]	Time 0.319 (0.360)	Data 0.000 (0.037)	Loss 2.678 (2.738)	Loss ir 0.410	Loss rgb 1.602	Loss cross 2.660	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.488586664199829
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4969899654388428
+==> Statistics for IR epoch 2: 209 clusters
+==> Statistics for RGB epoch 2: 213 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 4, total ir feat num= 209
+hungarian matched pseudo label number=  209
+Epoch: [2][10/100]	Time 0.322 (0.390)	Data 0.000 (0.065)	Loss 0.945 (0.588)	Loss ir 0.391	Loss rgb 0.142	Loss cross 1.644	
+Epoch: [2][20/100]	Time 0.319 (0.356)	Data 0.000 (0.033)	Loss 1.280 (0.878)	Loss ir 0.469	Loss rgb 0.126	Loss cross 2.740	
+Epoch: [2][30/100]	Time 0.321 (0.373)	Data 0.000 (0.049)	Loss 0.888 (1.039)	Loss ir 0.308	Loss rgb 0.064	Loss cross 2.064	
+Epoch: [2][40/100]	Time 0.320 (0.360)	Data 0.000 (0.037)	Loss 1.285 (1.105)	Loss ir 0.795	Loss rgb 0.034	Loss cross 1.826	
+Epoch: [2][50/100]	Time 0.320 (0.352)	Data 0.000 (0.030)	Loss 2.511 (1.260)	Loss ir 1.896	Loss rgb 0.041	Loss cross 2.296	
+Epoch: [2][60/100]	Time 0.318 (0.377)	Data 0.000 (0.055)	Loss 1.260 (1.319)	Loss ir 0.376	Loss rgb 0.558	Loss cross 1.300	
+Epoch: [2][70/100]	Time 0.320 (0.370)	Data 0.000 (0.047)	Loss 2.147 (1.445)	Loss ir 0.955	Loss rgb 0.435	Loss cross 3.028	
+Epoch: [2][80/100]	Time 0.327 (0.374)	Data 0.003 (0.051)	Loss 1.612 (1.557)	Loss ir 0.475	Loss rgb 0.751	Loss cross 1.546	
+Epoch: [2][90/100]	Time 0.321 (0.368)	Data 0.000 (0.045)	Loss 1.658 (1.581)	Loss ir 0.437	Loss rgb 0.718	Loss cross 2.012	
+Epoch: [2][100/100]	Time 0.320 (0.363)	Data 0.000 (0.041)	Loss 3.050 (1.670)	Loss ir 1.878	Loss rgb 0.559	Loss cross 2.448	
+Extracting Query Feature...
+Extracting Time:	 3.390
+Extracting Gallery Feature...
+Extracting Time:	 3.497
+Test Trial: 10
+FC:   Rank-1: 78.93% | Rank-5: 86.50% | Rank-10: 91.07%| Rank-20: 93.59%| mAP: 70.07%| mINP: 54.02%
+
+ * Finished epoch   2   model R1: 78.9%  model mAP: 70.1%   best R1: 78.9%   best mAP: 70.1%(best_epoch:2)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.56996488571167
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5098206996917725
+==> Statistics for IR epoch 3: 209 clusters
+==> Statistics for RGB epoch 3: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 2, total ir feat num= 209
+hungarian matched pseudo label number=  209
+Epoch: [3][10/100]	Time 0.327 (0.385)	Data 0.000 (0.059)	Loss 2.446 (0.524)	Loss ir 0.010	Loss rgb 2.290	Loss cross 0.585	
+Epoch: [3][20/100]	Time 0.314 (0.352)	Data 0.000 (0.030)	Loss 1.534 (0.809)	Loss ir 0.031	Loss rgb 1.004	Loss cross 1.996	
+Epoch: [3][30/100]	Time 0.324 (0.369)	Data 0.000 (0.046)	Loss 1.642 (1.004)	Loss ir 0.161	Loss rgb 1.259	Loss cross 0.886	
+Epoch: [3][40/100]	Time 0.315 (0.357)	Data 0.000 (0.035)	Loss 1.899 (1.123)	Loss ir 0.202	Loss rgb 1.506	Loss cross 0.765	
+Epoch: [3][50/100]	Time 0.324 (0.350)	Data 0.000 (0.028)	Loss 2.545 (1.338)	Loss ir 0.345	Loss rgb 1.929	Loss cross 1.082	
+Epoch: [3][60/100]	Time 0.322 (0.375)	Data 0.000 (0.053)	Loss 1.183 (1.391)	Loss ir 0.141	Loss rgb 0.817	Loss cross 0.901	
+Epoch: [3][70/100]	Time 0.320 (0.367)	Data 0.000 (0.045)	Loss 1.180 (1.453)	Loss ir 0.194	Loss rgb 0.805	Loss cross 0.721	
+Epoch: [3][80/100]	Time 0.323 (0.374)	Data 0.000 (0.052)	Loss 2.264 (1.541)	Loss ir 0.267	Loss rgb 1.821	Loss cross 0.708	
+Epoch: [3][90/100]	Time 0.321 (0.368)	Data 0.000 (0.046)	Loss 1.497 (1.618)	Loss ir 0.371	Loss rgb 0.831	Loss cross 1.180	
+Epoch: [3][100/100]	Time 0.321 (0.364)	Data 0.000 (0.041)	Loss 2.778 (1.720)	Loss ir 0.449	Loss rgb 2.100	Loss cross 0.919	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5942087173461914
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4937679767608643
+==> Statistics for IR epoch 4: 210 clusters
+==> Statistics for RGB epoch 4: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 210
+hungarian matched pseudo label number=  210
+Epoch: [4][10/100]	Time 0.322 (0.372)	Data 0.001 (0.046)	Loss 0.640 (0.430)	Loss ir 0.209	Loss rgb 0.074	Loss cross 1.425	
+Epoch: [4][20/100]	Time 0.321 (0.347)	Data 0.000 (0.023)	Loss 0.917 (0.694)	Loss ir 0.385	Loss rgb 0.021	Loss cross 2.043	
+Epoch: [4][30/100]	Time 0.302 (0.363)	Data 0.000 (0.042)	Loss 0.545 (0.763)	Loss ir 0.225	Loss rgb 0.055	Loss cross 1.063	
+Epoch: [4][40/100]	Time 0.317 (0.352)	Data 0.000 (0.032)	Loss 0.877 (0.860)	Loss ir 0.517	Loss rgb 0.024	Loss cross 1.342	
+Epoch: [4][50/100]	Time 0.320 (0.346)	Data 0.000 (0.025)	Loss 1.828 (1.011)	Loss ir 1.316	Loss rgb 0.027	Loss cross 1.942	
+Epoch: [4][60/100]	Time 0.302 (0.370)	Data 0.000 (0.050)	Loss 1.003 (1.060)	Loss ir 0.360	Loss rgb 0.477	Loss cross 0.665	
+Epoch: [4][70/100]	Time 0.321 (0.363)	Data 0.000 (0.043)	Loss 1.864 (1.153)	Loss ir 1.233	Loss rgb 0.413	Loss cross 0.872	
+Epoch: [4][80/100]	Time 0.324 (0.370)	Data 0.000 (0.049)	Loss 1.472 (1.212)	Loss ir 0.408	Loss rgb 0.742	Loss cross 1.288	
+Epoch: [4][90/100]	Time 0.321 (0.365)	Data 0.000 (0.044)	Loss 1.245 (1.246)	Loss ir 0.576	Loss rgb 0.401	Loss cross 1.070	
+Epoch: [4][100/100]	Time 0.320 (0.360)	Data 0.000 (0.039)	Loss 1.731 (1.297)	Loss ir 0.775	Loss rgb 0.562	Loss cross 1.575	
+Extracting Query Feature...
+Extracting Time:	 3.263
+Extracting Gallery Feature...
+Extracting Time:	 3.412
+Test Trial: 10
+FC:   Rank-1: 77.77% | Rank-5: 86.21% | Rank-10: 88.45%| Rank-20: 92.14%| mAP: 70.02%| mINP: 54.14%
+
+ * Finished epoch   4   model R1: 77.8%  model mAP: 70.0%   best R1: 78.9%   best mAP: 70.1%(best_epoch:2)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5556349754333496
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4729843139648438
+==> Statistics for IR epoch 5: 209 clusters
+==> Statistics for RGB epoch 5: 209 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 0, total ir feat num= 209
+hungarian matched pseudo label number=  209
+Epoch: [5][10/100]	Time 0.320 (0.381)	Data 0.000 (0.059)	Loss 0.424 (0.283)	Loss ir 0.005	Loss rgb 0.249	Loss cross 0.681	
+Epoch: [5][20/100]	Time 0.323 (0.352)	Data 0.000 (0.029)	Loss 1.038 (0.656)	Loss ir 0.005	Loss rgb 0.935	Loss cross 0.395	
+Epoch: [5][30/100]	Time 0.324 (0.366)	Data 0.000 (0.044)	Loss 1.964 (0.833)	Loss ir 0.219	Loss rgb 1.609	Loss cross 0.543	
+Epoch: [5][40/100]	Time 0.321 (0.354)	Data 0.000 (0.033)	Loss 0.957 (1.031)	Loss ir 0.156	Loss rgb 0.604	Loss cross 0.785	
+Epoch: [5][50/100]	Time 0.319 (0.347)	Data 0.000 (0.026)	Loss 2.918 (1.272)	Loss ir 0.205	Loss rgb 2.383	Loss cross 1.316	
+Epoch: [5][60/100]	Time 0.321 (0.373)	Data 0.000 (0.052)	Loss 1.741 (1.359)	Loss ir 0.243	Loss rgb 1.193	Loss cross 1.223	
+Epoch: [5][70/100]	Time 0.320 (0.365)	Data 0.000 (0.044)	Loss 2.053 (1.429)	Loss ir 0.246	Loss rgb 1.627	Loss cross 0.720	
+Epoch: [5][80/100]	Time 0.326 (0.372)	Data 0.000 (0.050)	Loss 1.901 (1.503)	Loss ir 0.314	Loss rgb 1.498	Loss cross 0.359	
+Epoch: [5][90/100]	Time 0.319 (0.366)	Data 0.000 (0.045)	Loss 1.761 (1.558)	Loss ir 0.235	Loss rgb 1.188	Loss cross 1.351	
+Epoch: [5][100/100]	Time 0.321 (0.362)	Data 0.000 (0.040)	Loss 3.043 (1.641)	Loss ir 0.291	Loss rgb 2.370	Loss cross 1.527	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5042195320129395
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4908149242401123
+==> Statistics for IR epoch 6: 212 clusters
+==> Statistics for RGB epoch 6: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [6][10/100]	Time 0.323 (0.383)	Data 0.000 (0.063)	Loss 0.584 (0.435)	Loss ir 0.387	Loss rgb 0.035	Loss cross 0.651	
+Epoch: [6][20/100]	Time 0.320 (0.352)	Data 0.000 (0.032)	Loss 0.802 (0.612)	Loss ir 0.715	Loss rgb 0.014	Loss cross 0.293	
+Epoch: [6][30/100]	Time 0.323 (0.365)	Data 0.000 (0.044)	Loss 0.871 (0.724)	Loss ir 0.610	Loss rgb 0.060	Loss cross 0.799	
+Epoch: [6][40/100]	Time 0.318 (0.354)	Data 0.000 (0.033)	Loss 0.919 (0.862)	Loss ir 0.598	Loss rgb 0.065	Loss cross 1.022	
+Epoch: [6][50/100]	Time 0.321 (0.347)	Data 0.000 (0.027)	Loss 1.997 (0.942)	Loss ir 1.197	Loss rgb 0.045	Loss cross 3.021	
+Epoch: [6][60/100]	Time 0.322 (0.375)	Data 0.001 (0.054)	Loss 1.701 (1.032)	Loss ir 0.712	Loss rgb 0.765	Loss cross 0.900	
+Epoch: [6][70/100]	Time 0.322 (0.367)	Data 0.000 (0.046)	Loss 1.877 (1.117)	Loss ir 0.738	Loss rgb 0.700	Loss cross 1.752	
+Epoch: [6][80/100]	Time 0.337 (0.371)	Data 0.000 (0.049)	Loss 1.576 (1.196)	Loss ir 0.688	Loss rgb 0.572	Loss cross 1.262	
+Epoch: [6][90/100]	Time 0.320 (0.365)	Data 0.000 (0.044)	Loss 1.548 (1.224)	Loss ir 0.889	Loss rgb 0.456	Loss cross 0.810	
+Epoch: [6][100/100]	Time 0.321 (0.361)	Data 0.000 (0.039)	Loss 2.094 (1.265)	Loss ir 1.425	Loss rgb 0.498	Loss cross 0.684	
+Extracting Query Feature...
+Extracting Time:	 3.518
+Extracting Gallery Feature...
+Extracting Time:	 3.497
+Test Trial: 10
+FC:   Rank-1: 74.22% | Rank-5: 84.22% | Rank-10: 88.83%| Rank-20: 93.40%| mAP: 67.27%| mINP: 52.26%
+
+ * Finished epoch   6   model R1: 74.2%  model mAP: 67.3%   best R1: 78.9%   best mAP: 70.1%(best_epoch:2)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5356194972991943
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4776904582977295
+==> Statistics for IR epoch 7: 212 clusters
+==> Statistics for RGB epoch 7: 210 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 2, total ir feat num= 210
+hungarian matched pseudo label number=  210
+Epoch: [7][10/100]	Time 0.314 (0.362)	Data 0.000 (0.048)	Loss 0.565 (0.399)	Loss ir 0.003	Loss rgb 0.444	Loss cross 0.474	
+Epoch: [7][20/100]	Time 0.321 (0.341)	Data 0.000 (0.024)	Loss 0.356 (0.538)	Loss ir 0.020	Loss rgb 0.228	Loss cross 0.431	
+Epoch: [7][30/100]	Time 0.324 (0.362)	Data 0.000 (0.042)	Loss 1.170 (0.775)	Loss ir 0.340	Loss rgb 0.739	Loss cross 0.364	
+Epoch: [7][40/100]	Time 0.321 (0.352)	Data 0.000 (0.032)	Loss 1.178 (0.890)	Loss ir 0.260	Loss rgb 0.715	Loss cross 0.815	
+Epoch: [7][50/100]	Time 0.321 (0.346)	Data 0.000 (0.026)	Loss 1.503 (0.979)	Loss ir 0.204	Loss rgb 1.012	Loss cross 1.147	
+Epoch: [7][60/100]	Time 0.321 (0.376)	Data 0.000 (0.054)	Loss 1.177 (1.013)	Loss ir 0.136	Loss rgb 0.803	Loss cross 0.954	
+Epoch: [7][70/100]	Time 0.323 (0.368)	Data 0.000 (0.046)	Loss 1.469 (1.058)	Loss ir 0.325	Loss rgb 0.996	Loss cross 0.592	
+Epoch: [7][80/100]	Time 0.327 (0.372)	Data 0.000 (0.050)	Loss 0.856 (1.113)	Loss ir 0.098	Loss rgb 0.665	Loss cross 0.371	
+Epoch: [7][90/100]	Time 0.322 (0.367)	Data 0.000 (0.045)	Loss 2.010 (1.158)	Loss ir 0.191	Loss rgb 1.756	Loss cross 0.251	
+Epoch: [7][100/100]	Time 0.320 (0.362)	Data 0.000 (0.040)	Loss 2.842 (1.243)	Loss ir 0.259	Loss rgb 2.335	Loss cross 0.995	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5019564628601074
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5399036407470703
+==> Statistics for IR epoch 8: 213 clusters
+==> Statistics for RGB epoch 8: 209 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 4, total ir feat num= 209
+hungarian matched pseudo label number=  209
+Epoch: [8][10/100]	Time 0.321 (0.393)	Data 0.000 (0.072)	Loss 0.725 (0.286)	Loss ir 0.240	Loss rgb 0.079	Loss cross 1.626	
+Epoch: [8][20/100]	Time 0.321 (0.358)	Data 0.000 (0.036)	Loss 0.775 (0.438)	Loss ir 0.671	Loss rgb 0.024	Loss cross 0.320	
+Epoch: [8][30/100]	Time 0.323 (0.376)	Data 0.000 (0.053)	Loss 0.325 (0.529)	Loss ir 0.195	Loss rgb 0.026	Loss cross 0.416	
+Epoch: [8][40/100]	Time 0.317 (0.362)	Data 0.000 (0.040)	Loss 0.503 (0.590)	Loss ir 0.371	Loss rgb 0.027	Loss cross 0.417	
+Epoch: [8][50/100]	Time 0.320 (0.354)	Data 0.000 (0.032)	Loss 0.936 (0.694)	Loss ir 0.752	Loss rgb 0.031	Loss cross 0.610	
+Epoch: [8][60/100]	Time 0.321 (0.378)	Data 0.000 (0.057)	Loss 0.768 (0.803)	Loss ir 0.397	Loss rgb 0.212	Loss cross 0.633	
+Epoch: [8][70/100]	Time 0.317 (0.370)	Data 0.000 (0.049)	Loss 1.217 (0.873)	Loss ir 0.483	Loss rgb 0.436	Loss cross 1.188	
+Epoch: [8][80/100]	Time 0.308 (0.372)	Data 0.000 (0.052)	Loss 0.811 (0.953)	Loss ir 0.290	Loss rgb 0.294	Loss cross 0.909	
+Epoch: [8][90/100]	Time 0.319 (0.367)	Data 0.000 (0.046)	Loss 1.005 (0.981)	Loss ir 0.407	Loss rgb 0.408	Loss cross 0.760	
+Epoch: [8][100/100]	Time 0.321 (0.362)	Data 0.000 (0.042)	Loss 1.311 (1.031)	Loss ir 0.624	Loss rgb 0.577	Loss cross 0.440	
+Extracting Query Feature...
+Extracting Time:	 3.398
+Extracting Gallery Feature...
+Extracting Time:	 3.578
+Test Trial: 10
+FC:   Rank-1: 75.63% | Rank-5: 84.22% | Rank-10: 88.64%| Rank-20: 92.72%| mAP: 70.09%| mINP: 55.49%
+
+ * Finished epoch   8   model R1: 75.6%  model mAP: 70.1%   best R1: 78.9%   best mAP: 70.1%(best_epoch:2)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5779175758361816
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5242795944213867
+==> Statistics for IR epoch 9: 210 clusters
+==> Statistics for RGB epoch 9: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 210
+hungarian matched pseudo label number=  210
+Epoch: [9][10/100]	Time 0.321 (0.367)	Data 0.000 (0.044)	Loss 0.261 (0.233)	Loss ir 0.003	Loss rgb 0.231	Loss cross 0.107	
+Epoch: [9][20/100]	Time 0.322 (0.345)	Data 0.000 (0.022)	Loss 1.087 (0.364)	Loss ir 0.007	Loss rgb 1.006	Loss cross 0.295	
+Epoch: [9][30/100]	Time 0.319 (0.361)	Data 0.001 (0.040)	Loss 0.750 (0.636)	Loss ir 0.145	Loss rgb 0.446	Loss cross 0.634	
+Epoch: [9][40/100]	Time 0.320 (0.350)	Data 0.000 (0.030)	Loss 1.336 (0.789)	Loss ir 0.315	Loss rgb 0.780	Loss cross 0.960	
+Epoch: [9][50/100]	Time 0.319 (0.344)	Data 0.000 (0.024)	Loss 1.986 (0.889)	Loss ir 0.210	Loss rgb 1.453	Loss cross 1.294	
+Epoch: [9][60/100]	Time 0.320 (0.372)	Data 0.000 (0.051)	Loss 0.987 (0.901)	Loss ir 0.259	Loss rgb 0.653	Loss cross 0.302	
+Epoch: [9][70/100]	Time 0.323 (0.365)	Data 0.000 (0.044)	Loss 0.732 (0.943)	Loss ir 0.160	Loss rgb 0.468	Loss cross 0.413	
+Epoch: [9][80/100]	Time 0.327 (0.371)	Data 0.000 (0.050)	Loss 1.324 (0.979)	Loss ir 0.059	Loss rgb 1.147	Loss cross 0.474	
+Epoch: [9][90/100]	Time 0.322 (0.366)	Data 0.000 (0.044)	Loss 1.099 (1.023)	Loss ir 0.269	Loss rgb 0.697	Loss cross 0.534	
+Epoch: [9][100/100]	Time 0.323 (0.361)	Data 0.000 (0.040)	Loss 1.114 (1.067)	Loss ir 0.196	Loss rgb 0.658	Loss cross 1.040	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5359978675842285
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5175433158874512
+==> Statistics for IR epoch 10: 213 clusters
+==> Statistics for RGB epoch 10: 212 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 212
+hungarian matched pseudo label number=  212
+Epoch: [10][10/100]	Time 0.322 (0.382)	Data 0.000 (0.059)	Loss 0.345 (0.251)	Loss ir 0.013	Loss rgb 0.064	Loss cross 1.073	
+Epoch: [10][20/100]	Time 0.321 (0.351)	Data 0.000 (0.029)	Loss 0.923 (0.484)	Loss ir 0.831	Loss rgb 0.026	Loss cross 0.266	
+Epoch: [10][30/100]	Time 0.323 (0.368)	Data 0.000 (0.045)	Loss 0.754 (0.581)	Loss ir 0.562	Loss rgb 0.030	Loss cross 0.650	
+Epoch: [10][40/100]	Time 0.320 (0.357)	Data 0.000 (0.034)	Loss 0.407 (0.627)	Loss ir 0.327	Loss rgb 0.020	Loss cross 0.239	
+Epoch: [10][50/100]	Time 0.321 (0.349)	Data 0.000 (0.027)	Loss 0.889 (0.711)	Loss ir 0.489	Loss rgb 0.042	Loss cross 1.433	
+Epoch: [10][60/100]	Time 0.318 (0.371)	Data 0.000 (0.049)	Loss 1.012 (0.789)	Loss ir 0.449	Loss rgb 0.393	Loss cross 0.679	
+Epoch: [10][70/100]	Time 0.316 (0.364)	Data 0.000 (0.042)	Loss 0.999 (0.858)	Loss ir 0.385	Loss rgb 0.430	Loss cross 0.737	
+Epoch: [10][80/100]	Time 0.326 (0.368)	Data 0.000 (0.046)	Loss 1.324 (0.943)	Loss ir 0.408	Loss rgb 0.723	Loss cross 0.772	
+Epoch: [10][90/100]	Time 0.314 (0.363)	Data 0.000 (0.041)	Loss 1.248 (0.985)	Loss ir 0.487	Loss rgb 0.332	Loss cross 1.716	
+Epoch: [10][100/100]	Time 0.316 (0.358)	Data 0.000 (0.037)	Loss 1.212 (1.035)	Loss ir 0.678	Loss rgb 0.424	Loss cross 0.442	
+Extracting Query Feature...
+Extracting Time:	 3.391
+Extracting Gallery Feature...
+Extracting Time:	 3.427
+Test Trial: 10
+FC:   Rank-1: 76.36% | Rank-5: 83.64% | Rank-10: 88.11%| Rank-20: 91.89%| mAP: 68.68%| mINP: 54.03%
+
+ * Finished epoch  10   model R1: 76.4%  model mAP: 68.7%   best R1: 78.9%   best mAP: 70.1%(best_epoch:2)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5027589797973633
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4862382411956787
+==> Statistics for IR epoch 11: 213 clusters
+==> Statistics for RGB epoch 11: 213 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 0, total ir feat num= 213
+hungarian matched pseudo label number=  213
+Epoch: [11][10/100]	Time 0.324 (0.399)	Data 0.000 (0.076)	Loss 0.888 (0.304)	Loss ir 0.012	Loss rgb 0.471	Loss cross 1.618	
+Epoch: [11][20/100]	Time 0.323 (0.359)	Data 0.000 (0.038)	Loss 0.480 (0.392)	Loss ir 0.007	Loss rgb 0.432	Loss cross 0.165	
+Epoch: [11][30/100]	Time 0.323 (0.379)	Data 0.001 (0.057)	Loss 0.631 (0.577)	Loss ir 0.093	Loss rgb 0.446	Loss cross 0.367	
+Epoch: [11][40/100]	Time 0.324 (0.364)	Data 0.000 (0.043)	Loss 1.338 (0.698)	Loss ir 0.113	Loss rgb 1.079	Loss cross 0.583	
+Epoch: [11][50/100]	Time 0.318 (0.356)	Data 0.000 (0.034)	Loss 1.037 (0.834)	Loss ir 0.242	Loss rgb 0.510	Loss cross 1.138	
+Epoch: [11][60/100]	Time 0.320 (0.381)	Data 0.001 (0.059)	Loss 1.949 (0.886)	Loss ir 0.436	Loss rgb 1.337	Loss cross 0.706	
+Epoch: [11][70/100]	Time 0.321 (0.372)	Data 0.000 (0.051)	Loss 1.027 (0.897)	Loss ir 0.143	Loss rgb 0.792	Loss cross 0.370	
+Epoch: [11][80/100]	Time 0.328 (0.380)	Data 0.001 (0.058)	Loss 0.778 (0.924)	Loss ir 0.077	Loss rgb 0.657	Loss cross 0.177	
+Epoch: [11][90/100]	Time 0.324 (0.373)	Data 0.000 (0.051)	Loss 1.224 (0.961)	Loss ir 0.229	Loss rgb 0.886	Loss cross 0.437	
+Epoch: [11][100/100]	Time 0.316 (0.368)	Data 0.000 (0.046)	Loss 1.865 (1.026)	Loss ir 0.392	Loss rgb 0.753	Loss cross 2.880	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.558927297592163
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5165088176727295
+==> Statistics for IR epoch 12: 211 clusters
+==> Statistics for RGB epoch 12: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 0, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [12][10/100]	Time 0.319 (0.389)	Data 0.000 (0.067)	Loss 0.249 (0.194)	Loss ir 0.162	Loss rgb 0.030	Loss cross 0.228	
+Epoch: [12][20/100]	Time 0.318 (0.355)	Data 0.000 (0.033)	Loss 0.298 (0.366)	Loss ir 0.094	Loss rgb 0.042	Loss cross 0.648	
+Epoch: [12][30/100]	Time 0.320 (0.370)	Data 0.000 (0.049)	Loss 0.576 (0.507)	Loss ir 0.372	Loss rgb 0.013	Loss cross 0.765	
+Epoch: [12][40/100]	Time 0.320 (0.358)	Data 0.000 (0.037)	Loss 0.616 (0.568)	Loss ir 0.455	Loss rgb 0.017	Loss cross 0.579	
+Epoch: [12][50/100]	Time 0.316 (0.349)	Data 0.000 (0.030)	Loss 0.844 (0.683)	Loss ir 0.671	Loss rgb 0.022	Loss cross 0.607	
+Epoch: [12][60/100]	Time 0.322 (0.374)	Data 0.000 (0.054)	Loss 1.657 (0.728)	Loss ir 0.750	Loss rgb 0.526	Loss cross 1.523	
+Epoch: [12][70/100]	Time 0.322 (0.366)	Data 0.000 (0.047)	Loss 1.678 (0.818)	Loss ir 0.816	Loss rgb 0.668	Loss cross 0.777	
+Epoch: [12][80/100]	Time 0.333 (0.371)	Data 0.000 (0.051)	Loss 1.033 (0.875)	Loss ir 0.314	Loss rgb 0.529	Loss cross 0.760	
+Epoch: [12][90/100]	Time 0.318 (0.365)	Data 0.000 (0.045)	Loss 1.396 (0.888)	Loss ir 0.276	Loss rgb 0.873	Loss cross 0.991	
+Epoch: [12][100/100]	Time 0.320 (0.361)	Data 0.000 (0.040)	Loss 1.815 (0.934)	Loss ir 1.343	Loss rgb 0.351	Loss cross 0.481	
+Extracting Query Feature...
+Extracting Time:	 3.325
+Extracting Gallery Feature...
+Extracting Time:	 3.442
+Test Trial: 10
+FC:   Rank-1: 81.21% | Rank-5: 88.74% | Rank-10: 92.82%| Rank-20: 94.81%| mAP: 72.62%| mINP: 56.03%
+
+ * Finished epoch  12   model R1: 81.2%  model mAP: 72.6%   best R1: 81.2%   best mAP: 72.6%(best_epoch:12)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5262575149536133
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5142595767974854
+==> Statistics for IR epoch 13: 211 clusters
+==> Statistics for RGB epoch 13: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 0, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [13][10/100]	Time 0.314 (0.352)	Data 0.000 (0.046)	Loss 0.050 (0.118)	Loss ir 0.008	Loss rgb 0.010	Loss cross 0.131	
+Epoch: [13][20/100]	Time 0.301 (0.327)	Data 0.000 (0.023)	Loss 0.431 (0.320)	Loss ir 0.006	Loss rgb 0.337	Loss cross 0.352	
+Epoch: [13][30/100]	Time 0.323 (0.348)	Data 0.000 (0.042)	Loss 0.967 (0.490)	Loss ir 0.109	Loss rgb 0.790	Loss cross 0.271	
+Epoch: [13][40/100]	Time 0.317 (0.342)	Data 0.000 (0.031)	Loss 0.723 (0.597)	Loss ir 0.093	Loss rgb 0.403	Loss cross 0.911	
+Epoch: [13][50/100]	Time 0.318 (0.337)	Data 0.000 (0.025)	Loss 0.923 (0.703)	Loss ir 0.238	Loss rgb 0.540	Loss cross 0.581	
+Epoch: [13][60/100]	Time 0.320 (0.365)	Data 0.000 (0.052)	Loss 1.044 (0.774)	Loss ir 0.278	Loss rgb 0.639	Loss cross 0.509	
+Epoch: [13][70/100]	Time 0.321 (0.359)	Data 0.000 (0.044)	Loss 1.156 (0.807)	Loss ir 0.210	Loss rgb 0.841	Loss cross 0.424	
+Epoch: [13][80/100]	Time 0.318 (0.364)	Data 0.001 (0.048)	Loss 0.947 (0.845)	Loss ir 0.169	Loss rgb 0.732	Loss cross 0.182	
+Epoch: [13][90/100]	Time 0.308 (0.358)	Data 0.000 (0.043)	Loss 1.191 (0.873)	Loss ir 0.214	Loss rgb 0.904	Loss cross 0.293	
+Epoch: [13][100/100]	Time 0.308 (0.353)	Data 0.000 (0.038)	Loss 1.641 (0.928)	Loss ir 0.208	Loss rgb 1.149	Loss cross 1.132	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5441772937774658
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4841115474700928
+==> Statistics for IR epoch 14: 211 clusters
+==> Statistics for RGB epoch 14: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 0, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [14][10/100]	Time 0.302 (0.369)	Data 0.000 (0.064)	Loss 0.719 (0.229)	Loss ir 0.510	Loss rgb 0.041	Loss cross 0.670	
+Epoch: [14][20/100]	Time 0.321 (0.344)	Data 0.000 (0.032)	Loss 0.428 (0.355)	Loss ir 0.258	Loss rgb 0.036	Loss cross 0.538	
+Epoch: [14][30/100]	Time 0.324 (0.361)	Data 0.000 (0.044)	Loss 0.445 (0.437)	Loss ir 0.211	Loss rgb 0.015	Loss cross 0.875	
+Epoch: [14][40/100]	Time 0.315 (0.351)	Data 0.000 (0.033)	Loss 0.838 (0.540)	Loss ir 0.522	Loss rgb 0.019	Loss cross 1.187	
+Epoch: [14][50/100]	Time 0.314 (0.344)	Data 0.000 (0.027)	Loss 1.064 (0.608)	Loss ir 0.731	Loss rgb 0.035	Loss cross 1.189	
+Epoch: [14][60/100]	Time 0.326 (0.373)	Data 0.000 (0.054)	Loss 0.872 (0.653)	Loss ir 0.461	Loss rgb 0.312	Loss cross 0.396	
+Epoch: [14][70/100]	Time 0.317 (0.365)	Data 0.000 (0.047)	Loss 0.836 (0.713)	Loss ir 0.272	Loss rgb 0.371	Loss cross 0.775	
+Epoch: [14][80/100]	Time 0.330 (0.368)	Data 0.001 (0.049)	Loss 1.116 (0.770)	Loss ir 0.365	Loss rgb 0.332	Loss cross 1.678	
+Epoch: [14][90/100]	Time 0.317 (0.363)	Data 0.000 (0.044)	Loss 0.533 (0.782)	Loss ir 0.125	Loss rgb 0.345	Loss cross 0.255	
+Epoch: [14][100/100]	Time 0.318 (0.359)	Data 0.000 (0.040)	Loss 1.008 (0.816)	Loss ir 0.373	Loss rgb 0.467	Loss cross 0.676	
+Extracting Query Feature...
+Extracting Time:	 3.315
+Extracting Gallery Feature...
+Extracting Time:	 3.621
+Test Trial: 10
+FC:   Rank-1: 76.26% | Rank-5: 83.79% | Rank-10: 87.18%| Rank-20: 91.41%| mAP: 68.70%| mINP: 54.31%
+
+ * Finished epoch  14   model R1: 76.3%  model mAP: 68.7%   best R1: 81.2%   best mAP: 72.6%(best_epoch:12)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.595400333404541
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4882917404174805
+==> Statistics for IR epoch 15: 211 clusters
+==> Statistics for RGB epoch 15: 210 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 210
+hungarian matched pseudo label number=  210
+Epoch: [15][10/100]	Time 0.320 (0.369)	Data 0.001 (0.045)	Loss 0.431 (0.183)	Loss ir 0.004	Loss rgb 0.414	Loss cross 0.051	
+Epoch: [15][20/100]	Time 0.320 (0.346)	Data 0.000 (0.022)	Loss 0.837 (0.261)	Loss ir 0.006	Loss rgb 0.792	Loss cross 0.153	
+Epoch: [15][30/100]	Time 0.316 (0.366)	Data 0.000 (0.043)	Loss 0.460 (0.404)	Loss ir 0.047	Loss rgb 0.345	Loss cross 0.269	
+Epoch: [15][40/100]	Time 0.322 (0.354)	Data 0.000 (0.032)	Loss 1.055 (0.507)	Loss ir 0.330	Loss rgb 0.476	Loss cross 0.998	
+Epoch: [15][50/100]	Time 0.322 (0.348)	Data 0.000 (0.026)	Loss 1.245 (0.582)	Loss ir 0.204	Loss rgb 0.763	Loss cross 1.113	
+Epoch: [15][60/100]	Time 0.320 (0.376)	Data 0.000 (0.054)	Loss 0.556 (0.614)	Loss ir 0.139	Loss rgb 0.265	Loss cross 0.607	
+Epoch: [15][70/100]	Time 0.318 (0.368)	Data 0.000 (0.046)	Loss 1.100 (0.653)	Loss ir 0.243	Loss rgb 0.669	Loss cross 0.751	
+Epoch: [15][80/100]	Time 0.327 (0.374)	Data 0.001 (0.052)	Loss 0.756 (0.701)	Loss ir 0.087	Loss rgb 0.554	Loss cross 0.464	
+Epoch: [15][90/100]	Time 0.322 (0.368)	Data 0.000 (0.046)	Loss 0.976 (0.723)	Loss ir 0.156	Loss rgb 0.631	Loss cross 0.754	
+Epoch: [15][100/100]	Time 0.301 (0.363)	Data 0.000 (0.042)	Loss 0.634 (0.744)	Loss ir 0.139	Loss rgb 0.327	Loss cross 0.673	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.483855962753296
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.399167537689209
+==> Statistics for IR epoch 16: 213 clusters
+==> Statistics for RGB epoch 16: 210 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 3, total ir feat num= 210
+hungarian matched pseudo label number=  210
+Epoch: [16][10/100]	Time 0.317 (0.375)	Data 0.000 (0.056)	Loss 0.152 (0.223)	Loss ir 0.054	Loss rgb 0.016	Loss cross 0.328	
+Epoch: [16][20/100]	Time 0.320 (0.348)	Data 0.000 (0.028)	Loss 0.325 (0.370)	Loss ir 0.113	Loss rgb 0.043	Loss cross 0.676	
+Epoch: [16][30/100]	Time 0.322 (0.369)	Data 0.000 (0.047)	Loss 0.349 (0.397)	Loss ir 0.209	Loss rgb 0.045	Loss cross 0.383	
+Epoch: [16][40/100]	Time 0.318 (0.357)	Data 0.000 (0.035)	Loss 1.181 (0.459)	Loss ir 0.972	Loss rgb 0.043	Loss cross 0.662	
+Epoch: [16][50/100]	Time 0.321 (0.350)	Data 0.000 (0.028)	Loss 0.689 (0.499)	Loss ir 0.375	Loss rgb 0.049	Loss cross 1.064	
+Epoch: [16][60/100]	Time 0.306 (0.379)	Data 0.000 (0.057)	Loss 0.881 (0.542)	Loss ir 0.694	Loss rgb 0.090	Loss cross 0.386	
+Epoch: [16][70/100]	Time 0.322 (0.371)	Data 0.000 (0.049)	Loss 0.767 (0.584)	Loss ir 0.546	Loss rgb 0.148	Loss cross 0.294	
+Epoch: [16][80/100]	Time 0.337 (0.375)	Data 0.001 (0.053)	Loss 0.576 (0.616)	Loss ir 0.239	Loss rgb 0.244	Loss cross 0.371	
+Epoch: [16][90/100]	Time 0.319 (0.369)	Data 0.000 (0.047)	Loss 1.003 (0.639)	Loss ir 0.777	Loss rgb 0.175	Loss cross 0.204	
+Epoch: [16][100/100]	Time 0.321 (0.365)	Data 0.000 (0.042)	Loss 1.340 (0.699)	Loss ir 0.614	Loss rgb 0.474	Loss cross 1.009	
+Extracting Query Feature...
+Extracting Time:	 3.352
+Extracting Gallery Feature...
+Extracting Time:	 3.608
+Test Trial: 10
+FC:   Rank-1: 80.78% | Rank-5: 89.03% | Rank-10: 92.43%| Rank-20: 94.85%| mAP: 74.35%| mINP: 59.83%
+
+ * Finished epoch  16   model R1: 80.8%  model mAP: 74.3%   best R1: 81.2%   best mAP: 72.6%(best_epoch:12)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5505037307739258
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.547980785369873
+==> Statistics for IR epoch 17: 210 clusters
+==> Statistics for RGB epoch 17: 210 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 0, total ir feat num= 210
+hungarian matched pseudo label number=  210
+Epoch: [17][10/100]	Time 0.321 (0.371)	Data 0.000 (0.046)	Loss 0.677 (0.153)	Loss ir 0.007	Loss rgb 0.572	Loss cross 0.390	
+Epoch: [17][20/100]	Time 0.323 (0.347)	Data 0.000 (0.023)	Loss 0.288 (0.263)	Loss ir 0.012	Loss rgb 0.175	Loss cross 0.407	
+Epoch: [17][30/100]	Time 0.321 (0.368)	Data 0.000 (0.043)	Loss 0.698 (0.376)	Loss ir 0.044	Loss rgb 0.557	Loss cross 0.388	
+Epoch: [17][40/100]	Time 0.321 (0.357)	Data 0.000 (0.032)	Loss 0.455 (0.414)	Loss ir 0.032	Loss rgb 0.360	Loss cross 0.251	
+Epoch: [17][50/100]	Time 0.318 (0.349)	Data 0.000 (0.026)	Loss 0.367 (0.462)	Loss ir 0.032	Loss rgb 0.197	Loss cross 0.551	
+Epoch: [17][60/100]	Time 0.321 (0.378)	Data 0.000 (0.054)	Loss 0.782 (0.515)	Loss ir 0.189	Loss rgb 0.512	Loss cross 0.324	
+Epoch: [17][70/100]	Time 0.321 (0.370)	Data 0.000 (0.047)	Loss 0.848 (0.533)	Loss ir 0.124	Loss rgb 0.619	Loss cross 0.417	
+Epoch: [17][80/100]	Time 0.327 (0.376)	Data 0.000 (0.052)	Loss 0.450 (0.547)	Loss ir 0.050	Loss rgb 0.385	Loss cross 0.064	
+Epoch: [17][90/100]	Time 0.322 (0.370)	Data 0.000 (0.047)	Loss 0.969 (0.576)	Loss ir 0.087	Loss rgb 0.736	Loss cross 0.578	
+Epoch: [17][100/100]	Time 0.321 (0.365)	Data 0.000 (0.042)	Loss 1.074 (0.600)	Loss ir 0.096	Loss rgb 0.855	Loss cross 0.492	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5342967510223389
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.510979413986206
+==> Statistics for IR epoch 18: 210 clusters
+==> Statistics for RGB epoch 18: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 210
+hungarian matched pseudo label number=  210
+Epoch: [18][10/100]	Time 0.320 (0.395)	Data 0.000 (0.069)	Loss 0.485 (0.172)	Loss ir 0.285	Loss rgb 0.030	Loss cross 0.677	
+Epoch: [18][20/100]	Time 0.321 (0.358)	Data 0.000 (0.035)	Loss 0.603 (0.305)	Loss ir 0.481	Loss rgb 0.016	Loss cross 0.426	
+Epoch: [18][30/100]	Time 0.319 (0.377)	Data 0.000 (0.053)	Loss 0.273 (0.359)	Loss ir 0.076	Loss rgb 0.023	Loss cross 0.694	
+Epoch: [18][40/100]	Time 0.320 (0.363)	Data 0.000 (0.040)	Loss 0.800 (0.436)	Loss ir 0.737	Loss rgb 0.009	Loss cross 0.217	
+Epoch: [18][50/100]	Time 0.319 (0.355)	Data 0.000 (0.032)	Loss 0.410 (0.521)	Loss ir 0.338	Loss rgb 0.008	Loss cross 0.257	
+Epoch: [18][60/100]	Time 0.301 (0.379)	Data 0.000 (0.058)	Loss 0.640 (0.545)	Loss ir 0.343	Loss rgb 0.143	Loss cross 0.618	
+Epoch: [18][70/100]	Time 0.330 (0.368)	Data 0.000 (0.050)	Loss 1.022 (0.600)	Loss ir 0.302	Loss rgb 0.583	Loss cross 0.545	
+Epoch: [18][80/100]	Time 0.328 (0.373)	Data 0.000 (0.055)	Loss 1.157 (0.644)	Loss ir 0.682	Loss rgb 0.282	Loss cross 0.773	
+Epoch: [18][90/100]	Time 0.321 (0.367)	Data 0.000 (0.049)	Loss 1.275 (0.677)	Loss ir 0.769	Loss rgb 0.354	Loss cross 0.606	
+Epoch: [18][100/100]	Time 0.320 (0.363)	Data 0.000 (0.044)	Loss 0.955 (0.711)	Loss ir 0.456	Loss rgb 0.383	Loss cross 0.466	
+Extracting Query Feature...
+Extracting Time:	 3.424
+Extracting Gallery Feature...
+Extracting Time:	 3.740
+Test Trial: 10
+FC:   Rank-1: 79.32% | Rank-5: 87.96% | Rank-10: 91.50%| Rank-20: 95.15%| mAP: 72.51%| mINP: 56.46%
+
+ * Finished epoch  18   model R1: 79.3%  model mAP: 72.5%   best R1: 81.2%   best mAP: 72.6%(best_epoch:12)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.514129638671875
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5214545726776123
+==> Statistics for IR epoch 19: 211 clusters
+==> Statistics for RGB epoch 19: 210 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 210
+hungarian matched pseudo label number=  210
+Epoch: [19][10/100]	Time 0.324 (0.372)	Data 0.001 (0.047)	Loss 0.605 (0.170)	Loss ir 0.007	Loss rgb 0.569	Loss cross 0.117	
+Epoch: [19][20/100]	Time 0.322 (0.349)	Data 0.000 (0.023)	Loss 0.796 (0.274)	Loss ir 0.011	Loss rgb 0.390	Loss cross 1.583	
+Epoch: [19][30/100]	Time 0.323 (0.364)	Data 0.000 (0.039)	Loss 0.582 (0.360)	Loss ir 0.096	Loss rgb 0.454	Loss cross 0.128	
+Epoch: [19][40/100]	Time 0.322 (0.354)	Data 0.000 (0.029)	Loss 0.891 (0.488)	Loss ir 0.143	Loss rgb 0.679	Loss cross 0.277	
+Epoch: [19][50/100]	Time 0.319 (0.347)	Data 0.000 (0.023)	Loss 0.727 (0.583)	Loss ir 0.118	Loss rgb 0.508	Loss cross 0.405	
+Epoch: [19][60/100]	Time 0.311 (0.374)	Data 0.000 (0.051)	Loss 1.278 (0.628)	Loss ir 0.300	Loss rgb 0.791	Loss cross 0.751	
+Epoch: [19][70/100]	Time 0.329 (0.366)	Data 0.000 (0.043)	Loss 0.748 (0.656)	Loss ir 0.127	Loss rgb 0.389	Loss cross 0.926	
+Epoch: [19][80/100]	Time 0.315 (0.371)	Data 0.000 (0.048)	Loss 0.998 (0.697)	Loss ir 0.432	Loss rgb 0.407	Loss cross 0.637	
+Epoch: [19][90/100]	Time 0.325 (0.366)	Data 0.000 (0.043)	Loss 1.131 (0.712)	Loss ir 0.138	Loss rgb 0.918	Loss cross 0.300	
+Epoch: [19][100/100]	Time 0.301 (0.361)	Data 0.000 (0.039)	Loss 1.180 (0.746)	Loss ir 0.221	Loss rgb 0.798	Loss cross 0.643	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5470683574676514
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.4911692142486572
+==> Statistics for IR epoch 20: 210 clusters
+==> Statistics for RGB epoch 20: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 210
+hungarian matched pseudo label number=  210
+Epoch: [20][10/100]	Time 0.328 (0.387)	Data 0.000 (0.067)	Loss 0.187 (0.137)	Loss ir 0.097	Loss rgb 0.009	Loss cross 0.322	
+Epoch: [20][20/100]	Time 0.320 (0.354)	Data 0.000 (0.034)	Loss 0.479 (0.238)	Loss ir 0.432	Loss rgb 0.013	Loss cross 0.134	
+Epoch: [20][30/100]	Time 0.322 (0.372)	Data 0.001 (0.052)	Loss 0.205 (0.301)	Loss ir 0.133	Loss rgb 0.010	Loss cross 0.247	
+Epoch: [20][40/100]	Time 0.320 (0.360)	Data 0.000 (0.039)	Loss 0.847 (0.353)	Loss ir 0.610	Loss rgb 0.021	Loss cross 0.862	
+Epoch: [20][50/100]	Time 0.320 (0.352)	Data 0.000 (0.031)	Loss 0.543 (0.401)	Loss ir 0.456	Loss rgb 0.012	Loss cross 0.298	
+Epoch: [20][60/100]	Time 0.331 (0.376)	Data 0.000 (0.054)	Loss 0.833 (0.442)	Loss ir 0.279	Loss rgb 0.404	Loss cross 0.598	
+Epoch: [20][70/100]	Time 0.322 (0.368)	Data 0.000 (0.047)	Loss 0.849 (0.483)	Loss ir 0.316	Loss rgb 0.459	Loss cross 0.299	
+Epoch: [20][80/100]	Time 0.329 (0.374)	Data 0.000 (0.053)	Loss 0.631 (0.524)	Loss ir 0.411	Loss rgb 0.167	Loss cross 0.210	
+Epoch: [20][90/100]	Time 0.320 (0.368)	Data 0.000 (0.047)	Loss 1.804 (0.559)	Loss ir 0.514	Loss rgb 1.062	Loss cross 0.913	
+Epoch: [20][100/100]	Time 0.320 (0.364)	Data 0.000 (0.042)	Loss 0.935 (0.578)	Loss ir 0.490	Loss rgb 0.238	Loss cross 0.829	
+Extracting Query Feature...
+Extracting Time:	 3.419
+Extracting Gallery Feature...
+Extracting Time:	 3.376
+Test Trial: 10
+FC:   Rank-1: 84.13% | Rank-5: 90.00% | Rank-10: 92.28%| Rank-20: 95.05%| mAP: 76.59%| mINP: 62.17%
+
+ * Finished epoch  20   model R1: 84.1%  model mAP: 76.6%   best R1: 84.1%   best mAP: 76.6%(best_epoch:20)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5872304439544678
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5044307708740234
+==> Statistics for IR epoch 21: 211 clusters
+==> Statistics for RGB epoch 21: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 0, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [21][10/100]	Time 0.327 (0.374)	Data 0.000 (0.060)	Loss 0.376 (0.180)	Loss ir 0.002	Loss rgb 0.369	Loss cross 0.022	
+Epoch: [21][20/100]	Time 0.320 (0.346)	Data 0.000 (0.030)	Loss 0.114 (0.237)	Loss ir 0.001	Loss rgb 0.103	Loss cross 0.039	
+Epoch: [21][30/100]	Time 0.320 (0.360)	Data 0.000 (0.044)	Loss 0.201 (0.282)	Loss ir 0.038	Loss rgb 0.136	Loss cross 0.107	
+Epoch: [21][40/100]	Time 0.322 (0.350)	Data 0.000 (0.033)	Loss 0.206 (0.303)	Loss ir 0.020	Loss rgb 0.130	Loss cross 0.222	
+Epoch: [21][50/100]	Time 0.319 (0.344)	Data 0.000 (0.026)	Loss 0.615 (0.326)	Loss ir 0.052	Loss rgb 0.488	Loss cross 0.298	
+Epoch: [21][60/100]	Time 0.321 (0.371)	Data 0.000 (0.052)	Loss 0.386 (0.361)	Loss ir 0.088	Loss rgb 0.231	Loss cross 0.267	
+Epoch: [21][70/100]	Time 0.322 (0.364)	Data 0.000 (0.044)	Loss 0.291 (0.384)	Loss ir 0.028	Loss rgb 0.162	Loss cross 0.406	
+Epoch: [21][80/100]	Time 0.324 (0.368)	Data 0.001 (0.048)	Loss 0.328 (0.394)	Loss ir 0.151	Loss rgb 0.113	Loss cross 0.256	
+Epoch: [21][90/100]	Time 0.320 (0.363)	Data 0.000 (0.042)	Loss 0.342 (0.397)	Loss ir 0.082	Loss rgb 0.182	Loss cross 0.314	
+Epoch: [21][100/100]	Time 0.321 (0.358)	Data 0.000 (0.038)	Loss 0.333 (0.402)	Loss ir 0.028	Loss rgb 0.238	Loss cross 0.267	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5940454006195068
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5418591499328613
+==> Statistics for IR epoch 22: 211 clusters
+==> Statistics for RGB epoch 22: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 0, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [22][10/100]	Time 0.322 (0.382)	Data 0.000 (0.059)	Loss 0.091 (0.058)	Loss ir 0.036	Loss rgb 0.007	Loss cross 0.191	
+Epoch: [22][20/100]	Time 0.320 (0.352)	Data 0.000 (0.029)	Loss 0.145 (0.103)	Loss ir 0.080	Loss rgb 0.009	Loss cross 0.224	
+Epoch: [22][30/100]	Time 0.302 (0.365)	Data 0.000 (0.044)	Loss 0.293 (0.170)	Loss ir 0.242	Loss rgb 0.015	Loss cross 0.140	
+Epoch: [22][40/100]	Time 0.321 (0.354)	Data 0.000 (0.033)	Loss 0.224 (0.198)	Loss ir 0.144	Loss rgb 0.001	Loss cross 0.312	
+Epoch: [22][50/100]	Time 0.321 (0.347)	Data 0.000 (0.027)	Loss 0.736 (0.231)	Loss ir 0.646	Loss rgb 0.004	Loss cross 0.340	
+Epoch: [22][60/100]	Time 0.322 (0.373)	Data 0.001 (0.052)	Loss 0.329 (0.258)	Loss ir 0.065	Loss rgb 0.193	Loss cross 0.285	
+Epoch: [22][70/100]	Time 0.324 (0.365)	Data 0.000 (0.044)	Loss 0.496 (0.289)	Loss ir 0.259	Loss rgb 0.197	Loss cross 0.160	
+Epoch: [22][80/100]	Time 0.334 (0.370)	Data 0.000 (0.049)	Loss 0.327 (0.331)	Loss ir 0.195	Loss rgb 0.094	Loss cross 0.152	
+Epoch: [22][90/100]	Time 0.322 (0.365)	Data 0.000 (0.043)	Loss 0.218 (0.341)	Loss ir 0.067	Loss rgb 0.091	Loss cross 0.238	
+Epoch: [22][100/100]	Time 0.321 (0.360)	Data 0.000 (0.039)	Loss 0.544 (0.366)	Loss ir 0.406	Loss rgb 0.093	Loss cross 0.178	
+Extracting Query Feature...
+Extracting Time:	 3.406
+Extracting Gallery Feature...
+Extracting Time:	 3.548
+Test Trial: 10
+FC:   Rank-1: 84.71% | Rank-5: 90.19% | Rank-10: 92.82%| Rank-20: 95.49%| mAP: 77.90%| mINP: 63.92%
+
+ * Finished epoch  22   model R1: 84.7%  model mAP: 77.9%   best R1: 84.7%   best mAP: 77.9%(best_epoch:22)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.565662145614624
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5355219841003418
+==> Statistics for IR epoch 23: 211 clusters
+==> Statistics for RGB epoch 23: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 0, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [23][10/100]	Time 0.316 (0.368)	Data 0.000 (0.045)	Loss 0.337 (0.071)	Loss ir 0.002	Loss rgb 0.006	Loss cross 1.318	
+Epoch: [23][20/100]	Time 0.317 (0.343)	Data 0.000 (0.023)	Loss 0.249 (0.113)	Loss ir 0.001	Loss rgb 0.148	Loss cross 0.399	
+Epoch: [23][30/100]	Time 0.319 (0.362)	Data 0.000 (0.041)	Loss 0.216 (0.159)	Loss ir 0.032	Loss rgb 0.119	Loss cross 0.260	
+Epoch: [23][40/100]	Time 0.318 (0.351)	Data 0.000 (0.031)	Loss 0.274 (0.207)	Loss ir 0.010	Loss rgb 0.204	Loss cross 0.242	
+Epoch: [23][50/100]	Time 0.301 (0.343)	Data 0.000 (0.025)	Loss 0.515 (0.230)	Loss ir 0.061	Loss rgb 0.404	Loss cross 0.199	
+Epoch: [23][60/100]	Time 0.303 (0.367)	Data 0.000 (0.049)	Loss 0.283 (0.249)	Loss ir 0.022	Loss rgb 0.189	Loss cross 0.287	
+Epoch: [23][70/100]	Time 0.329 (0.358)	Data 0.000 (0.042)	Loss 0.485 (0.257)	Loss ir 0.026	Loss rgb 0.419	Loss cross 0.161	
+Epoch: [23][80/100]	Time 0.329 (0.365)	Data 0.000 (0.048)	Loss 0.306 (0.301)	Loss ir 0.094	Loss rgb 0.111	Loss cross 0.408	
+Epoch: [23][90/100]	Time 0.321 (0.359)	Data 0.000 (0.043)	Loss 0.270 (0.302)	Loss ir 0.086	Loss rgb 0.136	Loss cross 0.195	
+Epoch: [23][100/100]	Time 0.319 (0.355)	Data 0.000 (0.039)	Loss 0.253 (0.306)	Loss ir 0.039	Loss rgb 0.137	Loss cross 0.310	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.6624932289123535
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.579716682434082
+==> Statistics for IR epoch 24: 212 clusters
+==> Statistics for RGB epoch 24: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [24][10/100]	Time 0.324 (0.389)	Data 0.000 (0.063)	Loss 0.026 (0.054)	Loss ir 0.003	Loss rgb 0.005	Loss cross 0.072	
+Epoch: [24][20/100]	Time 0.323 (0.356)	Data 0.000 (0.032)	Loss 0.064 (0.087)	Loss ir 0.038	Loss rgb 0.007	Loss cross 0.078	
+Epoch: [24][30/100]	Time 0.324 (0.380)	Data 0.001 (0.054)	Loss 0.210 (0.113)	Loss ir 0.186	Loss rgb 0.005	Loss cross 0.079	
+Epoch: [24][40/100]	Time 0.324 (0.366)	Data 0.000 (0.041)	Loss 0.208 (0.149)	Loss ir 0.166	Loss rgb 0.002	Loss cross 0.163	
+Epoch: [24][50/100]	Time 0.321 (0.357)	Data 0.000 (0.033)	Loss 0.378 (0.187)	Loss ir 0.283	Loss rgb 0.004	Loss cross 0.362	
+Epoch: [24][60/100]	Time 0.321 (0.386)	Data 0.001 (0.062)	Loss 0.613 (0.233)	Loss ir 0.227	Loss rgb 0.277	Loss cross 0.433	
+Epoch: [24][70/100]	Time 0.324 (0.377)	Data 0.000 (0.053)	Loss 0.772 (0.275)	Loss ir 0.594	Loss rgb 0.144	Loss cross 0.137	
+Epoch: [24][80/100]	Time 0.325 (0.383)	Data 0.001 (0.058)	Loss 0.393 (0.298)	Loss ir 0.158	Loss rgb 0.176	Loss cross 0.234	
+Epoch: [24][90/100]	Time 0.321 (0.376)	Data 0.000 (0.052)	Loss 0.548 (0.315)	Loss ir 0.286	Loss rgb 0.232	Loss cross 0.118	
+Epoch: [24][100/100]	Time 0.321 (0.371)	Data 0.000 (0.047)	Loss 0.377 (0.326)	Loss ir 0.268	Loss rgb 0.048	Loss cross 0.244	
+Extracting Query Feature...
+Extracting Time:	 3.658
+Extracting Gallery Feature...
+Extracting Time:	 3.702
+Test Trial: 10
+FC:   Rank-1: 85.10% | Rank-5: 90.34% | Rank-10: 92.96%| Rank-20: 95.53%| mAP: 77.82%| mINP: 63.80%
+
+ * Finished epoch  24   model R1: 85.1%  model mAP: 77.8%   best R1: 85.1%   best mAP: 77.8%(best_epoch:24)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.6198070049285889
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.582141399383545
+==> Statistics for IR epoch 25: 212 clusters
+==> Statistics for RGB epoch 25: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [25][10/100]	Time 0.323 (0.399)	Data 0.001 (0.073)	Loss 0.159 (0.054)	Loss ir 0.009	Loss rgb 0.023	Loss cross 0.506	
+Epoch: [25][20/100]	Time 0.323 (0.362)	Data 0.000 (0.037)	Loss 0.200 (0.116)	Loss ir 0.001	Loss rgb 0.155	Loss cross 0.175	
+Epoch: [25][30/100]	Time 0.322 (0.375)	Data 0.001 (0.050)	Loss 0.149 (0.139)	Loss ir 0.031	Loss rgb 0.090	Loss cross 0.111	
+Epoch: [25][40/100]	Time 0.325 (0.362)	Data 0.000 (0.037)	Loss 0.203 (0.172)	Loss ir 0.031	Loss rgb 0.125	Loss cross 0.189	
+Epoch: [25][50/100]	Time 0.320 (0.353)	Data 0.000 (0.030)	Loss 0.417 (0.198)	Loss ir 0.029	Loss rgb 0.335	Loss cross 0.214	
+Epoch: [25][60/100]	Time 0.324 (0.382)	Data 0.000 (0.059)	Loss 0.213 (0.214)	Loss ir 0.038	Loss rgb 0.142	Loss cross 0.133	
+Epoch: [25][70/100]	Time 0.324 (0.374)	Data 0.001 (0.050)	Loss 0.578 (0.226)	Loss ir 0.038	Loss rgb 0.483	Loss cross 0.227	
+Epoch: [25][80/100]	Time 0.331 (0.378)	Data 0.001 (0.054)	Loss 0.183 (0.241)	Loss ir 0.045	Loss rgb 0.131	Loss cross 0.026	
+Epoch: [25][90/100]	Time 0.322 (0.372)	Data 0.000 (0.048)	Loss 0.241 (0.246)	Loss ir 0.062	Loss rgb 0.123	Loss cross 0.222	
+Epoch: [25][100/100]	Time 0.320 (0.367)	Data 0.000 (0.043)	Loss 0.267 (0.250)	Loss ir 0.025	Loss rgb 0.164	Loss cross 0.313	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.592968225479126
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5611522197723389
+==> Statistics for IR epoch 26: 212 clusters
+==> Statistics for RGB epoch 26: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [26][10/100]	Time 0.322 (0.397)	Data 0.000 (0.070)	Loss 0.064 (0.068)	Loss ir 0.050	Loss rgb 0.005	Loss cross 0.037	
+Epoch: [26][20/100]	Time 0.332 (0.360)	Data 0.000 (0.035)	Loss 0.225 (0.110)	Loss ir 0.178	Loss rgb 0.005	Loss cross 0.166	
+Epoch: [26][30/100]	Time 0.323 (0.373)	Data 0.000 (0.049)	Loss 0.065 (0.128)	Loss ir 0.037	Loss rgb 0.006	Loss cross 0.087	
+Epoch: [26][40/100]	Time 0.320 (0.360)	Data 0.000 (0.037)	Loss 0.205 (0.148)	Loss ir 0.135	Loss rgb 0.005	Loss cross 0.260	
+Epoch: [26][50/100]	Time 0.320 (0.352)	Data 0.000 (0.029)	Loss 0.218 (0.169)	Loss ir 0.176	Loss rgb 0.001	Loss cross 0.159	
+Epoch: [26][60/100]	Time 0.320 (0.375)	Data 0.000 (0.052)	Loss 0.124 (0.187)	Loss ir 0.038	Loss rgb 0.063	Loss cross 0.090	
+Epoch: [26][70/100]	Time 0.325 (0.368)	Data 0.000 (0.045)	Loss 0.387 (0.228)	Loss ir 0.199	Loss rgb 0.154	Loss cross 0.140	
+Epoch: [26][80/100]	Time 0.323 (0.371)	Data 0.001 (0.048)	Loss 0.329 (0.250)	Loss ir 0.246	Loss rgb 0.067	Loss cross 0.065	
+Epoch: [26][90/100]	Time 0.321 (0.366)	Data 0.000 (0.043)	Loss 0.461 (0.270)	Loss ir 0.153	Loss rgb 0.278	Loss cross 0.117	
+Epoch: [26][100/100]	Time 0.318 (0.361)	Data 0.000 (0.038)	Loss 0.460 (0.285)	Loss ir 0.330	Loss rgb 0.102	Loss cross 0.110	
+Extracting Query Feature...
+Extracting Time:	 3.473
+Extracting Gallery Feature...
+Extracting Time:	 3.625
+Test Trial: 10
+FC:   Rank-1: 83.98% | Rank-5: 89.76% | Rank-10: 92.96%| Rank-20: 95.63%| mAP: 77.32%| mINP: 63.37%
+
+ * Finished epoch  26   model R1: 84.0%  model mAP: 77.3%   best R1: 85.1%   best mAP: 77.8%(best_epoch:24)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5950522422790527
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5535073280334473
+==> Statistics for IR epoch 27: 212 clusters
+==> Statistics for RGB epoch 27: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [27][10/100]	Time 0.321 (0.392)	Data 0.001 (0.067)	Loss 0.104 (0.056)	Loss ir 0.001	Loss rgb 0.087	Loss cross 0.065	
+Epoch: [27][20/100]	Time 0.317 (0.356)	Data 0.000 (0.034)	Loss 0.254 (0.089)	Loss ir 0.000	Loss rgb 0.198	Loss cross 0.225	
+Epoch: [27][30/100]	Time 0.324 (0.370)	Data 0.000 (0.047)	Loss 0.179 (0.130)	Loss ir 0.037	Loss rgb 0.128	Loss cross 0.056	
+Epoch: [27][40/100]	Time 0.319 (0.358)	Data 0.000 (0.035)	Loss 0.237 (0.160)	Loss ir 0.036	Loss rgb 0.165	Loss cross 0.143	
+Epoch: [27][50/100]	Time 0.321 (0.350)	Data 0.000 (0.028)	Loss 0.533 (0.188)	Loss ir 0.038	Loss rgb 0.473	Loss cross 0.084	
+Epoch: [27][60/100]	Time 0.321 (0.374)	Data 0.000 (0.052)	Loss 0.397 (0.199)	Loss ir 0.046	Loss rgb 0.337	Loss cross 0.056	
+Epoch: [27][70/100]	Time 0.317 (0.366)	Data 0.000 (0.045)	Loss 0.241 (0.209)	Loss ir 0.014	Loss rgb 0.198	Loss cross 0.115	
+Epoch: [27][80/100]	Time 0.316 (0.372)	Data 0.000 (0.050)	Loss 0.148 (0.237)	Loss ir 0.038	Loss rgb 0.101	Loss cross 0.036	
+Epoch: [27][90/100]	Time 0.317 (0.366)	Data 0.000 (0.045)	Loss 0.381 (0.249)	Loss ir 0.095	Loss rgb 0.199	Loss cross 0.346	
+Epoch: [27][100/100]	Time 0.317 (0.362)	Data 0.000 (0.040)	Loss 0.301 (0.253)	Loss ir 0.073	Loss rgb 0.176	Loss cross 0.209	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.6754419803619385
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5806756019592285
+==> Statistics for IR epoch 28: 211 clusters
+==> Statistics for RGB epoch 28: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 0, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [28][10/100]	Time 0.321 (0.379)	Data 0.000 (0.057)	Loss 0.051 (0.043)	Loss ir 0.043	Loss rgb 0.002	Loss cross 0.022	
+Epoch: [28][20/100]	Time 0.315 (0.349)	Data 0.000 (0.029)	Loss 0.379 (0.079)	Loss ir 0.306	Loss rgb 0.009	Loss cross 0.254	
+Epoch: [28][30/100]	Time 0.318 (0.370)	Data 0.000 (0.048)	Loss 0.066 (0.103)	Loss ir 0.041	Loss rgb 0.002	Loss cross 0.089	
+Epoch: [28][40/100]	Time 0.320 (0.357)	Data 0.000 (0.036)	Loss 0.103 (0.116)	Loss ir 0.061	Loss rgb 0.002	Loss cross 0.160	
+Epoch: [28][50/100]	Time 0.320 (0.350)	Data 0.000 (0.029)	Loss 0.227 (0.155)	Loss ir 0.202	Loss rgb 0.005	Loss cross 0.080	
+Epoch: [28][60/100]	Time 0.303 (0.373)	Data 0.000 (0.052)	Loss 0.190 (0.189)	Loss ir 0.094	Loss rgb 0.068	Loss cross 0.111	
+Epoch: [28][70/100]	Time 0.317 (0.365)	Data 0.000 (0.045)	Loss 0.570 (0.216)	Loss ir 0.379	Loss rgb 0.118	Loss cross 0.293	
+Epoch: [28][80/100]	Time 0.316 (0.370)	Data 0.001 (0.050)	Loss 0.390 (0.259)	Loss ir 0.263	Loss rgb 0.091	Loss cross 0.144	
+Epoch: [28][90/100]	Time 0.310 (0.363)	Data 0.000 (0.045)	Loss 0.295 (0.263)	Loss ir 0.190	Loss rgb 0.083	Loss cross 0.089	
+Epoch: [28][100/100]	Time 0.314 (0.357)	Data 0.000 (0.040)	Loss 0.266 (0.280)	Loss ir 0.111	Loss rgb 0.106	Loss cross 0.195	
+Extracting Query Feature...
+Extracting Time:	 3.538
+Extracting Gallery Feature...
+Extracting Time:	 3.785
+Test Trial: 10
+FC:   Rank-1: 84.95% | Rank-5: 90.39% | Rank-10: 93.93%| Rank-20: 96.17%| mAP: 78.19%| mINP: 64.15%
+
+ * Finished epoch  28   model R1: 85.0%  model mAP: 78.2%   best R1: 85.1%   best mAP: 77.8%(best_epoch:24)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.565204381942749
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.6455957889556885
+==> Statistics for IR epoch 29: 211 clusters
+==> Statistics for RGB epoch 29: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 0, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [29][10/100]	Time 0.323 (0.394)	Data 0.000 (0.072)	Loss 0.008 (0.022)	Loss ir 0.001	Loss rgb 0.002	Loss cross 0.022	
+Epoch: [29][20/100]	Time 0.318 (0.358)	Data 0.000 (0.036)	Loss 0.145 (0.070)	Loss ir 0.001	Loss rgb 0.126	Loss cross 0.074	
+Epoch: [29][30/100]	Time 0.323 (0.375)	Data 0.001 (0.051)	Loss 0.156 (0.111)	Loss ir 0.010	Loss rgb 0.141	Loss cross 0.024	
+Epoch: [29][40/100]	Time 0.321 (0.361)	Data 0.000 (0.039)	Loss 0.238 (0.132)	Loss ir 0.014	Loss rgb 0.202	Loss cross 0.087	
+Epoch: [29][50/100]	Time 0.322 (0.353)	Data 0.000 (0.031)	Loss 0.258 (0.154)	Loss ir 0.023	Loss rgb 0.179	Loss cross 0.225	
+Epoch: [29][60/100]	Time 0.321 (0.381)	Data 0.001 (0.058)	Loss 0.308 (0.178)	Loss ir 0.018	Loss rgb 0.211	Loss cross 0.317	
+Epoch: [29][70/100]	Time 0.320 (0.373)	Data 0.000 (0.050)	Loss 0.285 (0.198)	Loss ir 0.019	Loss rgb 0.195	Loss cross 0.279	
+Epoch: [29][80/100]	Time 0.303 (0.377)	Data 0.001 (0.054)	Loss 0.727 (0.219)	Loss ir 0.042	Loss rgb 0.672	Loss cross 0.048	
+Epoch: [29][90/100]	Time 0.302 (0.368)	Data 0.000 (0.048)	Loss 0.409 (0.238)	Loss ir 0.043	Loss rgb 0.275	Loss cross 0.366	
+Epoch: [29][100/100]	Time 0.301 (0.362)	Data 0.000 (0.043)	Loss 0.188 (0.239)	Loss ir 0.033	Loss rgb 0.097	Loss cross 0.231	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.585491418838501
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.6144452095031738
+==> Statistics for IR epoch 30: 211 clusters
+==> Statistics for RGB epoch 30: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 0, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [30][10/100]	Time 0.301 (0.352)	Data 0.000 (0.045)	Loss 0.067 (0.037)	Loss ir 0.057	Loss rgb 0.004	Loss cross 0.023	
+Epoch: [30][20/100]	Time 0.327 (0.331)	Data 0.000 (0.023)	Loss 0.106 (0.062)	Loss ir 0.032	Loss rgb 0.002	Loss cross 0.291	
+Epoch: [30][30/100]	Time 0.321 (0.348)	Data 0.000 (0.037)	Loss 0.203 (0.108)	Loss ir 0.158	Loss rgb 0.003	Loss cross 0.166	
+Epoch: [30][40/100]	Time 0.307 (0.338)	Data 0.000 (0.027)	Loss 0.229 (0.129)	Loss ir 0.177	Loss rgb 0.006	Loss cross 0.181	
+Epoch: [30][50/100]	Time 0.307 (0.333)	Data 0.000 (0.022)	Loss 0.380 (0.143)	Loss ir 0.338	Loss rgb 0.010	Loss cross 0.128	
+Epoch: [30][60/100]	Time 0.323 (0.364)	Data 0.000 (0.051)	Loss 0.168 (0.165)	Loss ir 0.085	Loss rgb 0.054	Loss cross 0.117	
+Epoch: [30][70/100]	Time 0.320 (0.358)	Data 0.000 (0.044)	Loss 0.285 (0.198)	Loss ir 0.067	Loss rgb 0.164	Loss cross 0.211	
+Epoch: [30][80/100]	Time 0.323 (0.364)	Data 0.000 (0.049)	Loss 0.585 (0.217)	Loss ir 0.053	Loss rgb 0.491	Loss cross 0.164	
+Epoch: [30][90/100]	Time 0.320 (0.359)	Data 0.000 (0.044)	Loss 0.623 (0.232)	Loss ir 0.377	Loss rgb 0.158	Loss cross 0.351	
+Epoch: [30][100/100]	Time 0.320 (0.355)	Data 0.000 (0.039)	Loss 0.555 (0.240)	Loss ir 0.270	Loss rgb 0.257	Loss cross 0.111	
+Extracting Query Feature...
+Extracting Time:	 3.407
+Extracting Gallery Feature...
+Extracting Time:	 3.397
+Test Trial: 10
+FC:   Rank-1: 84.76% | Rank-5: 90.58% | Rank-10: 93.64%| Rank-20: 95.44%| mAP: 78.19%| mINP: 64.54%
+
+ * Finished epoch  30   model R1: 84.8%  model mAP: 78.2%   best R1: 85.1%   best mAP: 77.8%(best_epoch:24)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5866405963897705
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5417840480804443
+==> Statistics for IR epoch 31: 212 clusters
+==> Statistics for RGB epoch 31: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [31][10/100]	Time 0.318 (0.376)	Data 0.000 (0.053)	Loss 0.007 (0.033)	Loss ir 0.000	Loss rgb 0.005	Loss cross 0.004	
+Epoch: [31][20/100]	Time 0.322 (0.347)	Data 0.000 (0.027)	Loss 0.115 (0.064)	Loss ir 0.001	Loss rgb 0.075	Loss cross 0.158	
+Epoch: [31][30/100]	Time 0.321 (0.364)	Data 0.000 (0.041)	Loss 0.221 (0.109)	Loss ir 0.022	Loss rgb 0.148	Loss cross 0.205	
+Epoch: [31][40/100]	Time 0.319 (0.353)	Data 0.000 (0.031)	Loss 0.108 (0.134)	Loss ir 0.031	Loss rgb 0.049	Loss cross 0.109	
+Epoch: [31][50/100]	Time 0.321 (0.347)	Data 0.000 (0.025)	Loss 0.231 (0.156)	Loss ir 0.040	Loss rgb 0.139	Loss cross 0.205	
+Epoch: [31][60/100]	Time 0.320 (0.371)	Data 0.000 (0.049)	Loss 0.299 (0.165)	Loss ir 0.013	Loss rgb 0.268	Loss cross 0.072	
+Epoch: [31][70/100]	Time 0.323 (0.364)	Data 0.000 (0.042)	Loss 0.260 (0.184)	Loss ir 0.100	Loss rgb 0.125	Loss cross 0.138	
+Epoch: [31][80/100]	Time 0.334 (0.370)	Data 0.000 (0.047)	Loss 0.350 (0.196)	Loss ir 0.034	Loss rgb 0.285	Loss cross 0.127	
+Epoch: [31][90/100]	Time 0.322 (0.365)	Data 0.000 (0.042)	Loss 0.259 (0.196)	Loss ir 0.080	Loss rgb 0.127	Loss cross 0.205	
+Epoch: [31][100/100]	Time 0.316 (0.360)	Data 0.000 (0.038)	Loss 0.428 (0.205)	Loss ir 0.058	Loss rgb 0.299	Loss cross 0.283	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.684288501739502
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.564774990081787
+==> Statistics for IR epoch 32: 212 clusters
+==> Statistics for RGB epoch 32: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [32][10/100]	Time 0.322 (0.382)	Data 0.000 (0.059)	Loss 0.077 (0.047)	Loss ir 0.053	Loss rgb 0.006	Loss cross 0.074	
+Epoch: [32][20/100]	Time 0.324 (0.350)	Data 0.000 (0.030)	Loss 0.062 (0.077)	Loss ir 0.030	Loss rgb 0.001	Loss cross 0.123	
+Epoch: [32][30/100]	Time 0.326 (0.369)	Data 0.000 (0.048)	Loss 0.091 (0.091)	Loss ir 0.071	Loss rgb 0.002	Loss cross 0.071	
+Epoch: [32][40/100]	Time 0.320 (0.356)	Data 0.000 (0.036)	Loss 0.216 (0.105)	Loss ir 0.164	Loss rgb 0.009	Loss cross 0.173	
+Epoch: [32][50/100]	Time 0.320 (0.349)	Data 0.000 (0.029)	Loss 0.242 (0.131)	Loss ir 0.220	Loss rgb 0.002	Loss cross 0.082	
+Epoch: [32][60/100]	Time 0.302 (0.375)	Data 0.000 (0.057)	Loss 0.474 (0.162)	Loss ir 0.185	Loss rgb 0.215	Loss cross 0.295	
+Epoch: [32][70/100]	Time 0.320 (0.367)	Data 0.000 (0.049)	Loss 0.303 (0.185)	Loss ir 0.077	Loss rgb 0.158	Loss cross 0.272	
+Epoch: [32][80/100]	Time 0.323 (0.373)	Data 0.000 (0.054)	Loss 0.160 (0.202)	Loss ir 0.039	Loss rgb 0.093	Loss cross 0.110	
+Epoch: [32][90/100]	Time 0.322 (0.367)	Data 0.000 (0.048)	Loss 0.117 (0.211)	Loss ir 0.047	Loss rgb 0.054	Loss cross 0.063	
+Epoch: [32][100/100]	Time 0.320 (0.363)	Data 0.000 (0.043)	Loss 0.374 (0.230)	Loss ir 0.154	Loss rgb 0.193	Loss cross 0.107	
+Extracting Query Feature...
+Extracting Time:	 3.369
+Extracting Gallery Feature...
+Extracting Time:	 3.625
+Test Trial: 10
+FC:   Rank-1: 84.66% | Rank-5: 89.85% | Rank-10: 93.16%| Rank-20: 96.31%| mAP: 78.26%| mINP: 65.22%
+
+ * Finished epoch  32   model R1: 84.7%  model mAP: 78.3%   best R1: 85.1%   best mAP: 77.8%(best_epoch:24)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.6228535175323486
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5519521236419678
+==> Statistics for IR epoch 33: 212 clusters
+==> Statistics for RGB epoch 33: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [33][10/100]	Time 0.320 (0.392)	Data 0.000 (0.071)	Loss 0.162 (0.037)	Loss ir 0.001	Loss rgb 0.150	Loss cross 0.047	
+Epoch: [33][20/100]	Time 0.323 (0.357)	Data 0.000 (0.036)	Loss 0.170 (0.070)	Loss ir 0.000	Loss rgb 0.136	Loss cross 0.131	
+Epoch: [33][30/100]	Time 0.323 (0.372)	Data 0.000 (0.050)	Loss 0.123 (0.083)	Loss ir 0.039	Loss rgb 0.063	Loss cross 0.082	
+Epoch: [33][40/100]	Time 0.319 (0.359)	Data 0.000 (0.038)	Loss 0.176 (0.123)	Loss ir 0.025	Loss rgb 0.098	Loss cross 0.213	
+Epoch: [33][50/100]	Time 0.321 (0.351)	Data 0.000 (0.030)	Loss 0.112 (0.143)	Loss ir 0.012	Loss rgb 0.074	Loss cross 0.104	
+Epoch: [33][60/100]	Time 0.320 (0.379)	Data 0.000 (0.057)	Loss 0.382 (0.152)	Loss ir 0.071	Loss rgb 0.265	Loss cross 0.183	
+Epoch: [33][70/100]	Time 0.323 (0.371)	Data 0.000 (0.049)	Loss 0.158 (0.169)	Loss ir 0.025	Loss rgb 0.101	Loss cross 0.129	
+Epoch: [33][80/100]	Time 0.331 (0.374)	Data 0.000 (0.052)	Loss 0.189 (0.175)	Loss ir 0.029	Loss rgb 0.145	Loss cross 0.057	
+Epoch: [33][90/100]	Time 0.319 (0.368)	Data 0.000 (0.046)	Loss 0.120 (0.177)	Loss ir 0.017	Loss rgb 0.087	Loss cross 0.063	
+Epoch: [33][100/100]	Time 0.320 (0.364)	Data 0.000 (0.042)	Loss 0.133 (0.182)	Loss ir 0.022	Loss rgb 0.072	Loss cross 0.155	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5823006629943848
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5744004249572754
+==> Statistics for IR epoch 34: 211 clusters
+==> Statistics for RGB epoch 34: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 0, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [34][10/100]	Time 0.322 (0.370)	Data 0.000 (0.047)	Loss 0.053 (0.027)	Loss ir 0.038	Loss rgb 0.001	Loss cross 0.058	
+Epoch: [34][20/100]	Time 0.326 (0.346)	Data 0.000 (0.024)	Loss 0.141 (0.059)	Loss ir 0.131	Loss rgb 0.003	Loss cross 0.030	
+Epoch: [34][30/100]	Time 0.323 (0.370)	Data 0.001 (0.047)	Loss 0.119 (0.082)	Loss ir 0.098	Loss rgb 0.004	Loss cross 0.067	
+Epoch: [34][40/100]	Time 0.319 (0.358)	Data 0.000 (0.035)	Loss 0.098 (0.098)	Loss ir 0.083	Loss rgb 0.001	Loss cross 0.056	
+Epoch: [34][50/100]	Time 0.317 (0.351)	Data 0.000 (0.028)	Loss 0.272 (0.119)	Loss ir 0.183	Loss rgb 0.003	Loss cross 0.346	
+Epoch: [34][60/100]	Time 0.322 (0.373)	Data 0.000 (0.051)	Loss 0.263 (0.146)	Loss ir 0.143	Loss rgb 0.072	Loss cross 0.191	
+Epoch: [34][70/100]	Time 0.303 (0.365)	Data 0.000 (0.043)	Loss 0.414 (0.167)	Loss ir 0.181	Loss rgb 0.211	Loss cross 0.089	
+Epoch: [34][80/100]	Time 0.331 (0.369)	Data 0.000 (0.047)	Loss 0.273 (0.187)	Loss ir 0.010	Loss rgb 0.236	Loss cross 0.108	
+Epoch: [34][90/100]	Time 0.318 (0.363)	Data 0.000 (0.042)	Loss 0.295 (0.201)	Loss ir 0.159	Loss rgb 0.114	Loss cross 0.088	
+Epoch: [34][100/100]	Time 0.323 (0.359)	Data 0.000 (0.038)	Loss 0.264 (0.213)	Loss ir 0.148	Loss rgb 0.047	Loss cross 0.277	
+Extracting Query Feature...
+Extracting Time:	 3.370
+Extracting Gallery Feature...
+Extracting Time:	 3.453
+Test Trial: 10
+FC:   Rank-1: 83.74% | Rank-5: 89.85% | Rank-10: 93.01%| Rank-20: 95.87%| mAP: 77.53%| mINP: 64.37%
+
+ * Finished epoch  34   model R1: 83.7%  model mAP: 77.5%   best R1: 85.1%   best mAP: 77.8%(best_epoch:24)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5686917304992676
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5497615337371826
+==> Statistics for IR epoch 35: 211 clusters
+==> Statistics for RGB epoch 35: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 0, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [35][10/100]	Time 0.320 (0.384)	Data 0.000 (0.061)	Loss 0.022 (0.027)	Loss ir 0.000	Loss rgb 0.015	Loss cross 0.025	
+Epoch: [35][20/100]	Time 0.322 (0.353)	Data 0.000 (0.030)	Loss 0.104 (0.066)	Loss ir 0.001	Loss rgb 0.085	Loss cross 0.072	
+Epoch: [35][30/100]	Time 0.323 (0.366)	Data 0.000 (0.043)	Loss 0.108 (0.096)	Loss ir 0.018	Loss rgb 0.072	Loss cross 0.076	
+Epoch: [35][40/100]	Time 0.321 (0.355)	Data 0.000 (0.032)	Loss 0.184 (0.118)	Loss ir 0.043	Loss rgb 0.089	Loss cross 0.207	
+Epoch: [35][50/100]	Time 0.321 (0.348)	Data 0.000 (0.026)	Loss 0.177 (0.137)	Loss ir 0.045	Loss rgb 0.067	Loss cross 0.259	
+Epoch: [35][60/100]	Time 0.321 (0.371)	Data 0.001 (0.050)	Loss 0.234 (0.155)	Loss ir 0.013	Loss rgb 0.155	Loss cross 0.266	
+Epoch: [35][70/100]	Time 0.329 (0.364)	Data 0.000 (0.043)	Loss 0.215 (0.162)	Loss ir 0.028	Loss rgb 0.107	Loss cross 0.324	
+Epoch: [35][80/100]	Time 0.325 (0.368)	Data 0.000 (0.047)	Loss 0.125 (0.167)	Loss ir 0.020	Loss rgb 0.099	Loss cross 0.022	
+Epoch: [35][90/100]	Time 0.322 (0.363)	Data 0.000 (0.042)	Loss 0.149 (0.170)	Loss ir 0.050	Loss rgb 0.060	Loss cross 0.155	
+Epoch: [35][100/100]	Time 0.320 (0.359)	Data 0.000 (0.038)	Loss 0.170 (0.171)	Loss ir 0.037	Loss rgb 0.088	Loss cross 0.182	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.6119942665100098
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5785496234893799
+==> Statistics for IR epoch 36: 211 clusters
+==> Statistics for RGB epoch 36: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 0, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [36][10/100]	Time 0.320 (0.369)	Data 0.000 (0.049)	Loss 0.188 (0.048)	Loss ir 0.182	Loss rgb 0.003	Loss cross 0.013	
+Epoch: [36][20/100]	Time 0.322 (0.346)	Data 0.000 (0.024)	Loss 0.108 (0.053)	Loss ir 0.073	Loss rgb 0.001	Loss cross 0.135	
+Epoch: [36][30/100]	Time 0.322 (0.365)	Data 0.000 (0.043)	Loss 0.071 (0.071)	Loss ir 0.044	Loss rgb 0.002	Loss cross 0.100	
+Epoch: [36][40/100]	Time 0.320 (0.354)	Data 0.000 (0.032)	Loss 0.138 (0.095)	Loss ir 0.057	Loss rgb 0.015	Loss cross 0.262	
+Epoch: [36][50/100]	Time 0.323 (0.347)	Data 0.000 (0.026)	Loss 0.086 (0.112)	Loss ir 0.067	Loss rgb 0.004	Loss cross 0.062	
+Epoch: [36][60/100]	Time 0.324 (0.376)	Data 0.000 (0.055)	Loss 0.250 (0.139)	Loss ir 0.195	Loss rgb 0.022	Loss cross 0.131	
+Epoch: [36][70/100]	Time 0.321 (0.368)	Data 0.000 (0.047)	Loss 0.639 (0.165)	Loss ir 0.121	Loss rgb 0.395	Loss cross 0.492	
+Epoch: [36][80/100]	Time 0.315 (0.370)	Data 0.000 (0.051)	Loss 0.188 (0.187)	Loss ir 0.018	Loss rgb 0.106	Loss cross 0.256	
+Epoch: [36][90/100]	Time 0.320 (0.365)	Data 0.000 (0.045)	Loss 0.402 (0.195)	Loss ir 0.138	Loss rgb 0.213	Loss cross 0.204	
+Epoch: [36][100/100]	Time 0.321 (0.360)	Data 0.000 (0.041)	Loss 0.418 (0.205)	Loss ir 0.256	Loss rgb 0.130	Loss cross 0.130	
+Extracting Query Feature...
+Extracting Time:	 3.407
+Extracting Gallery Feature...
+Extracting Time:	 3.557
+Test Trial: 10
+FC:   Rank-1: 83.06% | Rank-5: 90.10% | Rank-10: 93.35%| Rank-20: 95.58%| mAP: 77.33%| mINP: 64.06%
+
+ * Finished epoch  36   model R1: 83.1%  model mAP: 77.3%   best R1: 85.1%   best mAP: 77.8%(best_epoch:24)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5806150436401367
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5728681087493896
+==> Statistics for IR epoch 37: 212 clusters
+==> Statistics for RGB epoch 37: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [37][10/100]	Time 0.321 (0.380)	Data 0.000 (0.055)	Loss 0.014 (0.030)	Loss ir 0.001	Loss rgb 0.004	Loss cross 0.038	
+Epoch: [37][20/100]	Time 0.320 (0.351)	Data 0.000 (0.028)	Loss 0.055 (0.075)	Loss ir 0.000	Loss rgb 0.043	Loss cross 0.045	
+Epoch: [37][30/100]	Time 0.321 (0.371)	Data 0.000 (0.047)	Loss 0.183 (0.093)	Loss ir 0.017	Loss rgb 0.135	Loss cross 0.122	
+Epoch: [37][40/100]	Time 0.322 (0.359)	Data 0.000 (0.036)	Loss 0.207 (0.110)	Loss ir 0.077	Loss rgb 0.033	Loss cross 0.388	
+Epoch: [37][50/100]	Time 0.321 (0.351)	Data 0.000 (0.029)	Loss 0.130 (0.133)	Loss ir 0.043	Loss rgb 0.043	Loss cross 0.178	
+Epoch: [37][60/100]	Time 0.320 (0.375)	Data 0.000 (0.052)	Loss 0.125 (0.142)	Loss ir 0.021	Loss rgb 0.070	Loss cross 0.139	
+Epoch: [37][70/100]	Time 0.322 (0.367)	Data 0.000 (0.044)	Loss 0.134 (0.157)	Loss ir 0.017	Loss rgb 0.081	Loss cross 0.148	
+Epoch: [37][80/100]	Time 0.327 (0.373)	Data 0.000 (0.050)	Loss 0.127 (0.163)	Loss ir 0.046	Loss rgb 0.060	Loss cross 0.084	
+Epoch: [37][90/100]	Time 0.324 (0.367)	Data 0.000 (0.044)	Loss 0.215 (0.165)	Loss ir 0.019	Loss rgb 0.171	Loss cross 0.100	
+Epoch: [37][100/100]	Time 0.321 (0.362)	Data 0.000 (0.040)	Loss 0.180 (0.170)	Loss ir 0.021	Loss rgb 0.120	Loss cross 0.157	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5882112979888916
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5297131538391113
+==> Statistics for IR epoch 38: 212 clusters
+==> Statistics for RGB epoch 38: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [38][10/100]	Time 0.322 (0.371)	Data 0.001 (0.046)	Loss 0.051 (0.027)	Loss ir 0.033	Loss rgb 0.002	Loss cross 0.067	
+Epoch: [38][20/100]	Time 0.321 (0.347)	Data 0.000 (0.023)	Loss 0.206 (0.056)	Loss ir 0.172	Loss rgb 0.008	Loss cross 0.106	
+Epoch: [38][30/100]	Time 0.331 (0.365)	Data 0.000 (0.041)	Loss 0.163 (0.075)	Loss ir 0.125	Loss rgb 0.007	Loss cross 0.124	
+Epoch: [38][40/100]	Time 0.321 (0.354)	Data 0.000 (0.031)	Loss 0.149 (0.092)	Loss ir 0.105	Loss rgb 0.007	Loss cross 0.151	
+Epoch: [38][50/100]	Time 0.319 (0.347)	Data 0.000 (0.025)	Loss 0.055 (0.109)	Loss ir 0.024	Loss rgb 0.002	Loss cross 0.115	
+Epoch: [38][60/100]	Time 0.321 (0.373)	Data 0.000 (0.051)	Loss 0.162 (0.120)	Loss ir 0.044	Loss rgb 0.103	Loss cross 0.059	
+Epoch: [38][70/100]	Time 0.308 (0.366)	Data 0.000 (0.044)	Loss 0.364 (0.140)	Loss ir 0.266	Loss rgb 0.074	Loss cross 0.095	
+Epoch: [38][80/100]	Time 0.329 (0.372)	Data 0.000 (0.050)	Loss 0.176 (0.161)	Loss ir 0.111	Loss rgb 0.044	Loss cross 0.084	
+Epoch: [38][90/100]	Time 0.320 (0.367)	Data 0.000 (0.044)	Loss 0.434 (0.178)	Loss ir 0.147	Loss rgb 0.200	Loss cross 0.346	
+Epoch: [38][100/100]	Time 0.320 (0.362)	Data 0.000 (0.040)	Loss 0.320 (0.191)	Loss ir 0.193	Loss rgb 0.109	Loss cross 0.072	
+Extracting Query Feature...
+Extracting Time:	 3.429
+Extracting Gallery Feature...
+Extracting Time:	 3.388
+Test Trial: 10
+FC:   Rank-1: 83.25% | Rank-5: 90.15% | Rank-10: 93.35%| Rank-20: 95.92%| mAP: 77.69%| mINP: 64.63%
+
+ * Finished epoch  38   model R1: 83.3%  model mAP: 77.7%   best R1: 85.1%   best mAP: 77.8%(best_epoch:24)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5919461250305176
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5454583168029785
+==> Statistics for IR epoch 39: 212 clusters
+==> Statistics for RGB epoch 39: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [39][10/100]	Time 0.322 (0.373)	Data 0.000 (0.046)	Loss 0.005 (0.012)	Loss ir 0.000	Loss rgb 0.003	Loss cross 0.007	
+Epoch: [39][20/100]	Time 0.322 (0.347)	Data 0.000 (0.023)	Loss 0.069 (0.044)	Loss ir 0.001	Loss rgb 0.056	Loss cross 0.048	
+Epoch: [39][30/100]	Time 0.324 (0.371)	Data 0.000 (0.047)	Loss 0.221 (0.086)	Loss ir 0.047	Loss rgb 0.124	Loss cross 0.198	
+Epoch: [39][40/100]	Time 0.325 (0.360)	Data 0.000 (0.036)	Loss 0.144 (0.115)	Loss ir 0.013	Loss rgb 0.112	Loss cross 0.074	
+Epoch: [39][50/100]	Time 0.319 (0.352)	Data 0.000 (0.028)	Loss 0.297 (0.135)	Loss ir 0.013	Loss rgb 0.247	Loss cross 0.147	
+Epoch: [39][60/100]	Time 0.323 (0.376)	Data 0.000 (0.054)	Loss 0.287 (0.147)	Loss ir 0.028	Loss rgb 0.232	Loss cross 0.105	
+Epoch: [39][70/100]	Time 0.323 (0.368)	Data 0.000 (0.046)	Loss 0.137 (0.156)	Loss ir 0.044	Loss rgb 0.080	Loss cross 0.052	
+Epoch: [39][80/100]	Time 0.303 (0.372)	Data 0.001 (0.051)	Loss 0.119 (0.160)	Loss ir 0.022	Loss rgb 0.069	Loss cross 0.115	
+Epoch: [39][90/100]	Time 0.322 (0.366)	Data 0.000 (0.046)	Loss 0.575 (0.170)	Loss ir 0.056	Loss rgb 0.494	Loss cross 0.102	
+Epoch: [39][100/100]	Time 0.324 (0.362)	Data 0.000 (0.041)	Loss 0.139 (0.169)	Loss ir 0.019	Loss rgb 0.084	Loss cross 0.149	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.6413207054138184
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.592116355895996
+==> Statistics for IR epoch 40: 212 clusters
+==> Statistics for RGB epoch 40: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [40][10/100]	Time 0.323 (0.373)	Data 0.000 (0.049)	Loss 0.097 (0.022)	Loss ir 0.021	Loss rgb 0.004	Loss cross 0.287	
+Epoch: [40][20/100]	Time 0.323 (0.348)	Data 0.000 (0.025)	Loss 0.014 (0.045)	Loss ir 0.009	Loss rgb 0.002	Loss cross 0.010	
+Epoch: [40][30/100]	Time 0.312 (0.369)	Data 0.000 (0.046)	Loss 0.331 (0.066)	Loss ir 0.290	Loss rgb 0.003	Loss cross 0.154	
+Epoch: [40][40/100]	Time 0.321 (0.357)	Data 0.000 (0.035)	Loss 0.099 (0.085)	Loss ir 0.058	Loss rgb 0.002	Loss cross 0.161	
+Epoch: [40][50/100]	Time 0.320 (0.350)	Data 0.000 (0.028)	Loss 0.128 (0.100)	Loss ir 0.107	Loss rgb 0.006	Loss cross 0.062	
+Epoch: [40][60/100]	Time 0.322 (0.374)	Data 0.000 (0.052)	Loss 0.195 (0.120)	Loss ir 0.035	Loss rgb 0.145	Loss cross 0.061	
+Epoch: [40][70/100]	Time 0.327 (0.367)	Data 0.000 (0.045)	Loss 0.462 (0.153)	Loss ir 0.234	Loss rgb 0.207	Loss cross 0.082	
+Epoch: [40][80/100]	Time 0.329 (0.372)	Data 0.001 (0.050)	Loss 0.198 (0.164)	Loss ir 0.022	Loss rgb 0.162	Loss cross 0.056	
+Epoch: [40][90/100]	Time 0.324 (0.366)	Data 0.000 (0.044)	Loss 0.184 (0.172)	Loss ir 0.120	Loss rgb 0.042	Loss cross 0.084	
+Epoch: [40][100/100]	Time 0.321 (0.361)	Data 0.000 (0.040)	Loss 0.466 (0.189)	Loss ir 0.217	Loss rgb 0.213	Loss cross 0.148	
+Extracting Query Feature...
+Extracting Time:	 3.559
+Extracting Gallery Feature...
+Extracting Time:	 3.562
+Test Trial: 10
+FC:   Rank-1: 82.72% | Rank-5: 89.85% | Rank-10: 93.16%| Rank-20: 95.68%| mAP: 77.25%| mINP: 64.23%
+
+ * Finished epoch  40   model R1: 82.7%  model mAP: 77.2%   best R1: 85.1%   best mAP: 77.8%(best_epoch:24)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.608137607574463
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5581021308898926
+==> Statistics for IR epoch 41: 212 clusters
+==> Statistics for RGB epoch 41: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [41][10/100]	Time 0.323 (0.385)	Data 0.000 (0.062)	Loss 0.066 (0.029)	Loss ir 0.001	Loss rgb 0.049	Loss cross 0.064	
+Epoch: [41][20/100]	Time 0.322 (0.354)	Data 0.000 (0.031)	Loss 0.148 (0.048)	Loss ir 0.001	Loss rgb 0.139	Loss cross 0.036	
+Epoch: [41][30/100]	Time 0.323 (0.369)	Data 0.000 (0.046)	Loss 0.128 (0.070)	Loss ir 0.015	Loss rgb 0.093	Loss cross 0.083	
+Epoch: [41][40/100]	Time 0.321 (0.357)	Data 0.000 (0.034)	Loss 0.193 (0.095)	Loss ir 0.035	Loss rgb 0.068	Loss cross 0.357	
+Epoch: [41][50/100]	Time 0.321 (0.350)	Data 0.000 (0.027)	Loss 0.349 (0.114)	Loss ir 0.035	Loss rgb 0.230	Loss cross 0.335	
+Epoch: [41][60/100]	Time 0.322 (0.376)	Data 0.000 (0.053)	Loss 0.087 (0.127)	Loss ir 0.027	Loss rgb 0.030	Loss cross 0.121	
+Epoch: [41][70/100]	Time 0.320 (0.368)	Data 0.000 (0.045)	Loss 0.228 (0.135)	Loss ir 0.039	Loss rgb 0.179	Loss cross 0.042	
+Epoch: [41][80/100]	Time 0.332 (0.374)	Data 0.000 (0.051)	Loss 0.120 (0.138)	Loss ir 0.036	Loss rgb 0.059	Loss cross 0.101	
+Epoch: [41][90/100]	Time 0.319 (0.368)	Data 0.000 (0.045)	Loss 0.181 (0.144)	Loss ir 0.015	Loss rgb 0.153	Loss cross 0.052	
+Epoch: [41][100/100]	Time 0.321 (0.363)	Data 0.000 (0.041)	Loss 0.204 (0.144)	Loss ir 0.040	Loss rgb 0.086	Loss cross 0.309	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.6193382740020752
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5611135959625244
+==> Statistics for IR epoch 42: 212 clusters
+==> Statistics for RGB epoch 42: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [42][10/100]	Time 0.328 (0.392)	Data 0.000 (0.071)	Loss 0.063 (0.046)	Loss ir 0.048	Loss rgb 0.010	Loss cross 0.019	
+Epoch: [42][20/100]	Time 0.324 (0.358)	Data 0.000 (0.035)	Loss 0.110 (0.051)	Loss ir 0.042	Loss rgb 0.002	Loss cross 0.262	
+Epoch: [42][30/100]	Time 0.324 (0.373)	Data 0.001 (0.050)	Loss 0.104 (0.065)	Loss ir 0.084	Loss rgb 0.002	Loss cross 0.070	
+Epoch: [42][40/100]	Time 0.323 (0.361)	Data 0.000 (0.038)	Loss 0.237 (0.095)	Loss ir 0.203	Loss rgb 0.006	Loss cross 0.106	
+Epoch: [42][50/100]	Time 0.322 (0.353)	Data 0.000 (0.030)	Loss 0.234 (0.106)	Loss ir 0.185	Loss rgb 0.012	Loss cross 0.149	
+Epoch: [42][60/100]	Time 0.322 (0.378)	Data 0.001 (0.054)	Loss 0.377 (0.131)	Loss ir 0.146	Loss rgb 0.212	Loss cross 0.077	
+Epoch: [42][70/100]	Time 0.317 (0.369)	Data 0.000 (0.046)	Loss 0.307 (0.155)	Loss ir 0.154	Loss rgb 0.125	Loss cross 0.111	
+Epoch: [42][80/100]	Time 0.334 (0.374)	Data 0.000 (0.051)	Loss 0.292 (0.176)	Loss ir 0.160	Loss rgb 0.118	Loss cross 0.052	
+Epoch: [42][90/100]	Time 0.321 (0.368)	Data 0.000 (0.046)	Loss 0.170 (0.182)	Loss ir 0.058	Loss rgb 0.070	Loss cross 0.167	
+Epoch: [42][100/100]	Time 0.320 (0.364)	Data 0.000 (0.041)	Loss 0.223 (0.186)	Loss ir 0.075	Loss rgb 0.122	Loss cross 0.106	
+Extracting Query Feature...
+Extracting Time:	 3.400
+Extracting Gallery Feature...
+Extracting Time:	 3.446
+Test Trial: 10
+FC:   Rank-1: 82.91% | Rank-5: 89.71% | Rank-10: 93.11%| Rank-20: 95.44%| mAP: 77.33%| mINP: 64.38%
+
+ * Finished epoch  42   model R1: 82.9%  model mAP: 77.3%   best R1: 85.1%   best mAP: 77.8%(best_epoch:24)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5731532573699951
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.559250831604004
+==> Statistics for IR epoch 43: 212 clusters
+==> Statistics for RGB epoch 43: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [43][10/100]	Time 0.320 (0.376)	Data 0.001 (0.050)	Loss 0.005 (0.026)	Loss ir 0.000	Loss rgb 0.001	Loss cross 0.015	
+Epoch: [43][20/100]	Time 0.334 (0.349)	Data 0.000 (0.025)	Loss 0.093 (0.043)	Loss ir 0.001	Loss rgb 0.088	Loss cross 0.019	
+Epoch: [43][30/100]	Time 0.321 (0.368)	Data 0.000 (0.045)	Loss 0.121 (0.062)	Loss ir 0.040	Loss rgb 0.068	Loss cross 0.050	
+Epoch: [43][40/100]	Time 0.321 (0.356)	Data 0.000 (0.034)	Loss 0.263 (0.086)	Loss ir 0.068	Loss rgb 0.129	Loss cross 0.265	
+Epoch: [43][50/100]	Time 0.321 (0.349)	Data 0.000 (0.027)	Loss 0.131 (0.098)	Loss ir 0.012	Loss rgb 0.052	Loss cross 0.268	
+Epoch: [43][60/100]	Time 0.314 (0.374)	Data 0.000 (0.051)	Loss 0.128 (0.111)	Loss ir 0.009	Loss rgb 0.113	Loss cross 0.026	
+Epoch: [43][70/100]	Time 0.323 (0.366)	Data 0.000 (0.044)	Loss 0.152 (0.121)	Loss ir 0.009	Loss rgb 0.126	Loss cross 0.068	
+Epoch: [43][80/100]	Time 0.303 (0.370)	Data 0.001 (0.049)	Loss 0.257 (0.132)	Loss ir 0.059	Loss rgb 0.187	Loss cross 0.045	
+Epoch: [43][90/100]	Time 0.322 (0.364)	Data 0.000 (0.043)	Loss 0.188 (0.134)	Loss ir 0.063	Loss rgb 0.086	Loss cross 0.154	
+Epoch: [43][100/100]	Time 0.318 (0.359)	Data 0.000 (0.039)	Loss 0.241 (0.142)	Loss ir 0.059	Loss rgb 0.150	Loss cross 0.127	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5935759544372559
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5528078079223633
+==> Statistics for IR epoch 44: 212 clusters
+==> Statistics for RGB epoch 44: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [44][10/100]	Time 0.319 (0.380)	Data 0.000 (0.067)	Loss 0.008 (0.031)	Loss ir 0.001	Loss rgb 0.000	Loss cross 0.023	
+Epoch: [44][20/100]	Time 0.322 (0.351)	Data 0.000 (0.033)	Loss 0.025 (0.055)	Loss ir 0.002	Loss rgb 0.002	Loss cross 0.080	
+Epoch: [44][30/100]	Time 0.312 (0.365)	Data 0.000 (0.048)	Loss 0.062 (0.064)	Loss ir 0.032	Loss rgb 0.006	Loss cross 0.095	
+Epoch: [44][40/100]	Time 0.321 (0.354)	Data 0.000 (0.036)	Loss 0.204 (0.078)	Loss ir 0.173	Loss rgb 0.001	Loss cross 0.122	
+Epoch: [44][50/100]	Time 0.320 (0.347)	Data 0.000 (0.029)	Loss 0.220 (0.092)	Loss ir 0.192	Loss rgb 0.001	Loss cross 0.110	
+Epoch: [44][60/100]	Time 0.303 (0.371)	Data 0.000 (0.055)	Loss 0.125 (0.111)	Loss ir 0.041	Loss rgb 0.066	Loss cross 0.070	
+Epoch: [44][70/100]	Time 0.303 (0.362)	Data 0.000 (0.047)	Loss 0.175 (0.125)	Loss ir 0.050	Loss rgb 0.075	Loss cross 0.196	
+Epoch: [44][80/100]	Time 0.303 (0.365)	Data 0.000 (0.052)	Loss 0.196 (0.139)	Loss ir 0.068	Loss rgb 0.080	Loss cross 0.192	
+Epoch: [44][90/100]	Time 0.318 (0.360)	Data 0.000 (0.047)	Loss 0.255 (0.149)	Loss ir 0.168	Loss rgb 0.058	Loss cross 0.113	
+Epoch: [44][100/100]	Time 0.320 (0.356)	Data 0.000 (0.042)	Loss 0.233 (0.158)	Loss ir 0.083	Loss rgb 0.140	Loss cross 0.043	
+Extracting Query Feature...
+Extracting Time:	 3.352
+Extracting Gallery Feature...
+Extracting Time:	 3.430
+Test Trial: 10
+FC:   Rank-1: 82.91% | Rank-5: 89.61% | Rank-10: 93.11%| Rank-20: 95.63%| mAP: 77.45%| mINP: 64.28%
+
+ * Finished epoch  44   model R1: 82.9%  model mAP: 77.5%   best R1: 85.1%   best mAP: 77.8%(best_epoch:24)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5818812847137451
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5424787998199463
+==> Statistics for IR epoch 45: 212 clusters
+==> Statistics for RGB epoch 45: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [45][10/100]	Time 0.321 (0.390)	Data 0.000 (0.068)	Loss 0.019 (0.013)	Loss ir 0.001	Loss rgb 0.017	Loss cross 0.006	
+Epoch: [45][20/100]	Time 0.322 (0.355)	Data 0.000 (0.034)	Loss 0.086 (0.040)	Loss ir 0.001	Loss rgb 0.073	Loss cross 0.049	
+Epoch: [45][30/100]	Time 0.321 (0.368)	Data 0.000 (0.045)	Loss 0.136 (0.065)	Loss ir 0.012	Loss rgb 0.115	Loss cross 0.037	
+Epoch: [45][40/100]	Time 0.319 (0.356)	Data 0.000 (0.034)	Loss 0.119 (0.086)	Loss ir 0.017	Loss rgb 0.078	Loss cross 0.096	
+Epoch: [45][50/100]	Time 0.318 (0.349)	Data 0.000 (0.027)	Loss 0.192 (0.103)	Loss ir 0.015	Loss rgb 0.163	Loss cross 0.055	
+Epoch: [45][60/100]	Time 0.325 (0.373)	Data 0.000 (0.051)	Loss 0.215 (0.122)	Loss ir 0.015	Loss rgb 0.190	Loss cross 0.041	
+Epoch: [45][70/100]	Time 0.302 (0.363)	Data 0.000 (0.044)	Loss 0.206 (0.128)	Loss ir 0.036	Loss rgb 0.156	Loss cross 0.058	
+Epoch: [45][80/100]	Time 0.305 (0.364)	Data 0.000 (0.047)	Loss 0.251 (0.134)	Loss ir 0.012	Loss rgb 0.225	Loss cross 0.054	
+Epoch: [45][90/100]	Time 0.301 (0.357)	Data 0.000 (0.042)	Loss 0.155 (0.141)	Loss ir 0.017	Loss rgb 0.131	Loss cross 0.030	
+Epoch: [45][100/100]	Time 0.322 (0.353)	Data 0.000 (0.037)	Loss 0.133 (0.142)	Loss ir 0.011	Loss rgb 0.063	Loss cross 0.233	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.581709384918213
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5498054027557373
+==> Statistics for IR epoch 46: 212 clusters
+==> Statistics for RGB epoch 46: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [46][10/100]	Time 0.302 (0.363)	Data 0.000 (0.058)	Loss 0.043 (0.027)	Loss ir 0.033	Loss rgb 0.003	Loss cross 0.026	
+Epoch: [46][20/100]	Time 0.320 (0.342)	Data 0.000 (0.029)	Loss 0.036 (0.036)	Loss ir 0.010	Loss rgb 0.005	Loss cross 0.083	
+Epoch: [46][30/100]	Time 0.317 (0.360)	Data 0.000 (0.046)	Loss 0.055 (0.056)	Loss ir 0.024	Loss rgb 0.001	Loss cross 0.117	
+Epoch: [46][40/100]	Time 0.320 (0.349)	Data 0.000 (0.034)	Loss 0.208 (0.083)	Loss ir 0.190	Loss rgb 0.004	Loss cross 0.058	
+Epoch: [46][50/100]	Time 0.314 (0.343)	Data 0.000 (0.028)	Loss 0.175 (0.102)	Loss ir 0.136	Loss rgb 0.003	Loss cross 0.144	
+Epoch: [46][60/100]	Time 0.317 (0.368)	Data 0.000 (0.052)	Loss 0.158 (0.127)	Loss ir 0.075	Loss rgb 0.040	Loss cross 0.170	
+Epoch: [46][70/100]	Time 0.311 (0.361)	Data 0.000 (0.045)	Loss 0.230 (0.142)	Loss ir 0.105	Loss rgb 0.092	Loss cross 0.134	
+Epoch: [46][80/100]	Time 0.303 (0.366)	Data 0.000 (0.050)	Loss 0.190 (0.154)	Loss ir 0.117	Loss rgb 0.046	Loss cross 0.108	
+Epoch: [46][90/100]	Time 0.301 (0.359)	Data 0.000 (0.045)	Loss 0.625 (0.168)	Loss ir 0.445	Loss rgb 0.143	Loss cross 0.149	
+Epoch: [46][100/100]	Time 0.316 (0.355)	Data 0.000 (0.040)	Loss 0.294 (0.176)	Loss ir 0.141	Loss rgb 0.122	Loss cross 0.127	
+Extracting Query Feature...
+Extracting Time:	 3.255
+Extracting Gallery Feature...
+Extracting Time:	 3.400
+Test Trial: 10
+FC:   Rank-1: 82.96% | Rank-5: 89.61% | Rank-10: 93.01%| Rank-20: 95.58%| mAP: 77.48%| mINP: 64.53%
+
+ * Finished epoch  46   model R1: 83.0%  model mAP: 77.5%   best R1: 85.1%   best mAP: 77.8%(best_epoch:24)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.6106650829315186
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5684716701507568
+==> Statistics for IR epoch 47: 212 clusters
+==> Statistics for RGB epoch 47: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [47][10/100]	Time 0.329 (0.370)	Data 0.000 (0.045)	Loss 0.002 (0.013)	Loss ir 0.000	Loss rgb 0.001	Loss cross 0.002	
+Epoch: [47][20/100]	Time 0.323 (0.346)	Data 0.000 (0.023)	Loss 0.050 (0.035)	Loss ir 0.005	Loss rgb 0.022	Loss cross 0.093	
+Epoch: [47][30/100]	Time 0.321 (0.367)	Data 0.000 (0.043)	Loss 0.124 (0.051)	Loss ir 0.010	Loss rgb 0.090	Loss cross 0.097	
+Epoch: [47][40/100]	Time 0.319 (0.356)	Data 0.000 (0.033)	Loss 0.150 (0.076)	Loss ir 0.027	Loss rgb 0.106	Loss cross 0.066	
+Epoch: [47][50/100]	Time 0.319 (0.349)	Data 0.000 (0.026)	Loss 0.167 (0.090)	Loss ir 0.049	Loss rgb 0.103	Loss cross 0.059	
+Epoch: [47][60/100]	Time 0.302 (0.372)	Data 0.000 (0.052)	Loss 0.193 (0.104)	Loss ir 0.013	Loss rgb 0.146	Loss cross 0.138	
+Epoch: [47][70/100]	Time 0.302 (0.362)	Data 0.000 (0.045)	Loss 0.348 (0.120)	Loss ir 0.010	Loss rgb 0.244	Loss cross 0.376	
+Epoch: [47][80/100]	Time 0.303 (0.366)	Data 0.000 (0.051)	Loss 0.078 (0.126)	Loss ir 0.007	Loss rgb 0.064	Loss cross 0.027	
+Epoch: [47][90/100]	Time 0.322 (0.361)	Data 0.000 (0.045)	Loss 0.198 (0.142)	Loss ir 0.029	Loss rgb 0.130	Loss cross 0.153	
+Epoch: [47][100/100]	Time 0.301 (0.357)	Data 0.000 (0.041)	Loss 0.144 (0.147)	Loss ir 0.010	Loss rgb 0.083	Loss cross 0.207	
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.6574287414550781
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5707001686096191
+==> Statistics for IR epoch 48: 212 clusters
+==> Statistics for RGB epoch 48: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [48][10/100]	Time 0.322 (0.365)	Data 0.000 (0.047)	Loss 0.009 (0.014)	Loss ir 0.003	Loss rgb 0.003	Loss cross 0.013	
+Epoch: [48][20/100]	Time 0.320 (0.344)	Data 0.000 (0.023)	Loss 0.062 (0.046)	Loss ir 0.044	Loss rgb 0.003	Loss cross 0.062	
+Epoch: [48][30/100]	Time 0.322 (0.359)	Data 0.000 (0.039)	Loss 0.062 (0.066)	Loss ir 0.052	Loss rgb 0.002	Loss cross 0.031	
+Epoch: [48][40/100]	Time 0.320 (0.349)	Data 0.000 (0.030)	Loss 0.105 (0.079)	Loss ir 0.083	Loss rgb 0.001	Loss cross 0.083	
+Epoch: [48][50/100]	Time 0.320 (0.344)	Data 0.000 (0.024)	Loss 0.125 (0.094)	Loss ir 0.099	Loss rgb 0.002	Loss cross 0.094	
+Epoch: [48][60/100]	Time 0.312 (0.371)	Data 0.000 (0.051)	Loss 0.164 (0.111)	Loss ir 0.047	Loss rgb 0.080	Loss cross 0.146	
+Epoch: [48][70/100]	Time 0.322 (0.364)	Data 0.000 (0.043)	Loss 0.180 (0.131)	Loss ir 0.091	Loss rgb 0.066	Loss cross 0.091	
+Epoch: [48][80/100]	Time 0.325 (0.368)	Data 0.000 (0.048)	Loss 0.190 (0.143)	Loss ir 0.043	Loss rgb 0.099	Loss cross 0.193	
+Epoch: [48][90/100]	Time 0.325 (0.363)	Data 0.000 (0.042)	Loss 0.183 (0.155)	Loss ir 0.056	Loss rgb 0.107	Loss cross 0.081	
+Epoch: [48][100/100]	Time 0.320 (0.359)	Data 0.000 (0.038)	Loss 0.317 (0.166)	Loss ir 0.186	Loss rgb 0.108	Loss cross 0.094	
+Extracting Query Feature...
+Extracting Time:	 3.322
+Extracting Gallery Feature...
+Extracting Time:	 3.690
+Test Trial: 10
+FC:   Rank-1: 82.86% | Rank-5: 89.47% | Rank-10: 92.57%| Rank-20: 95.58%| mAP: 77.41%| mINP: 64.61%
+
+ * Finished epoch  48   model R1: 82.9%  model mAP: 77.4%   best R1: 85.1%   best mAP: 77.8%(best_epoch:24)
+
+==> Create pseudo labels for unlabeled RGB data
+==> Create pseudo labels for unlabeled IR data
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.6932642459869385
+Computing jaccard distance...
+Jaccard distance computing time cost: 1.5627055168151855
+==> Statistics for IR epoch 49: 212 clusters
+==> Statistics for RGB epoch 49: 211 clusters
+Hungarian matching:
+hungarian matching: after step-1 matching, unmatched row num= 1, total ir feat num= 211
+hungarian matched pseudo label number=  211
+Epoch: [49][10/100]	Time 0.321 (0.373)	Data 0.000 (0.044)	Loss 0.066 (0.025)	Loss ir 0.000	Loss rgb 0.039	Loss cross 0.107	
+Epoch: [49][20/100]	Time 0.323 (0.348)	Data 0.000 (0.022)	Loss 0.055 (0.046)	Loss ir 0.000	Loss rgb 0.046	Loss cross 0.034	
+Epoch: [49][30/100]	Time 0.323 (0.365)	Data 0.000 (0.039)	Loss 0.092 (0.068)	Loss ir 0.019	Loss rgb 0.055	Loss cross 0.076	
+Epoch: [49][40/100]	Time 0.322 (0.355)	Data 0.000 (0.030)	Loss 0.139 (0.098)	Loss ir 0.018	Loss rgb 0.107	Loss cross 0.058	
+Epoch: [49][50/100]	Time 0.321 (0.348)	Data 0.000 (0.024)	Loss 0.153 (0.109)	Loss ir 0.037	Loss rgb 0.098	Loss cross 0.072	
+Epoch: [49][60/100]	Time 0.324 (0.376)	Data 0.000 (0.051)	Loss 0.168 (0.113)	Loss ir 0.033	Loss rgb 0.102	Loss cross 0.134	
+Epoch: [49][70/100]	Time 0.321 (0.368)	Data 0.000 (0.044)	Loss 0.218 (0.118)	Loss ir 0.017	Loss rgb 0.167	Loss cross 0.137	
+Epoch: [49][80/100]	Time 0.335 (0.374)	Data 0.000 (0.050)	Loss 0.083 (0.126)	Loss ir 0.026	Loss rgb 0.050	Loss cross 0.024	
+Epoch: [49][90/100]	Time 0.321 (0.369)	Data 0.000 (0.045)	Loss 0.217 (0.131)	Loss ir 0.030	Loss rgb 0.174	Loss cross 0.056	
+Epoch: [49][100/100]	Time 0.328 (0.364)	Data 0.000 (0.040)	Loss 0.132 (0.134)	Loss ir 0.015	Loss rgb 0.090	Loss cross 0.107	
+Total running time:  0:45:28.821907
